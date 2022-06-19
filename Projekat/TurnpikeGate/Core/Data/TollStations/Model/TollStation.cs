@@ -1,10 +1,5 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TurnpikeGate.Core.Data.TollStations
 {
@@ -29,8 +24,11 @@ namespace TurnpikeGate.Core.Data.TollStations
         [BsonElement("locationId")]
         public ObjectId LocationId { get; set; }
 
+        [BsonElement("referentIds")]
+        public List<ObjectId>? TollBoothIds { get; set; }
 
-        public TollStation(string address, string name, ObjectId stationManagerId, List<ObjectId> referentIds, ObjectId locationId)
+
+        public TollStation(string address, string name, ObjectId stationManagerId, List<ObjectId> referentIds, ObjectId locationId, List<ObjectId> tollBoothIds)
         {
             ID = ObjectId.GenerateNewId();
             Address = address;
@@ -38,6 +36,7 @@ namespace TurnpikeGate.Core.Data.TollStations
             StationManagerId = stationManagerId;
             ReferentIds = referentIds;
             LocationId = locationId;
+            TollBoothIds = tollBoothIds;
         }
     }
 }
