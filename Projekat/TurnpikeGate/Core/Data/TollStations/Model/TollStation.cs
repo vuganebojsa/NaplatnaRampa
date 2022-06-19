@@ -24,7 +24,7 @@ namespace TurnpikeGate.Core.Data.TollStations
         [BsonElement("locationId")]
         public ObjectId LocationId { get; set; }
 
-        [BsonElement("referentIds")]
+        [BsonElement("tollBoothIds")]
         public List<ObjectId>? TollBoothIds { get; set; }
 
 
