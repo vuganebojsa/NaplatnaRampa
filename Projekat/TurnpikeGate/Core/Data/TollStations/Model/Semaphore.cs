@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TurnpikeGate.Core.Data.TollStations.Model
 {
-    class Semaphore
+    public class Semaphore
     {
         [BsonElement("_id")]
         public ObjectId ID { get; set; }

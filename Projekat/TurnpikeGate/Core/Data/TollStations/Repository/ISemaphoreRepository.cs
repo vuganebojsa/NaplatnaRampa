@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace TurnpikeGate.Core.Data.TollStations.Repository
 {
-    interface ISemaphoreRepository
+    public interface ISemaphoreRepository : IRepository<Semaphore>
     {
+
     }
 }

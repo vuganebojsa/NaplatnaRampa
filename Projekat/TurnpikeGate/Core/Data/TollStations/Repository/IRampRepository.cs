@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TurnpikeGate.Core.Data.TollStations.Repository
 {
-    interface IRampRepository
+    public interface IRampRepository : IRepository<Ramp>
     {
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TurnpikeGate.Core.Data.TollStations.Model
 {
-    class Camera
+    public class Camera
     {
         [BsonElement("_id")]
         public ObjectId ID { get; set; }

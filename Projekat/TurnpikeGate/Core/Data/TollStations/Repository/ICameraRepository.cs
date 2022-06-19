@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TurnpikeGate.Core.Data.TollStations.Repository
 {
-    interface ICameraRepository
+    public interface ICameraRepository : IRepository<Camera>
     {
     }
 }
