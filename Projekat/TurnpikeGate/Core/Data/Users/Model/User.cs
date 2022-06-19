@@ -8,16 +8,22 @@ namespace TurnpikeGate.Core.Data.Users.Model
     {
         [BsonElement("_id")]
         public ObjectId ID { get; set; }
+
         [BsonElement("name")]
         public string Name { get; set; }
+
         [BsonElement("lastName")]
         public string LastName { get; set; }
+
         [BsonElement("email")]
         public string Email { get; set; }
+
         [BsonElement("phoneNumber")]
         public string PhoneNumber { get; set; }
+
         [BsonElement("JMBG")]
         public string JMBG { get; set; }
+
         [BsonElement("salary")]
         public double Salary { get; set; }
 
