@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
+using TurnpikeGate.Core.Data.TollStations.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace TurnpikeGate.Core.Data.TollStations.Repository
 {
-    public class SemaphoreRepository : ISemaphoreRepository
+    public class TraficLightRepository : ITraficLightRepository
     {
-        private IMongoCollection<Semaphore> _collection;
+        private IMongoCollection<TraficLight> _collection;
 
-        public SemaphoreRepository()
+        public TraficLightRepository()
         {
-            _collection = DatabaseConnection.Database.GetCollection<Semaphore>("Semaphores");
+            _collection = DatabaseConnection.Database.GetCollection<TraficLight>("TraficLights");
         }
 
         public void Delete(ObjectId id)
@@ -20,22 +23,22 @@ namespace TurnpikeGate.Core.Data.TollStations.Repository
             _collection.DeleteOne(item => item.ID == id);
         }
 
-        public List<Semaphore> GetAll()
+        public List<TraficLight> GetAll()
         {
             return _collection.Find(item => true).ToList();
         }
 
-        public Semaphore GetById(ObjectId id)
+        public TraficLight GetById(ObjectId id)
         {
             return _collection.Find(item => item.ID == id).FirstOrDefault();
         }
 
-        public void Insert(Semaphore entity)
+        public void Insert(TraficLight entity)
         {
             _collection.InsertOne(entity);
         }
 
-        public void Update(Semaphore entity)
+        public void Update(TraficLight entity)
         {
             _collection.ReplaceOne(item => item.ID == entity.ID, entity);
         }

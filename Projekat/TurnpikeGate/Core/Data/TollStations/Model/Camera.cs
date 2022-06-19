@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,7 @@ namespace TurnpikeGate.Core.Data.TollStations.Model
 
         public Camera(ObjectId toolBoothId)
         {
+            ID = ObjectId.GenerateNewId();
             ToolBoothId = toolBoothId;
         }
     }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,19 +23,20 @@ namespace TurnpikeGate.Core.Data.TollStations.Model
         [BsonElement("toolStationId")]
         public ObjectId ToolStationId { get; set; }
         [BsonElement("rampId")]
-        public ObjectId RampId { get; set; }
+        public ObjectId? RampId { get; set; }
         [BsonElement("semaphoreId")]
-        public ObjectId SemaphoreId { get; set; }
+        public ObjectId? TraficLightId { get; set; }
         [BsonElement("cameraId")]
-        public ObjectId CameraId { get; set; }
+        public ObjectId? CameraId { get; set; }
 
-        public TollBooth(TypeOfPayment type, ObjectId toolStationId, ObjectId rampId, ObjectId semaphoreId, ObjectId cameraId)
+        public TollBooth(TypeOfPayment type, ObjectId toolStationId, ObjectId? rampId, ObjectId? traficLightId, ObjectId? cameraId)
         {
+            ID = ObjectId.GenerateNewId();
             Type = type;
             ToolStationId = toolStationId;
             RampId = rampId;
             CameraId = cameraId;
-            SemaphoreId = semaphoreId;
+            TraficLightId = traficLightId;
         }
 
     }
