@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TurnpikeGate.Core.Data.PriceList
+namespace TurnpikeGate.Core.Data.Prices.Model
 {
     public enum Currency
     {

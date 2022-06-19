@@ -5,17 +5,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TurnpikeGate.Core.Data.PriceList;
+using TurnpikeGate.Core.Data.Prices.Model;
 
-namespace TurnpikeGate.Core.Data.PriceList.Repository
+namespace TurnpikeGate.Core.Data.Prices.Repository
 {
-    public class AmountRepository : IAmountRepository
+    public class PriceListRepository : IPriceListRepository
     {
-        private IMongoCollection<Amount> _collection;
+        private IMongoCollection<PriceList> _collection;
 
-        public AmountRepository()
+        public PriceListRepository()
         {
-            _collection = DatabaseConnection.Database.GetCollection<Amount>("Amounts");
+            _collection = DatabaseConnection.Database.GetCollection<PriceList>("PriceLists");
         }
 
         public void Delete(ObjectId id)
@@ -23,22 +23,22 @@ namespace TurnpikeGate.Core.Data.PriceList.Repository
             _collection.DeleteOne(item => item.ID == id);
         }
 
-        public List<Amount> GetAll()
+        public List<PriceList> GetAll()
         {
             return _collection.Find(item => true).ToList();
         }
 
-        public Amount GetById(ObjectId id)
+        public PriceList GetById(ObjectId id)
         {
             return _collection.Find(item => item.ID == id).FirstOrDefault();
         }
 
-        public void Insert(Amount entity)
+        public void Insert(PriceList entity)
         {
             _collection.InsertOne(entity);
         }
 
-        public void Update(Amount entity)
+        public void Update(PriceList entity)
         {
             _collection.ReplaceOne(item => item.ID == entity.ID, entity);
         }
