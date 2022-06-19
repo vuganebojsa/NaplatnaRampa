@@ -18,11 +18,11 @@ namespace TurnpikeGate.Core.Data.Prices.Model
 
         // Foreign keys
         [BsonElement("priceListEntries")]
-        public List<PriceListEntry>? PriceListEntries { get; set; }
+        public List<ObjectId>? PriceListEntries { get; set; }
 
-        public PriceList(ObjectId iD, DateTime activationDate, List<PriceListEntry>? priceListEntries)
+        public PriceList(DateTime activationDate, List<ObjectId>? priceListEntries)
         {
-            ID = iD;
+            ID = ObjectId.GenerateNewId();
             ActivationDate = activationDate;
             PriceListEntries = priceListEntries;
         }

@@ -1,5 +1,7 @@
 
 using MongoDB.Bson;
+using TurnpikeGate.Core.Data.Prices.Model;
+using TurnpikeGate.Core.Data.Prices.Repository;
 using TurnpikeGate.Core.Data.Users;
 using TurnpikeGate.Core.Data.Users.Model;
 using TurnpikeGate.Core.Data.Users.Repository;
@@ -15,7 +17,6 @@ namespace TurnpikeGate
         static void Main()
         {
             DatabaseConnection.Init();
-            
 
         }
     }

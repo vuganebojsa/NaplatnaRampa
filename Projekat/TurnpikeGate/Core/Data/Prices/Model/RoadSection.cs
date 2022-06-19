@@ -20,9 +20,9 @@ namespace TurnpikeGate.Core.Data.Prices.Model
         [BsonElement("destinationStationId")]
         public ObjectId DestinationStationId { get; set; }
 
-        public RoadSection(ObjectId iD, ObjectId departureStationId, ObjectId destinationStationId)
+        public RoadSection(ObjectId departureStationId, ObjectId destinationStationId)
         {
-            ID = iD;
+            ID = ObjectId.GenerateNewId();
             DepartureStationId = departureStationId;
             DestinationStationId = destinationStationId;
         }
