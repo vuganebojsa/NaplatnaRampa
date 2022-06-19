@@ -5,17 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TurnpikeGate.Core.Data.Users.Model;
 
-namespace TurnpikeGate.Core.Data.Users.Repository
-{
-    public class CredentialsRepository : ICredentialsRepository
+namespace TurnpikeGate.Core.Data.Locations.Repository
+{ 
+    public class LocationRepository: ILocationRepository
     {
-        private IMongoCollection<Credentials> _collection;
+        private IMongoCollection<Location> _collection;
 
-        public CredentialsRepository()
+        public LocationRepository()
         {
-            _collection = DatabaseConnection.Database.GetCollection<Credentials>("Credentials");
+            _collection = DatabaseConnection.Database.GetCollection<Location>("Locations");
         }
 
         public void Delete(ObjectId id)
@@ -23,25 +22,24 @@ namespace TurnpikeGate.Core.Data.Users.Repository
             _collection.DeleteOne(item => item.ID == id);
         }
 
-        public List<Credentials> GetAll()
+        public List<Location> GetAll()
         {
             return _collection.Find(item => true).ToList();
         }
 
-        public Credentials GetById(ObjectId id)
+        public Location GetById(ObjectId id)
         {
             return _collection.Find(item => item.ID == id).FirstOrDefault();
         }
 
-        public void Insert(Credentials entity)
+        public void Insert(Location entity)
         {
             _collection.InsertOne(entity);
         }
 
-        public void Update(Credentials entity)
+        public void Update(Location entity)
         {
             _collection.ReplaceOne(item => item.ID == entity.ID, entity);
-        } 
-        
+        }
     }
 }
