@@ -1,6 +1,5 @@
 using MongoDB.Bson;
 
-
 namespace TurnpikeGate
 {
     internal static class Program
