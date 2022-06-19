@@ -5,17 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TurnpikeGate.Core.Data.Users.Model;
 
-namespace TurnpikeGate.Core.Data.Users.Repository
+namespace TurnpikeGate.Core.Data.TollStations.Repository
 {
-    public class CredentialsRepository : ICredentialsRepository
+    public class TollStationRepository : ITollStationRepository
     {
-        private IMongoCollection<Credentials> _collection;
+        private IMongoCollection<TollStation> _collection;
 
-        public CredentialsRepository()
+        public TollStationRepository()
         {
-            _collection = DatabaseConnection.Database.GetCollection<Credentials>("Credentials");
+            _collection = DatabaseConnection.Database.GetCollection<TollStation>("TollStations");
         }
 
         public void Delete(ObjectId id)
@@ -23,25 +22,24 @@ namespace TurnpikeGate.Core.Data.Users.Repository
             _collection.DeleteOne(item => item.ID == id);
         }
 
-        public List<Credentials> GetAll()
+        public List<TollStation> GetAll()
         {
             return _collection.Find(item => true).ToList();
         }
 
-        public Credentials GetById(ObjectId id)
+        public TollStation GetById(ObjectId id)
         {
             return _collection.Find(item => item.ID == id).FirstOrDefault();
         }
 
-        public void Insert(Credentials entity)
+        public void Insert(TollStation entity)
         {
             _collection.InsertOne(entity);
         }
 
-        public void Update(Credentials entity)
+        public void Update(TollStation entity)
         {
             _collection.ReplaceOne(item => item.ID == entity.ID, entity);
-        } 
-        
+        }
     }
 }
