@@ -15,9 +15,7 @@ namespace TurnpikeGate
         static void Main()
         {
             DatabaseConnection.Init();
-            Credentials user = new Credentials("ognjencar34","123",UserType.ADMINISTRATOR,new ObjectId("62af712c3a5c19aa24753f93"));
-            ICredentialsRepository rep = new CredentialsRepository();
-            rep.Insert(user);
+            
 
         }
     }
