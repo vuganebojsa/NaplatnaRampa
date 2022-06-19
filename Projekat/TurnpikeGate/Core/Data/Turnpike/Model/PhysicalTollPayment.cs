@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace TurnpikeGate.Core.Data.Turnpike.Model
 {
     public class PhysicalTollPayment : TollPayment
     {
+        [BsonElement("referentId")]
         public ObjectId ReferentId { get; set; }
 
         public PhysicalTollPayment(string registrationPlate, DateTime enteranceTime, DateTime exitTime, 
