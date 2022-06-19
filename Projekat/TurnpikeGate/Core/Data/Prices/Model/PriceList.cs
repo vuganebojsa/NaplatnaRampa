@@ -20,5 +20,11 @@ namespace TurnpikeGate.Core.Data.Prices.Model
         [BsonElement("priceListEntries")]
         public List<PriceListEntry>? PriceListEntries { get; set; }
 
+        public PriceList(ObjectId iD, DateTime activationDate, List<PriceListEntry>? priceListEntries)
+        {
+            ID = iD;
+            ActivationDate = activationDate;
+            PriceListEntries = priceListEntries;
+        }
     }
 }

@@ -19,5 +19,12 @@ namespace TurnpikeGate.Core.Data.Prices.Model
 
         [BsonElement("destinationStationId")]
         public ObjectId DestinationStationId { get; set; }
+
+        public RoadSection(ObjectId iD, ObjectId departureStationId, ObjectId destinationStationId)
+        {
+            ID = iD;
+            DepartureStationId = departureStationId;
+            DestinationStationId = destinationStationId;
+        }
     }
 }
