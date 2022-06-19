@@ -22,8 +22,12 @@ namespace TurnpikeGate.Core.Data.Turnpike.Model
         [BsonElement("exitTime")]
         public DateTime ExitTime { get; set; }
 
+        // Foreign key
         [BsonElement("entranceStation")]
-        public ObjectId EntranceStationId { get; set; } 
+        public ObjectId EntranceStationId { get; set; }
+
+        [BsonElement("priceListEntry")]
+        public ObjectId PriceListEntryId { get; set; }
 
 
     }

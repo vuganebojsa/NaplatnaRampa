@@ -14,7 +14,7 @@ namespace TurnpikeGate.Core.Data.Turnpike.Model
         public ObjectId ReferentId { get; set; }
 
         public PhysicalTollPayment(string registrationPlate, DateTime enteranceTime, DateTime exitTime, 
-                                   ObjectId entranceStationId, ObjectId referentId)
+                                   ObjectId entranceStationId, ObjectId referentId, ObjectId priceListEntryId)
         { 
             ID = ObjectId.GenerateNewId();
             RegistrationPlate = registrationPlate;
@@ -22,6 +22,7 @@ namespace TurnpikeGate.Core.Data.Turnpike.Model
             ExitTime = exitTime;
             EntranceStationId = entranceStationId;
             ReferentId = referentId;
+            PriceListEntryId = priceListEntryId;
 
         }
 
