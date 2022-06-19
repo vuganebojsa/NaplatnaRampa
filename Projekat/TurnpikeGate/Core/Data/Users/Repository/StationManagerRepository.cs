@@ -1,21 +1,16 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TurnpikeGate.Core.Data.Users.Model;
 
 namespace TurnpikeGate.Core.Data.Users.Repository
 {
-    public class CredentialsRepository : ICredentialsRepository
+    public class StationManagerRepository: IStationManagerRepository
     {
-        private IMongoCollection<Credentials> _collection;
+        private IMongoCollection<StationManager> _collection;
 
-        public CredentialsRepository()
+        public StationManagerRepository()
         {
-            _collection = DatabaseConnection.Database.GetCollection<Credentials>("Credentials");
+            _collection = DatabaseConnection.Database.GetCollection<StationManager>("StationManagers");
         }
 
         public void Delete(ObjectId id)
@@ -23,25 +18,24 @@ namespace TurnpikeGate.Core.Data.Users.Repository
             _collection.DeleteOne(item => item.ID == id);
         }
 
-        public List<Credentials> GetAll()
+        public List<StationManager> GetAll()
         {
             return _collection.Find(item => true).ToList();
         }
 
-        public Credentials GetById(ObjectId id)
+        public StationManager GetById(ObjectId id)
         {
             return _collection.Find(item => item.ID == id).FirstOrDefault();
         }
 
-        public void Insert(Credentials entity)
+        public void Insert(StationManager entity)
         {
             _collection.InsertOne(entity);
         }
 
-        public void Update(Credentials entity)
+        public void Update(StationManager entity)
         {
             _collection.ReplaceOne(item => item.ID == entity.ID, entity);
-        } 
-        
+        }
     }
 }
