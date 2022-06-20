@@ -10,6 +10,7 @@ using TurnpikeGate.Core.Users.Model;
 using TurnpikeGate.Core.Users.Repository;
 using TurnpikeGate.Core.TollStations.Service;
 using Autofac;
+using TurnpikeGate.View.AdministratorViews;
 
 namespace TurnpikeGate
 {
@@ -28,6 +29,9 @@ namespace TurnpikeGate
             {
                 Console.WriteLine(a.Name);
             }
+
+            TollStationForm tf = new TollStationForm();
+            tf.ShowDialog();
         }
     }
 }

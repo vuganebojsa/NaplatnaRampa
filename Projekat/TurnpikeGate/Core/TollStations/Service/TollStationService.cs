@@ -17,9 +17,10 @@ namespace TurnpikeGate.Core.TollStations.Service
             _tollStationRepository = tollStationRepository;
         }
 
-        public void Delete(ObjectId id)
+        public void Delete(string id)
         {
-            _tollStationRepository.Delete(id);
+            _tollStationRepository.Delete(ObjectId.Parse(id));
+
         }
 
         public List<TollStation> GetAll()

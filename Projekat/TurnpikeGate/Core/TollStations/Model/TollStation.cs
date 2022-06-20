@@ -1,9 +1,10 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using TurnpikeGate.Core.Interfaces;
 
 namespace TurnpikeGate.Core.TollStations
 {
-    public class TollStation
+    public class TollStation : IObservable
     {
         [BsonElement("_id")]
         public ObjectId ID { get; set; }
@@ -27,6 +28,7 @@ namespace TurnpikeGate.Core.TollStations
         [BsonElement("tollBoothIds")]
         public List<ObjectId>? TollBoothIds { get; set; }
 
+        private List<IObserver> _observers = new List<IObserver>();
 
         public TollStation(string address, string name, ObjectId stationManagerId, List<ObjectId> referentIds, ObjectId locationId, List<ObjectId> tollBoothIds)
         {
@@ -37,6 +39,20 @@ namespace TurnpikeGate.Core.TollStations
             ReferentIds = referentIds;
             LocationId = locationId;
             TollBoothIds = tollBoothIds;
+        }
+
+        public void Attach(IObserver observer)
+        {
+            if (_observers == null) _observers = new List<IObserver>();
+            _observers.Add(observer);
+        }
+
+        public void Notify()
+        {
+            _observers.ForEach(o =>
+            {
+                o.Update(this);
+            });
         }
     }
 }

@@ -11,7 +11,7 @@ namespace TurnpikeGate.Core.Interfaces
     {
         void Insert(TEntity entity);
         void Update(TEntity entity);
-        void Delete(ObjectId id);
+        void Delete(String id);
         List<TEntity> GetAll();
         TEntity GetById(ObjectId id);
     }
