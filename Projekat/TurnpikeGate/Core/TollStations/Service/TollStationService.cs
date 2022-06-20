@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TurnpikeGate.Core.TollStations.DTOs;
 using TurnpikeGate.Core.TollStations.Repository;
 
 namespace TurnpikeGate.Core.TollStations.Service
@@ -34,22 +33,9 @@ namespace TurnpikeGate.Core.TollStations.Service
             return _tollStationRepository.GetById(id);
         }
 
-        public void Insert(CreateTollStationDTO tollStationDTO)
+        public void Insert(TollStation tollStation)
         {
-            _tollStationRepository.Insert(ParseToEntity(tollStationDTO));
-        }
-
-        public static TollStation ParseToEntity(CreateTollStationDTO tollStationDTO)
-        {
-            return new TollStation
-            {
-                Address = tollStationDTO.Address,
-                Name = tollStationDTO.Name,
-                ReferentIds = tollStationDTO.ReferentIds,
-                LocationId = tollStationDTO.LocationId,
-                StationManagerId = tollStationDTO.StationManagerId,
-                TollBoothIds = tollStationDTO.TollBoothIds
-            };
+            _tollStationRepository.Insert(tollStation);
         }
 
         public void Update(TollStation entity)
