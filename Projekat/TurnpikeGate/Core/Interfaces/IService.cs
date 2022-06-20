@@ -15,4 +15,12 @@ namespace TurnpikeGate.Core.Interfaces
         List<TEntity> GetAll();
         TEntity GetById(ObjectId id);
     }
+
+    public class EmptyFieldsException : Exception
+    {
+        public EmptyFieldsException() : base("You must fill all input fields")
+        {
+            
+        }
+    }
 }
