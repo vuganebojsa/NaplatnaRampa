@@ -34,12 +34,12 @@ namespace TurnpikeGate.Core.TollStations.Service
             return _tollStationRepository.GetById(id);
         }
 
-        public void Insert(CreateTollStationDTO tollStationDTO)
+        public void Insert(TollStation tollStationDTO)
         {
-            _tollStationRepository.Insert(ParseToEntity(tollStationDTO));
+            _tollStationRepository.Insert(tollStationDTO);
         }
 
-        public static TollStation ParseToEntity(CreateTollStationDTO tollStationDTO)
+       /* public static TollStation ParseToEntity(TollStation tollStationDTO)
         {
             return new TollStation
             {
@@ -51,7 +51,7 @@ namespace TurnpikeGate.Core.TollStations.Service
                 TollBoothIds = tollStationDTO.TollBoothIds
             };
         }
-
+*/
         public void Update(TollStation entity)
         {
             _tollStationRepository.Update(entity);

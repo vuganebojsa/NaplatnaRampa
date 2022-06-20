@@ -23,18 +23,16 @@ namespace TurnpikeGate.Core.Prices.Model
         [BsonElement("vehicleType")]
         public VehicleType VehicleType { get; set; }
 
-        // Foreign keys
-        [BsonElement("amountId")]
-        public ObjectId AmountId { get; set; }
+        public Amount Amount { get; set; }
 
         [BsonElement("roadSectionId")]
         public ObjectId RoadSectionId { get; set; }
 
-        public PriceListEntry(VehicleType vehicleType, ObjectId amountId, ObjectId roadSectionId)
+        public PriceListEntry(VehicleType vehicleType, Amount amount, ObjectId roadSectionId)
         {
             ID = ObjectId.GenerateNewId();
             VehicleType = vehicleType;
-            AmountId = amountId;
+            Amount = amount;
             RoadSectionId = roadSectionId;
         }
     }
