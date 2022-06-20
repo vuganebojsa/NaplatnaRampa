@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TurnpikeGate.Core.Interfaces
 {
-    internal interface IService<TEntity>
+    public interface IService<TEntity>
     {
         void Insert(TEntity entity);
         void Update(TEntity entity);
