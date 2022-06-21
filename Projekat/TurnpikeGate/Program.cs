@@ -15,6 +15,7 @@ using TurnpikeGate.Core.Locations.Repository;
 using TurnpikeGate.Core.Locations.Service;
 using TurnpikeGate.Core.TollStations;
 using TurnpikeGate.View.AdministratorViews;
+using TurnpikeGate.View.ReferentViews;
 
 namespace TurnpikeGate
 {
@@ -28,8 +29,8 @@ namespace TurnpikeGate
         {
             DatabaseConnection.Init();
             Globals.Load();
-            TollStationForm tf = new TollStationForm();
-            tf.ShowDialog();
+            EntranceTicketIssuingForm eti = new EntranceTicketIssuingForm();
+            eti.ShowDialog();
 
         }
     }
