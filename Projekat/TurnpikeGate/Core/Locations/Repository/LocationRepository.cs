@@ -5,7 +5,7 @@ namespace TurnpikeGate.Core.Locations.Repository
 { 
     public class LocationRepository: ILocationRepository
     {
-        private IMongoCollection<Location> _collection;
+        private readonly IMongoCollection<Location> _collection;
 
         public LocationRepository()
         {

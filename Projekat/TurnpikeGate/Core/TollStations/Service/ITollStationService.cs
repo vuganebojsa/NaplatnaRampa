@@ -9,6 +9,6 @@ namespace TurnpikeGate.Core.TollStations.Service
 {
     public interface ITollStationService : IService<TollStation>
     {
-        public TollStation GetTollStation();
+        public TollStation GetTollStation(string address, string name, string locationId);
     }
 }

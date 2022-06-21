@@ -41,16 +41,18 @@
             // 
             // dgvTollStation
             // 
+            this.dgvTollStation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTollStation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTollStation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
             this.address,
             this.location});
-            this.dgvTollStation.Location = new System.Drawing.Point(12, 89);
+            this.dgvTollStation.Location = new System.Drawing.Point(10, 67);
+            this.dgvTollStation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvTollStation.Name = "dgvTollStation";
             this.dgvTollStation.RowHeadersWidth = 51;
             this.dgvTollStation.RowTemplate.Height = 29;
-            this.dgvTollStation.Size = new System.Drawing.Size(740, 242);
+            this.dgvTollStation.Size = new System.Drawing.Size(648, 182);
             this.dgvTollStation.TabIndex = 0;
             // 
             // name
@@ -58,28 +60,26 @@
             this.name.HeaderText = "name";
             this.name.MinimumWidth = 6;
             this.name.Name = "name";
-            this.name.Width = 125;
             // 
             // address
             // 
             this.address.HeaderText = "address";
             this.address.MinimumWidth = 6;
             this.address.Name = "address";
-            this.address.Width = 125;
             // 
             // location
             // 
             this.location.HeaderText = "location";
             this.location.MinimumWidth = 6;
             this.location.Name = "location";
-            this.location.Width = 125;
             // 
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAdd.Location = new System.Drawing.Point(409, 367);
+            this.btnAdd.Location = new System.Drawing.Point(358, 275);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(117, 43);
+            this.btnAdd.Size = new System.Drawing.Size(102, 32);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -88,9 +88,10 @@
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEdit.Location = new System.Drawing.Point(532, 367);
+            this.btnEdit.Location = new System.Drawing.Point(466, 275);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(108, 43);
+            this.btnEdit.Size = new System.Drawing.Size(94, 32);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -99,9 +100,10 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnDelete.Location = new System.Drawing.Point(646, 367);
+            this.btnDelete.Location = new System.Drawing.Point(565, 275);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(106, 43);
+            this.btnDelete.Size = new System.Drawing.Size(93, 32);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -111,22 +113,23 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(297, 25);
+            this.label1.Location = new System.Drawing.Point(260, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 38);
+            this.label1.Size = new System.Drawing.Size(127, 30);
             this.label1.TabIndex = 4;
             this.label1.Text = "Toll Stations";
             // 
             // TollStationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 338);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvTollStation);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TollStationForm";
             this.Text = "TollStationForm";
             this.Load += new System.EventHandler(this.TollStationForm_Load);

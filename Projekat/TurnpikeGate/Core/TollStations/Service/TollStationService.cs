@@ -10,7 +10,7 @@ namespace TurnpikeGate.Core.TollStations.Service
 {
     public class TollStationService : ITollStationService
     {
-        private ITollStationRepository _tollStationRepository;
+        private readonly ITollStationRepository _tollStationRepository;
 
         public TollStationService(ITollStationRepository tollStationRepository)
         {
@@ -31,6 +31,12 @@ namespace TurnpikeGate.Core.TollStations.Service
         public TollStation GetById(ObjectId id)
         {
             return _tollStationRepository.GetById(id);
+        }
+
+        public TollStation GetTollStation(string address, string name, string locationId)
+        {
+            return new TollStation(address, name, ObjectId.Empty, new List<ObjectId>(), ObjectId.Parse(locationId),
+                new List<ObjectId>());
         }
 
         public void Insert(TollStation tollStation)
