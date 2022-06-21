@@ -12,7 +12,10 @@ namespace TurnpikeGate.Core.Prices.Model
     {
         MOTOCYCLE,
         AUTOMOBILE,
-        TRUCK
+        TRUCK, 
+        BUS,
+        MINIVAN,
+        CAR_WITH_TRAILER
     }
 
     public class PriceListEntry
