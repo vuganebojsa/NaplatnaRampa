@@ -41,7 +41,7 @@
             this.tbUsername.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbUsername.Location = new System.Drawing.Point(153, 197);
             this.tbUsername.Name = "tbUsername";
-            this.tbUsername.PlaceholderText = "username";
+            this.tbUsername.PlaceholderText = "korisnicko ime";
             this.tbUsername.Size = new System.Drawing.Size(278, 30);
             this.tbUsername.TabIndex = 0;
             // 
@@ -51,7 +51,7 @@
             this.tbPassword.Location = new System.Drawing.Point(153, 243);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
-            this.tbPassword.PlaceholderText = "password";
+            this.tbPassword.PlaceholderText = "lozinka";
             this.tbPassword.Size = new System.Drawing.Size(278, 30);
             this.tbPassword.TabIndex = 1;
             // 
@@ -59,11 +59,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(199, 127);
+            this.label1.Location = new System.Drawing.Point(173, 131);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 37);
+            this.label1.Size = new System.Drawing.Size(236, 37);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Welcome back!";
+            this.label1.Text = "Dobrodosli nazad!";
             // 
             // fileSystemWatcher1
             // 
@@ -76,7 +76,7 @@
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(94, 29);
             this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = "Log In";
+            this.btnLogin.Text = "Prijavi se";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -90,7 +90,7 @@
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbUsername);
             this.Name = "LoginForm";
-            this.Text = "LoginForm";
+            this.Text = "Naplatna Rampa";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);

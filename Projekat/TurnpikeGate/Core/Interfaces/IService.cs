@@ -18,9 +18,17 @@ namespace TurnpikeGate.Core.Interfaces
 
     public class EmptyFieldsException : Exception
     {
-        public EmptyFieldsException() : base("You must fill all input fields")
+        public EmptyFieldsException() : base("Sva polja moraju biti popunjena.")
         {
             
+        }
+    }
+
+    public class BadCredentialsException : Exception
+    {
+        public BadCredentialsException() : base("Pogresno korisnicko ime i/ili lozinka.")
+        {
+
         }
     }
 }

@@ -10,5 +10,6 @@ namespace TurnpikeGate.Core.Users.Repository
 {
     public interface ICredentialsRepository : IRepository<Credentials>
     {
+        public Credentials FindCredentials(string username, string password);
     }
 }

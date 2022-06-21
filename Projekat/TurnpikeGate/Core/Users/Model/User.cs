@@ -27,9 +27,6 @@ namespace TurnpikeGate.Core.Users.Model
         [BsonElement("salary")]
         public double Salary { get; set; }
 
-        [BsonElement("active")]
-        public bool IsActive { get; set; }
-
 
         public User(string name, string lastName, string email, string phoneNumber, string jmbg, double salary)
         {
@@ -40,7 +37,6 @@ namespace TurnpikeGate.Core.Users.Model
             PhoneNumber = phoneNumber;
             JMBG = jmbg;
             Salary = salary;
-            IsActive = false;
         }
     }
 

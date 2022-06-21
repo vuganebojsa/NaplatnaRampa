@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TurnpikeGate.Core.Users.Service;
 using Autofac;
+using TurnpikeGate.View.UserViews;
 
 namespace TurnpikeGate.View
 {
@@ -29,7 +30,21 @@ namespace TurnpikeGate.View
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            _loginService.Login(tbUsername.Text, tbPassword.Text);
+            try
+            {
+                _loginService.Login(tbUsername.Text, tbPassword.Text);
+                if (!Globals.LoggedUser.IsActive)
+                {
+                    ChangePasswordForm changePasswordForm = new ChangePasswordForm();
+                    changePasswordForm.ShowDialog();
+                }
+                // TODO: redirect user
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
         }
     }
 }
