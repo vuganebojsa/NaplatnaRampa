@@ -30,11 +30,14 @@ namespace TurnpikeGate.View.AdministratorViews
             _observer = observerForm;
             FillLocationComboBox();
             if (_tollStationId != "")
+            {
                 SetValues();
-            
+                btnAccept.Text = "AZURIRAJ";
+            }
+
         }
 
-        private void FillLocationComboBox()
+            private void FillLocationComboBox()
         {
             cbLocations.DataSource = _locations;
             cbLocations.DisplayMember = "name";

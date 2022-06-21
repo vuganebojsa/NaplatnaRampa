@@ -51,7 +51,7 @@ namespace TurnpikeGate.View.AdministratorViews
             }
             else
             {
-                MessageBox.Show("Please select a row first!");
+                MessageBox.Show("Selektujte red prvo!");
             }
         }
 
@@ -59,7 +59,7 @@ namespace TurnpikeGate.View.AdministratorViews
         {
             if (dgvTollStation.SelectedRows.Count > 0)
             {
-                var choice = MessageBox.Show("Are you sure?", "Delete?", MessageBoxButtons.YesNo);
+                var choice = MessageBox.Show("Da li ste sigurni?", "Obrisite?", MessageBoxButtons.YesNo);
                 if (choice == DialogResult.Yes)
                 {
                     TollStation tollStation = (TollStation)dgvTollStation.SelectedRows[0].Tag;
@@ -72,7 +72,7 @@ namespace TurnpikeGate.View.AdministratorViews
                 }
             }
             else
-                MessageBox.Show("No Row Selected!");
+                MessageBox.Show("Nije izabran nijedan red!");
         }
 
         private void TollStationForm_Load(object sender, EventArgs e)
