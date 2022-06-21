@@ -29,6 +29,7 @@ namespace TurnpikeGate.View.ReferentViews
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EntranceTicketIssuingForm));
             this.pbCar = new System.Windows.Forms.PictureBox();
             this.pbBus = new System.Windows.Forms.PictureBox();
@@ -43,6 +44,7 @@ namespace TurnpikeGate.View.ReferentViews
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tbEntry = new System.Windows.Forms.TextBox();
+            this.platesTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTruck)).BeginInit();
@@ -188,6 +190,10 @@ namespace TurnpikeGate.View.ReferentViews
             this.tbEntry.Size = new System.Drawing.Size(397, 35);
             this.tbEntry.TabIndex = 13;
             // 
+            // platesTimer
+            // 
+            this.platesTimer.Tick += new System.EventHandler(this.platesTimer_Tick_1);
+            // 
             // EntranceTicketIssuingForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -233,5 +239,6 @@ namespace TurnpikeGate.View.ReferentViews
         private Label label3;
         private Label label4;
         private TextBox tbEntry;
+        private System.Windows.Forms.Timer platesTimer;
     }
 }

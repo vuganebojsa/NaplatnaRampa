@@ -31,22 +31,6 @@ namespace TurnpikeGate.View.ReferentViews
         
         public EntranceTicketIssuingForm()
         {
-            /*STEPS
-             1. Vozilo stize na rampu
-             2. Kamera snima tablicu vozila
-             3. Referent naplate izdaje list vozacu
-             4. Referent pritiska dugme za podizanje rampe
-            5. Rampa se podize i pali se zeleno svetlo
-            */
-            /*
-             *MOTOCYCLE,
-            AUTOMOBILE,
-            TRUCK, 
-            BUS,
-            MINIVAN,
-            CAR_WITH_TRAILER
-             *
-             */
 
             InitializeComponent();
             _selectedPicture = pbCar;
@@ -55,8 +39,12 @@ namespace TurnpikeGate.View.ReferentViews
             _priceListEntryService = Globals.Container.Resolve<IPriceListEntryService>();
             _physicalTollPaymentService = Globals.Container.Resolve<IPhysicalTollPaymentService>();
             _carPlates = new List<string>();
-            GenerateVehicleThreads();
+            
             tbEntry.Text = _tollStationService.GetAll()[0].Name;
+            InitTimer();
+            GenerateVehicleThreads();
+
+           
         }
 
         private void btnIssue_Click(object sender, EventArgs e)
@@ -132,12 +120,13 @@ namespace TurnpikeGate.View.ReferentViews
                     String randomPlate = GenerateRandomPlate();
                     _carPlates.Add(randomPlate);
                     Console.WriteLine("Vozilo sa tablicama: " + randomPlate +  " je doslo na rampu.");
-                    if (tbPlates.Text == "")
-                        tbPlates.Text = randomPlate;
-                }, null, TimeSpan.FromSeconds(i * 15), Timeout.InfiniteTimeSpan));
+                    
+                    Thread.Sleep(8000);
+                       
+                }, null, TimeSpan.FromSeconds(i * 8), Timeout.InfiniteTimeSpan));
             }
+            
         }
-
 
         private String GenerateRandomPlate()
         {
@@ -156,6 +145,18 @@ namespace TurnpikeGate.View.ReferentViews
             return firsTwo + threeNumbers + lastTwo;
 
         }
+        public void InitTimer()
+        {
+            platesTimer = new System.Windows.Forms.Timer();
+            platesTimer.Tick += new EventHandler(platesTimer_Tick_1);
+            platesTimer.Interval = 1000;
+            platesTimer.Start();
 
+        }
+        private void platesTimer_Tick_1(object sender, EventArgs e)
+        {
+            if (tbPlates.Text == "" && _carPlates.Any())
+                tbPlates.Text = _carPlates[0];
+        }
     }
 }
