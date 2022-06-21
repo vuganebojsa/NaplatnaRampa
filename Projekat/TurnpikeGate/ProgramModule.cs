@@ -7,8 +7,12 @@ using Autofac;
 using TurnpikeGate.Core;
 using TurnpikeGate.Core.Locations.Repository;
 using TurnpikeGate.Core.Locations.Service;
+using TurnpikeGate.Core.Prices.Repository;
+using TurnpikeGate.Core.Prices.Service;
 using TurnpikeGate.Core.TollStations.Repository;
 using TurnpikeGate.Core.TollStations.Service;
+using TurnpikeGate.Core.Turnpike.Repository;
+using TurnpikeGate.Core.Turnpike.Service;
 
 namespace TurnpikeGate
 {
@@ -24,7 +28,13 @@ namespace TurnpikeGate
             builder.RegisterType<LocationService>().As<ILocationService>();
             builder.RegisterType<Location>().AsSelf();
 
+            builder.RegisterType<PriceListEntryRepository>().As<IPriceListEntryRepository>();
+            builder.RegisterType<PriceListEntryService>().As<IPriceListEntryService>();
+            builder.RegisterType<PriceListEntryService>().AsSelf();
 
+            builder.RegisterType<PhysicalTollPaymentRepository>().As<IPhysicalTollPaymentRepository>();
+            builder.RegisterType<PhysicalTollPaymentService>().As<IPhysicalTollPaymentService>();
+            builder.RegisterType<PhysicalTollPaymentService>().AsSelf();
 
 
         }

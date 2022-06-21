@@ -120,6 +120,7 @@ namespace TurnpikeGate.View.ReferentViews
             // 
             // btnIssue
             // 
+            this.btnIssue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIssue.FlatAppearance.BorderSize = 3;
             this.btnIssue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIssue.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
