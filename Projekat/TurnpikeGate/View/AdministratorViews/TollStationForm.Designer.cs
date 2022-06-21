@@ -54,7 +54,7 @@
             this.dgvTollStation.RowHeadersWidth = 51;
             this.dgvTollStation.RowTemplate.Height = 29;
             this.dgvTollStation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTollStation.Size = new System.Drawing.Size(648, 182);
+            this.dgvTollStation.Size = new System.Drawing.Size(878, 419);
             this.dgvTollStation.TabIndex = 0;
             // 
             // name
@@ -80,12 +80,12 @@
             this.btnAdd.BackColor = System.Drawing.SystemColors.Control;
             this.btnAdd.FlatAppearance.BorderSize = 2;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAdd.Location = new System.Drawing.Point(252, 275);
+            this.btnAdd.Location = new System.Drawing.Point(428, 534);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(148, 52);
+            this.btnAdd.Size = new System.Drawing.Size(169, 65);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "DODAJ";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -96,12 +96,12 @@
             this.btnEdit.BackColor = System.Drawing.SystemColors.Control;
             this.btnEdit.FlatAppearance.BorderSize = 2;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEdit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEdit.Location = new System.Drawing.Point(406, 275);
+            this.btnEdit.Location = new System.Drawing.Point(603, 534);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(130, 52);
+            this.btnEdit.Size = new System.Drawing.Size(150, 65);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "IZMENI";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -112,12 +112,12 @@
             this.btnDelete.BackColor = System.Drawing.SystemColors.Control;
             this.btnDelete.FlatAppearance.BorderSize = 2;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDelete.Location = new System.Drawing.Point(542, 275);
+            this.btnDelete.Location = new System.Drawing.Point(759, 534);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(117, 52);
+            this.btnDelete.Size = new System.Drawing.Size(117, 65);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "OBRISI";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -135,14 +135,14 @@
             // 
             // TollStationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 338);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(900, 638);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvTollStation);
+            this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TollStationForm";
