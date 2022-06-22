@@ -1,4 +1,4 @@
-﻿using MongoDB.Bson;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,7 +51,7 @@ namespace TurnpikeGate.Core.Users.Service
                 throw new PasswordsNotMatchingException();
 
             Globals.LoggedUser.Password = newPassword;
-            //Globals.LoggedUser.IsActive = true;
+            Globals.LoggedUser.IsActive = true;
             _credentialsRepository.Update(Globals.LoggedUser);
         }
     }

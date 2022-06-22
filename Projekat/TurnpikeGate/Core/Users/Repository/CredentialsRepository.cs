@@ -43,5 +43,9 @@ namespace TurnpikeGate.Core.Users.Repository
             _collection.ReplaceOne(item => item.ID == entity.ID, entity);
         } 
         
+        public Credentials FindCredentials(string username, string password)
+        {
+            return _collection.Find(item => item.Username == username && item.Password == password).FirstOrDefault();
+        }
     }
 }

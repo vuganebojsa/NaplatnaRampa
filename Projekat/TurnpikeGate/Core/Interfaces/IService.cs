@@ -1,4 +1,4 @@
-﻿using MongoDB.Bson;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +20,7 @@ namespace TurnpikeGate.Core.Interfaces
     {
         public EmptyFieldsException() : base("Sva polja moraju biti popunjena.")
         {
-
+        
         }
     }
 
@@ -48,6 +48,7 @@ namespace TurnpikeGate.Core.Interfaces
         }
     }
 
-
+}
 
 }
+

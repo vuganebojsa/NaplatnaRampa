@@ -33,15 +33,16 @@ namespace TurnpikeGate.Core.TollStations.Service
             return _tollStationRepository.GetById(id);
         }
 
+        public void Insert(TollStation tollStationDTO)
+        {
+            _tollStationRepository.Insert(tollStationDTO);
+        }
+
+        //public static TollStation ParseToEntity(TollStation tollStationDTO);
         public TollStation GetTollStation(string address, string name, string locationId)
         {
             return new TollStation(address, name, ObjectId.Empty, new List<ObjectId>(), ObjectId.Parse(locationId),
                 new List<ObjectId>());
-        }
-
-        public void Insert(TollStation tollStation)
-        {
-            _tollStationRepository.Insert(tollStation);
         }
 
         public void Update(TollStation entity)

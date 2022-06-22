@@ -1,4 +1,4 @@
-﻿using MongoDB.Bson;
+using MongoDB.Bson;
 using TurnpikeGate.Core.Prices.Model;
 using TurnpikeGate.Core.Prices.Repository;
 
@@ -11,6 +11,20 @@ namespace TurnpikeGate.Core.Prices.Service
         public PriceListEntryService(IPriceListEntryRepository priceListEntryRepository)
         {
             _priceListEntryRepository = priceListEntryRepository;
+        }
+
+        public void Insert(PriceListEntry tollStation)
+        {
+            _priceListEntryRepository.Insert(tollStation);
+        }
+        public void Delete(string id)
+        {
+            _priceListEntryRepository.Delete(ObjectId.Parse(id));
+
+        }
+        public void Update(PriceListEntry entity)
+        {
+            _priceListEntryRepository.Update(entity);
         }
 
         public List<PriceListEntry> GetAll()

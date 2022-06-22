@@ -33,7 +33,10 @@ namespace TurnpikeGate.Core.Users.Model
         // Foreign keys
         [BsonElement("userId")]
         public ObjectId UserId { get; set; }
-        
+
+        [BsonElement("active")]
+        public bool IsActive { get; set; }
+
 
         public Credentials(string username, string password, UserType type, ObjectId userId)
         { 
@@ -42,6 +45,7 @@ namespace TurnpikeGate.Core.Users.Model
             Password = password;
             Type = type;
             UserId = userId;
+            IsActive = false;
         }
 
     }
