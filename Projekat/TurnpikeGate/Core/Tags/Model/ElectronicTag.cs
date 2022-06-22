@@ -25,13 +25,14 @@ namespace TurnpikeGate.Core.Tags.Model
         [BsonElement("amount")]
         public Amount Amount { get; set; }
 
-        public ElectronicTag(string name,string lastName,VehicleType type,Amount amount)
+        public ElectronicTag(string name,string lastName,VehicleType type,Currency currency)
         {
             ID = ObjectId.GenerateNewId();
             Name = name;
             LastName = lastName;
             Type = type;
-            Amount = amount;
+            Amount = new Amount(0, currency);
+            
         }
     }
 }

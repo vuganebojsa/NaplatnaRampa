@@ -5,7 +5,7 @@ namespace TurnpikeGate.Core.TollStations.Repository
 {
     public class TollStationRepository : ITollStationRepository
     {
-        private IMongoCollection<TollStation> _collection;
+        private readonly IMongoCollection<TollStation> _collection;
 
         public TollStationRepository()
         {
