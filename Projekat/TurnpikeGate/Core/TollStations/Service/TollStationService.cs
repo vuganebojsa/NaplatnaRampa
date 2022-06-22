@@ -4,14 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TurnpikeGate.Core.TollStations.DTOs;
 using TurnpikeGate.Core.TollStations.Repository;
 
 namespace TurnpikeGate.Core.TollStations.Service
 {
     public class TollStationService : ITollStationService
     {
-        private ITollStationRepository _tollStationRepository;
+        private readonly ITollStationRepository _tollStationRepository;
 
         public TollStationService(ITollStationRepository tollStationRepository)
         {
@@ -34,10 +33,18 @@ namespace TurnpikeGate.Core.TollStations.Service
             return _tollStationRepository.GetById(id);
         }
 
-        public void Insert(TollStation tollStation)
+        public void Insert(TollStation tollStationDTO)
         {
-            _tollStationRepository.Insert(tollStation);
+            _tollStationRepository.Insert(tollStationDTO);
         }
+
+        //public static TollStation ParseToEntity(TollStation tollStationDTO);
+        public TollStation GetTollStation(string address, string name, string locationId)
+        {
+            return new TollStation(address, name, ObjectId.Empty, new List<ObjectId>(), ObjectId.Parse(locationId),
+                new List<ObjectId>());
+        }
+
         public void Update(TollStation entity)
         {
             _tollStationRepository.Update(entity);

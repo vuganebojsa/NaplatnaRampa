@@ -10,9 +10,15 @@ using TurnpikeGate.Core.Users.Model;
 using TurnpikeGate.Core.Users.Repository;
 using TurnpikeGate.Core.TollStations.Service;
 using Autofac;
+using TurnpikeGate.Core;
+using TurnpikeGate.Core.Locations.Repository;
+using TurnpikeGate.Core.Locations.Service;
+using TurnpikeGate.Core.TollStations;
 using TurnpikeGate.View.AdministratorViews;
 using TurnpikeGate.View;
 using TurnpikeGate.Core.Users.Service;
+using TurnpikeGate.View.TagSellerViews;
+using TurnpikeGate.View.ReferentViews;
 
 namespace TurnpikeGate
 {
@@ -27,8 +33,16 @@ namespace TurnpikeGate
             DatabaseConnection.Init();
             Globals.Load();
 
+
             LoginForm lf = new LoginForm();
             lf.ShowDialog();
+
+            //EntranceTicketIssuingForm eti = new EntranceTicketIssuingForm();
+            //eti.ShowDialog();
+
+//             TagSellerForm tf = new TagSellerForm();
+//             tf.ShowDialog();
+
         }
     }
 }
