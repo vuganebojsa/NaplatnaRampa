@@ -40,7 +40,7 @@ namespace TurnpikeGate.View
                 }
 
                 _loginService.RedirectUser();
-                //this.Close();
+                this.Close();
 
             }
             catch (Exception ex)
