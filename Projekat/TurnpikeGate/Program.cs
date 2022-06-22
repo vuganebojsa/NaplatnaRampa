@@ -33,7 +33,7 @@ namespace TurnpikeGate
            
             DatabaseConnection.Init();
             Globals.Load();
-            EntranceTicketIssuingForm tsf = new EntranceTicketIssuingForm();
+            TagSellerForm tsf = new TagSellerForm();
             tsf.ShowDialog();
 
         }
