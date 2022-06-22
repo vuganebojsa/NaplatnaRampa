@@ -45,7 +45,7 @@ namespace TurnpikeGate.View.TagSellerViews
                 tbAmount.Enabled = false;
                 tbID.Enabled = false;
                 btnAddFunds.Enabled = false;
-                this.BackColor = Color.LightGray;
+                this.BackColor = Color.DarkGray;
 
             }
         }
