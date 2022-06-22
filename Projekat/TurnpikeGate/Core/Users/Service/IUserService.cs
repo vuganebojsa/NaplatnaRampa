@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using TurnpikeGate.Core.Interfaces;
 using TurnpikeGate.Core.Users.Model;
+using TurnpikeGate.Core.Users.Repository;
 
 namespace TurnpikeGate.Core.Users.Service
 {
-    public interface ICredentialsService : IService<Credentials>
+    public interface IUserService
     {
-        public void ChangeInitialPassword(String newPassword, String repeatedNewPassword);
+        public List<User> GetAll();
+
     }
-
 }
-

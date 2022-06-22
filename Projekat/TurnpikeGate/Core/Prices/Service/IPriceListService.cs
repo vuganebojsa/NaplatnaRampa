@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TurnpikeGate.Core.Prices.Model;
-using TurnpikeGate.Core.Interfaces;
 
-namespace TurnpikeGate.Core.Prices.Repository
+namespace TurnpikeGate.Core.Prices.Service
 {
-    public interface IPriceListRepository : IRepository<PriceList>
+    public interface IPriceListService
     {
+        public List<PriceList> GetAll();
         public PriceList GetByDate(DateTime selectedDate);
     }
 }
