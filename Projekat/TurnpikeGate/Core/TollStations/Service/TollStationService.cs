@@ -45,7 +45,6 @@ namespace TurnpikeGate.Core.TollStations.Service
                 new List<ObjectId>());
         }
 
-       
         public void Update(TollStation entity)
         {
             _tollStationRepository.Update(entity);
