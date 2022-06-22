@@ -34,8 +34,8 @@ namespace TurnpikeGate
            
             DatabaseConnection.Init();
             Globals.Load();
-            ManagerForm mf = new ManagerForm();
-            mf.ShowDialog();
+            TagSellerMainForm tsf = new TagSellerMainForm();
+            tsf.ShowDialog();
 
         }
     }
