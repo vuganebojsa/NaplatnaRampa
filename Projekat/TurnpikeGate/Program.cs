@@ -34,8 +34,11 @@ namespace TurnpikeGate
             Globals.Load();
 
 
-            LoginForm lf = new LoginForm();
-            lf.ShowDialog();
+            //LoginForm lf = new LoginForm();
+            //lf.ShowDialog();
+
+            ReferentForm rf = new ReferentForm();
+            rf.ShowDialog();
 
             //EntranceTicketIssuingForm eti = new EntranceTicketIssuingForm();
             //eti.ShowDialog();
