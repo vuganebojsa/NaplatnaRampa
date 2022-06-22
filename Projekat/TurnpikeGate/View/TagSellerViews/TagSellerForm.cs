@@ -33,8 +33,8 @@ namespace TurnpikeGate.View.TagSellerViews
         {
             if (chbAddFounds.Checked)
             {
-                this.BackColor = Color.LightBlue;
-                panel1.BackColor = Color.LightGray;
+                this.BackColor = Color.FromArgb(245,245,245);
+                panel1.BackColor = Color.DarkGray;
                 chbRegisterTag.Checked = false;
                 tbAmount.Enabled = true;
                 tbID.Enabled = true;
@@ -45,7 +45,7 @@ namespace TurnpikeGate.View.TagSellerViews
                 tbAmount.Enabled = false;
                 tbID.Enabled = false;
                 btnAddFunds.Enabled = false;
-                this.BackColor = Color.LightGray;
+                this.BackColor = Color.DarkGray;
 
             }
         }
@@ -55,8 +55,8 @@ namespace TurnpikeGate.View.TagSellerViews
             if (chbRegisterTag.Checked)
             {
                 chbAddFounds.Checked = false;
-                this.BackColor = Color.LightGray;
-                panel1.BackColor = Color.LightBlue;
+                this.BackColor = Color.DarkGray;
+                panel1.BackColor = Color.FromArgb(245, 245, 245);
                 tbName.Enabled = true;
                 tbLastName.Enabled = true;
                 cbType.Enabled = true;
@@ -68,7 +68,7 @@ namespace TurnpikeGate.View.TagSellerViews
             }
             else
             {
-                panel1.BackColor = Color.LightGray;
+                panel1.BackColor = Color.DarkGray;
                 tbName.Enabled = false;
                 tbLastName.Enabled = false;
                 cbType.Enabled = false;
@@ -81,16 +81,27 @@ namespace TurnpikeGate.View.TagSellerViews
 
         private void btnAddFunds_Click(object sender, EventArgs e)
         {
-            ElectronicTag electronicTag = electronicTagService.GetById(ObjectId.Parse(tbID.Text));
-            electronicTag.Amount.Total += int.Parse(tbAmount.Text);
-            electronicTagService.Update(electronicTag);
-            System.Windows.Forms.MessageBox.Show("Sredstva dodata!");
+            try
+            {
+                ElectronicTag electronicTag = electronicTagService.GetById(ObjectId.Parse(tbID.Text));
+                electronicTag.Amount.Total += int.Parse(tbAmount.Text);
+                electronicTagService.Update(electronicTag);
+                System.Windows.Forms.MessageBox.Show("Sredstva dodata!");
+            }
+            catch (NullReferenceException ex)
+            {
+                if (ex is NullReferenceException)
+                {
+                    System.Windows.Forms.MessageBox.Show(" Tag ne postoji!");
+                }
+                
+            }
         }
 
         private void TagSellerForm_Load(object sender, EventArgs e)
         {
-            this.BackColor = Color.LightBlue;
-            panel1.BackColor = Color.LightGray;
+            this.BackColor = Color.FromArgb(245, 245, 245);
+            panel1.BackColor = Color.DarkGray;
             chbAddFounds.Checked = true;
             chbRegisterTag.Checked = false;
 
@@ -108,7 +119,13 @@ namespace TurnpikeGate.View.TagSellerViews
         {
             ElectronicTag electronicTag = new ElectronicTag(tbName.Text, tbLastName.Text, (VehicleType)cbType.SelectedValue,(Currency)cbCurrency.SelectedValue);
             electronicTagService.Insert(electronicTag);
-            System.Windows.Forms.MessageBox.Show("Elektronski tag uspesno registorvan!");
+            DialogResult dialogResult = MessageBox.Show("Tag uspesno napravljen\nDa li zelite da odhah oplatite novac?", "", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                tbID.Text = electronicTag.ID.ToString();
+                chbAddFounds.Checked = true;
+
+            }
         }
     }
 }

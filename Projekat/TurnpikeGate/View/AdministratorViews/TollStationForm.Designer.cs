@@ -82,7 +82,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAdd.Location = new System.Drawing.Point(428, 534);
+            this.btnAdd.Location = new System.Drawing.Point(351, 534);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(169, 65);
@@ -98,10 +98,10 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEdit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEdit.Location = new System.Drawing.Point(603, 534);
+            this.btnEdit.Location = new System.Drawing.Point(526, 534);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(150, 65);
+            this.btnEdit.Size = new System.Drawing.Size(161, 65);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "IZMENI";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -114,10 +114,10 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDelete.Location = new System.Drawing.Point(759, 534);
+            this.btnDelete.Location = new System.Drawing.Point(693, 534);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(117, 65);
+            this.btnDelete.Size = new System.Drawing.Size(166, 65);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "OBRISI";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -129,7 +129,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(260, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 31);
+            this.label1.Size = new System.Drawing.Size(249, 40);
             this.label1.TabIndex = 4;
             this.label1.Text = "Naplatne Stanice";
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,6 @@ namespace TurnpikeGate.Core.Prices.Service
 {
     interface IPriceListEntryService:IService<PriceListEntry>
     {
+      public PriceListEntry GetById(ObjectId id);
     }
 }

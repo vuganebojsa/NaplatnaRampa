@@ -12,4 +12,6 @@ namespace TurnpikeGate.Core.Users.Service
     {
         public void ChangeInitialPassword(String newPassword, String repeatedNewPassword);
     }
+
 }
+

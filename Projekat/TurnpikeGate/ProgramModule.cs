@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +33,11 @@ namespace TurnpikeGate
             builder.RegisterType<CredentialsService>().As<ICredentialsService>();
             builder.RegisterType<CredentialsService>().AsSelf();
 
+
+            builder.RegisterType<TollBoothRepository>().As<ITollBoothRepository>();
+            builder.RegisterType<TollBoothService>().As<ITollBoothService>();
+            builder.RegisterType<TollBoothService>().AsSelf();
+
             builder.RegisterType<LoginService>().As<ILoginService>();
             builder.RegisterType<LoginService>().AsSelf();
 
@@ -40,9 +45,23 @@ namespace TurnpikeGate
             builder.RegisterType<LocationService>().As<ILocationService>();
             builder.RegisterType<Location>().AsSelf();
 
+            builder.RegisterType<UserRepository>().As<IUserRepository>();
+            builder.RegisterType<UserService>().As<IUserService>();
+            builder.RegisterType<UserService>().AsSelf();
+
+            builder.RegisterType<PriceListRepository>().As<IPriceListRepository>();
+            builder.RegisterType<PriceListService>().As<IPriceListService>();
+            builder.RegisterType<PriceListService>().AsSelf();
+
             builder.RegisterType<PriceListEntryRepository>().As<IPriceListEntryRepository>();
             builder.RegisterType<PriceListEntryService>().As<IPriceListEntryService>();
             builder.RegisterType<PriceListEntryService>().AsSelf();
+
+
+            builder.RegisterType<RoadSectionRepository>().As<IRoadSectionRepository>();
+            builder.RegisterType<RoadSectionService>().As<IRoadSectionService>();
+            builder.RegisterType<RoadSectionService>().AsSelf();
+
 
             builder.RegisterType<PhysicalTollPaymentRepository>().As<IPhysicalTollPaymentRepository>();
             builder.RegisterType<PhysicalTollPaymentService>().As<IPhysicalTollPaymentService>();
@@ -52,8 +71,17 @@ namespace TurnpikeGate
             builder.RegisterType<ElectronicTagService>().As<IElectronicTagService>();
             builder.RegisterType<ElectronicTagService>().AsSelf();
 
+            builder.RegisterType<RampRepository>().As<IRampRepository>();
+            builder.RegisterType<RampService>().As<IRampService>();
+            builder.RegisterType<RampService>().AsSelf();
 
+            builder.RegisterType<TraficLightRepository>().As<ITraficLightRepository>();
+            builder.RegisterType<TrafficLightService>().As<ITrafficLightService>();
+            builder.RegisterType<TrafficLightService>().AsSelf();
 
+            builder.RegisterType<CameraRepository>().As<ICameraRepository>();
+            builder.RegisterType<CameraService>().As<ICameraService>();
+            builder.RegisterType<CameraService>().AsSelf();
         }
     }
 }

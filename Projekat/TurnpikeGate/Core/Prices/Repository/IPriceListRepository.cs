@@ -10,5 +10,6 @@ namespace TurnpikeGate.Core.Prices.Repository
 {
     public interface IPriceListRepository : IRepository<PriceList>
     {
+        public PriceList GetByDate(DateTime selectedDate);
     }
 }

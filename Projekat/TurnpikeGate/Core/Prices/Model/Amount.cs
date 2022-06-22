@@ -1,4 +1,4 @@
-﻿using MongoDB.Bson;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
@@ -18,12 +18,13 @@ namespace TurnpikeGate.Core.Prices.Model
     {
         public double Total { get; set; }
 
-        public Currency currency { get; set; }
+        [BsonElement("currency")]
+        public Currency Currency { get; set; }
 
         public Amount(double total, Currency currency)
         {
             Total = total;
-            this.currency = currency;
+            this.Currency = currency;
         }
     }
 }

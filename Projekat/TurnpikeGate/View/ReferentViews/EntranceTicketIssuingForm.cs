@@ -50,11 +50,9 @@ namespace TurnpikeGate.View.ReferentViews
         private void btnIssue_Click(object sender, EventArgs e)
         {
 
-            PriceListEntry pl = new PriceListEntry(_selectedVehicleType, null, ObjectId.Empty);
 
-            _priceListEntryService.Insert(pl);
-
-;            PhysicalTollPayment tollPayment = new PhysicalTollPayment(_carPlates[0], DateTime.Now, DateTime.MaxValue, _tollStationService.GetAll()[0].ID, ObjectId.Empty, pl.ID);
+;            PhysicalTollPayment tollPayment = new PhysicalTollPayment(_carPlates[0], DateTime.Now, DateTime.MaxValue,
+                                                                        _selectedVehicleType , _tollStationService.GetAll()[0].ID, ObjectId.Empty, ObjectId.Empty);
             
             _physicalTollPaymentService.Insert(tollPayment);
 

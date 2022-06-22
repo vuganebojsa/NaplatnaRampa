@@ -1,10 +1,10 @@
-﻿using MongoDB.Bson;
+using MongoDB.Bson;
 using TurnpikeGate.Core.Prices.Model;
 using TurnpikeGate.Core.Prices.Repository;
 
 namespace TurnpikeGate.Core.Prices.Service
 {
-    class PriceListEntryService: IPriceListEntryService
+    public class PriceListEntryService : IPriceListEntryService
     {
         private readonly IPriceListEntryRepository _priceListEntryRepository;
 

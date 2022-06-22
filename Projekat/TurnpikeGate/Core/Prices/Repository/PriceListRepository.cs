@@ -28,6 +28,11 @@ namespace TurnpikeGate.Core.Prices.Repository
             return _collection.Find(item => true).ToList();
         }
 
+        public PriceList GetByDate(DateTime selectedDate)
+        {
+            return _collection.Find(item => item.ActivationDate == selectedDate).FirstOrDefault();
+        }
+
         public PriceList GetById(ObjectId id)
         {
             return _collection.Find(item => item.ID == id).FirstOrDefault();

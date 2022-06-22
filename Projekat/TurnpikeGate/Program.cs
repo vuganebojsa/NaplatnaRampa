@@ -17,6 +17,7 @@ using TurnpikeGate.Core.TollStations;
 using TurnpikeGate.View.AdministratorViews;
 using TurnpikeGate.View;
 using TurnpikeGate.Core.Users.Service;
+using TurnpikeGate.View.MainViews;
 using TurnpikeGate.View.TagSellerViews;
 using TurnpikeGate.View.ReferentViews;
 
@@ -30,6 +31,7 @@ namespace TurnpikeGate
         [STAThread]
         static void Main()
         {
+           
             DatabaseConnection.Init();
             Globals.Load();
 
@@ -45,6 +47,11 @@ namespace TurnpikeGate
 
 //             TagSellerForm tf = new TagSellerForm();
 //             tf.ShowDialog();
+
+            AdministratorForm tsf = new AdministratorForm();
+            TagSellerMainForm tsf = new TagSellerMainForm();
+            tsf.ShowDialog();
+
 
         }
     }

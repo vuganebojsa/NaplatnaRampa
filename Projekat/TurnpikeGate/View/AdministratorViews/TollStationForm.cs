@@ -27,9 +27,6 @@ namespace TurnpikeGate.View.AdministratorViews
             InitializeComponent();
             _tollStationService = Globals.Container.Resolve<ITollStationService>();
             _locationService = Globals.Container.Resolve<ILocationService>();
-
-
-
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

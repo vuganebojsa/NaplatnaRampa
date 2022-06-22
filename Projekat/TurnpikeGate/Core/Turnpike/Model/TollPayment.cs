@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TurnpikeGate.Core.Prices.Model;
 
 namespace TurnpikeGate.Core.Turnpike.Model
 {
@@ -21,6 +22,9 @@ namespace TurnpikeGate.Core.Turnpike.Model
 
         [BsonElement("exitTime")]
         public DateTime ExitTime { get; set; }
+
+        [BsonElement("vehicleType")]
+        public VehicleType VehicleType { get; set; }
 
         // Foreign key
         [BsonElement("entranceStation")]
