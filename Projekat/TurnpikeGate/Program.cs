@@ -30,8 +30,11 @@ namespace TurnpikeGate
         [STAThread]
         static void Main()
         {
+           
             DatabaseConnection.Init();
             Globals.Load();
+            EntranceTicketIssuingForm tsf = new EntranceTicketIssuingForm();
+            tsf.ShowDialog();
 
         }
     }

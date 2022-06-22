@@ -62,9 +62,6 @@ namespace TurnpikeGate
             builder.RegisterType<RoadSectionService>().As<IRoadSectionService>();
             builder.RegisterType<RoadSectionService>().AsSelf();
 
-            builder.RegisterType<AmountRepository>().As<IAmountRepository>();
-            builder.RegisterType<AmountService>().As<IAmountService>();
-            builder.RegisterType<AmountService>().AsSelf();
 
             builder.RegisterType<PhysicalTollPaymentRepository>().As<IPhysicalTollPaymentRepository>();
             builder.RegisterType<PhysicalTollPaymentService>().As<IPhysicalTollPaymentService>();

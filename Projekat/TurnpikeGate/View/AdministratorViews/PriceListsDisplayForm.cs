@@ -18,7 +18,6 @@ namespace TurnpikeGate.View.AdministratorViews
     {
         private readonly IPriceListService _priceListService;
         private readonly IPriceListEntryService _priceListEntryService;
-        private readonly IAmountService _amountService;
         private readonly IRoadSectionService _roadSectionService;
         private readonly ITollStationService _tollStationService;
 
@@ -27,7 +26,6 @@ namespace TurnpikeGate.View.AdministratorViews
             InitializeComponent();
             _priceListService = Globals.Container.Resolve<IPriceListService>();
             _priceListEntryService = Globals.Container.Resolve<IPriceListEntryService>();
-            _amountService = Globals.Container.Resolve<IAmountService>();
             _roadSectionService = Globals.Container.Resolve<IRoadSectionService>();
             _tollStationService = Globals.Container.Resolve<ITollStationService>();
             FillPriceListComboBox();
@@ -61,8 +59,8 @@ namespace TurnpikeGate.View.AdministratorViews
                 int index = dgvPriceList.Rows.Add();
                 PriceListEntry entry = _priceListEntryService.GetById(u);
                 dgvPriceList.Rows[index].Cells["vehicleType"].Value = entry.VehicleType;
-                dgvPriceList.Rows[index].Cells["total"].Value = _amountService.GetById(entry.AmountId).Total;
-                dgvPriceList.Rows[index].Cells["currency"].Value = _amountService.GetById(entry.AmountId).Currency;
+                dgvPriceList.Rows[index].Cells["total"].Value = entry.Amount.Total;
+                dgvPriceList.Rows[index].Cells["currency"].Value = entry.Amount.Currency;
                 dgvPriceList.Rows[index].Cells["departure"].Value = _tollStationService.GetById(_roadSectionService.GetById(entry.RoadSectionId).DepartureStationId).Name;
                 dgvPriceList.Rows[index].Cells["destination"].Value = _tollStationService.GetById(_roadSectionService.GetById(entry.RoadSectionId).DestinationStationId).Name;
         });
