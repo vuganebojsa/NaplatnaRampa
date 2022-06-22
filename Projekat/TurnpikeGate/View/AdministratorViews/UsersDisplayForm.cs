@@ -35,7 +35,6 @@ namespace TurnpikeGate.View.AdministratorViews
                 dgvUsers.Rows[index].Cells["phoneNumber"].Value = u.PhoneNumber;
                 dgvUsers.Rows[index].Cells["JMBG"].Value = u.JMBG;
                 dgvUsers.Rows[index].Cells["salary"].Value = u.Salary;
-                dgvUsers.Rows[index].Cells["isActive"].Value = u.IsActive;
             });
         }
     }
