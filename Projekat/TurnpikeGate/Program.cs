@@ -28,9 +28,8 @@ namespace TurnpikeGate
         {
             DatabaseConnection.Init();
             Globals.Load();
-            TollStationForm tf = new TollStationForm();
+            TollBoothDisplay tf = new TollBoothDisplay();
             tf.ShowDialog();
-
         }
     }
 }

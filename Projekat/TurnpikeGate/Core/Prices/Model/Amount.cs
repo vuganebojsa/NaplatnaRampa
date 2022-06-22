@@ -23,13 +23,13 @@ namespace TurnpikeGate.Core.Prices.Model
         public double Total { get; set; }
 
         [BsonElement("currency")]
-        public Currency currency { get; set; }
+        public Currency Currency { get; set; }
 
         public Amount(double total, Currency currency)
         {
             ID = ObjectId.GenerateNewId();
             Total = total;
-            this.currency = currency;
+            this.Currency = currency;
         }
     }
 }

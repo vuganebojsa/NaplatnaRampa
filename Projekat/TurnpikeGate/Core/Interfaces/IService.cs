@@ -15,4 +15,39 @@ namespace TurnpikeGate.Core.Interfaces
         List<TEntity> GetAll();
         TEntity GetById(ObjectId id);
     }
+
+    public class EmptyFieldsException : Exception
+    {
+        public EmptyFieldsException() : base("Sva polja moraju biti popunjena.")
+        {
+
+        }
+    }
+
+    public class BadCredentialsException : Exception
+    {
+        public BadCredentialsException() : base("Pogresno korisnicko ime i/ili lozinka.")
+        {
+
+        }
+    }
+
+    public class PasswordsNotMatchingException : Exception
+    {
+        public PasswordsNotMatchingException() : base("Unete sifre se ne poklapaju. Pokusajte ponovo.")
+        {
+
+        }
+    }
+
+    public class LoggedUserException : Exception
+    {
+        public LoggedUserException(String message) : base(message)
+        {
+
+        }
+    }
+
+
+
 }

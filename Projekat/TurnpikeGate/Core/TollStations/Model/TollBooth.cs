@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TurnpikeGate.Core.Interfaces;
+using TurnpikeGate.View.AdministratorViews;
 
 namespace TurnpikeGate.Core.TollStations.Model
 {
@@ -12,7 +14,7 @@ namespace TurnpikeGate.Core.TollStations.Model
     {
         ELECTRONIC, PHYSICAL
     }
-    public class TollBooth
+    public class TollBooth : IObservable
     {
         [BsonElement("_id")]
         public ObjectId ID { get; set; }
@@ -20,24 +22,38 @@ namespace TurnpikeGate.Core.TollStations.Model
         public TypeOfPayment Type { get; set; }
 
         // Foreign keys
-        [BsonElement("toolStationId")]
-        public ObjectId ToolStationId { get; set; }
+        [BsonElement("tollStationId")]
+        public ObjectId TollStationId { get; set; }
         [BsonElement("rampId")]
         public ObjectId? RampId { get; set; }
         [BsonElement("semaphoreId")]
         public ObjectId? TraficLightId { get; set; }
         [BsonElement("cameraId")]
         public ObjectId? CameraId { get; set; }
+        private List<IObserver> _observers = new List<IObserver>();
 
-        public TollBooth(TypeOfPayment type, ObjectId toolStationId, ObjectId? rampId, ObjectId? traficLightId, ObjectId? cameraId)
+        public TollBooth(TypeOfPayment type, ObjectId tollStationId, ObjectId? rampId, ObjectId? traficLightId, ObjectId? cameraId)
         {
             ID = ObjectId.GenerateNewId();
             Type = type;
-            ToolStationId = toolStationId;
+            TollStationId = tollStationId;
             RampId = rampId;
             CameraId = cameraId;
             TraficLightId = traficLightId;
         }
 
+        public void Attach(IObserver observer)
+        {
+            if (_observers == null) _observers = new List<IObserver>();
+            _observers.Add(observer);
+        }
+
+        public void Notify()
+        {
+            _observers.ForEach(o =>
+            {
+                o.Update(this);
+            });
+        }
     }
 }
