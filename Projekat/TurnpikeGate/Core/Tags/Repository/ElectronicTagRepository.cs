@@ -5,18 +5,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TurnpikeGate.Core.Prices.Model;
-using TurnpikeGate.Core.Prices;
+using TurnpikeGate.Core.Tags.Model;
 
-namespace TurnpikeGate.Core.Prices.Repository
+namespace TurnpikeGate.Core.Tags.Repository
 {
-    public class AmountRepository : IAmountRepository
+    public class ElectronicTagRepository : IElectronicTagRepository
     {
-        private IMongoCollection<Amount> _collection;
+        private IMongoCollection<ElectronicTag> _collection;
 
-        public AmountRepository()
+        public ElectronicTagRepository()
         {
-            _collection = DatabaseConnection.Database.GetCollection<Amount>("Amounts");
+            _collection = DatabaseConnection.Database.GetCollection<ElectronicTag>("Tags");
         }
 
         public void Delete(ObjectId id)
@@ -24,22 +23,22 @@ namespace TurnpikeGate.Core.Prices.Repository
             _collection.DeleteOne(item => item.ID == id);
         }
 
-        public List<Amount> GetAll()
+        public List<ElectronicTag> GetAll()
         {
             return _collection.Find(item => true).ToList();
         }
 
-        public Amount GetById(ObjectId id)
+        public ElectronicTag GetById(ObjectId id)
         {
             return _collection.Find(item => item.ID == id).FirstOrDefault();
         }
 
-        public void Insert(Amount entity)
+        public void Insert(ElectronicTag entity)
         {
             _collection.InsertOne(entity);
         }
 
-        public void Update(Amount entity)
+        public void Update(ElectronicTag entity)
         {
             _collection.ReplaceOne(item => item.ID == entity.ID, entity);
         }

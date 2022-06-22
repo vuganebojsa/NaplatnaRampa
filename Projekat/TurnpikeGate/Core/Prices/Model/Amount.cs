@@ -16,18 +16,12 @@ namespace TurnpikeGate.Core.Prices.Model
 
     public class Amount
     {
-        [BsonElement("_id")]
-        public ObjectId ID { get; set; }
-
-        [BsonElement("total")]
         public double Total { get; set; }
 
-        [BsonElement("currency")]
         public Currency currency { get; set; }
 
         public Amount(double total, Currency currency)
         {
-            ID = ObjectId.GenerateNewId();
             Total = total;
             this.currency = currency;
         }

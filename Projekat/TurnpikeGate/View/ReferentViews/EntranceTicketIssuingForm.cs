@@ -50,7 +50,7 @@ namespace TurnpikeGate.View.ReferentViews
         private void btnIssue_Click(object sender, EventArgs e)
         {
 
-            PriceListEntry pl = new PriceListEntry(_selectedVehicleType, ObjectId.Empty, ObjectId.Empty);
+            PriceListEntry pl = new PriceListEntry(_selectedVehicleType, null, ObjectId.Empty);
 
             _priceListEntryService.Insert(pl);
 

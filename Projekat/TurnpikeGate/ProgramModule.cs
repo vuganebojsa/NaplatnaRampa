@@ -9,6 +9,8 @@ using TurnpikeGate.Core.Locations.Repository;
 using TurnpikeGate.Core.Locations.Service;
 using TurnpikeGate.Core.Prices.Repository;
 using TurnpikeGate.Core.Prices.Service;
+using TurnpikeGate.Core.Tags.Repository;
+using TurnpikeGate.Core.Tags.Service;
 using TurnpikeGate.Core.TollStations.Repository;
 using TurnpikeGate.Core.TollStations.Service;
 using TurnpikeGate.Core.Turnpike.Repository;
@@ -35,6 +37,10 @@ namespace TurnpikeGate
             builder.RegisterType<PhysicalTollPaymentRepository>().As<IPhysicalTollPaymentRepository>();
             builder.RegisterType<PhysicalTollPaymentService>().As<IPhysicalTollPaymentService>();
             builder.RegisterType<PhysicalTollPaymentService>().AsSelf();
+
+            builder.RegisterType<ElectronicTagRepository>().As<IElectronicTagRepository>();
+            builder.RegisterType<ElectronicTagService>().As<IElectronicTagService>();
+            builder.RegisterType<ElectronicTagService>().AsSelf();
 
 
         }
