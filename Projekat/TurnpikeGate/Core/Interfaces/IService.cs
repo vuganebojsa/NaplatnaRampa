@@ -31,4 +31,23 @@ namespace TurnpikeGate.Core.Interfaces
 
         }
     }
+
+    public class PasswordsNotMatchingException : Exception
+    {
+        public PasswordsNotMatchingException() : base("Unete sifre se ne poklapaju. Pokusajte ponovo.")
+        {
+
+        }
+    }
+
+    public class LoggedUserException : Exception
+    {
+        public LoggedUserException(String message) : base(message)
+        {
+
+        }
+    }
+
+    
+
 }

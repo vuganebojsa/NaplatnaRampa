@@ -34,24 +34,10 @@ namespace TurnpikeGate.Core.TollStations.Service
             return _tollStationRepository.GetById(id);
         }
 
-        public void Insert(CreateTollStationDTO tollStationDTO)
+        public void Insert(TollStation tollStation)
         {
-            _tollStationRepository.Insert(ParseToEntity(tollStationDTO));
+            _tollStationRepository.Insert(tollStation);
         }
-
-        public static TollStation ParseToEntity(CreateTollStationDTO tollStationDTO)
-        {
-            return new TollStation
-            {
-                Address = tollStationDTO.Address,
-                Name = tollStationDTO.Name,
-                ReferentIds = tollStationDTO.ReferentIds,
-                LocationId = tollStationDTO.LocationId,
-                StationManagerId = tollStationDTO.StationManagerId,
-                TollBoothIds = tollStationDTO.TollBoothIds
-            };
-        }
-
         public void Update(TollStation entity)
         {
             _tollStationRepository.Update(entity);

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TurnpikeGate.Core.Interfaces;
 using TurnpikeGate.Core.Users.Model;
 
 namespace TurnpikeGate.Core.Users.Service
 {
-    public interface ILoginService
+    public interface ICredentialsService : IService<Credentials>
     {
-        void Login(string username, string password);
-        void RedirectUser();
+        public void ChangeInitialPassword(String newPassword, String repeatedNewPassword);
     }
 }

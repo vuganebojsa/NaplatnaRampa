@@ -11,6 +11,8 @@ using TurnpikeGate.Core.Users.Repository;
 using TurnpikeGate.Core.TollStations.Service;
 using Autofac;
 using TurnpikeGate.View.AdministratorViews;
+using TurnpikeGate.View;
+using TurnpikeGate.Core.Users.Service;
 
 namespace TurnpikeGate
 {
@@ -24,14 +26,9 @@ namespace TurnpikeGate
         {
             DatabaseConnection.Init();
             Globals.Load();
-            ITollStationService tolsasd = Globals.Container.Resolve<TollStationService>();
-            foreach (var a in tolsasd.GetAll())
-            {
-                Console.WriteLine(a.Name);
-            }
 
-            TollStationForm tf = new TollStationForm();
-            tf.ShowDialog();
+            LoginForm lf = new LoginForm();
+            lf.ShowDialog();
         }
     }
 }

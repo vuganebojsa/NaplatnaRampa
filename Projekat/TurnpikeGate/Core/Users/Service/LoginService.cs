@@ -30,5 +30,29 @@ namespace TurnpikeGate.Core.Users.Service
 
             Globals.LoggedUser = foundUser;
         }
+
+        public void RedirectUser()
+        {
+            switch (Globals.LoggedUser.Type)
+            {
+                case UserType.ADMINISTRATOR:
+                    Console.WriteLine("ADMIN");
+                    break;
+                case UserType.MAIN_MANAGER:
+                    Console.WriteLine("MAIN");
+                    break;
+                case UserType.STATION_MANAGER:
+                    Console.WriteLine("STATION");
+                    break;
+                case UserType.REFERENT:
+                    Console.WriteLine("REFERENT");
+                    break;
+                case UserType.TAG_SELLER:
+                    Console.WriteLine("TAG SELLER");
+                    break;
+                default:
+                    throw new LoggedUserException("Tip ulogovanog korisnika ne odgovara predefinisanim tipovima.");
+            }
+        }
     }
 }

@@ -59,6 +59,7 @@
             // 
             this.tbPassword.Location = new System.Drawing.Point(253, 202);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.PlaceholderText = "nova lozinka";
             this.tbPassword.Size = new System.Drawing.Size(314, 27);
             this.tbPassword.TabIndex = 2;
@@ -67,6 +68,7 @@
             // 
             this.tbRepeatedPass.Location = new System.Drawing.Point(253, 254);
             this.tbRepeatedPass.Name = "tbRepeatedPass";
+            this.tbRepeatedPass.PasswordChar = '*';
             this.tbRepeatedPass.PlaceholderText = "ponovite novu lozinku";
             this.tbRepeatedPass.Size = new System.Drawing.Size(314, 27);
             this.tbRepeatedPass.TabIndex = 3;
@@ -81,7 +83,7 @@
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // btnPotvrdi
+            // ChangePasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -91,7 +93,7 @@
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "btnPotvrdi";
+            this.Name = "ChangePasswordForm";
             this.Text = "ChangePasswordForm";
             this.ResumeLayout(false);
             this.PerformLayout();
