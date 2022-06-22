@@ -17,6 +17,7 @@ using TurnpikeGate.Core.TollStations;
 using TurnpikeGate.View.AdministratorViews;
 using TurnpikeGate.View;
 using TurnpikeGate.Core.Users.Service;
+using TurnpikeGate.View.MainViews;
 using TurnpikeGate.View.TagSellerViews;
 using TurnpikeGate.View.ReferentViews;
 
