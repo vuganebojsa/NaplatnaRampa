@@ -36,12 +36,12 @@ namespace TurnpikeGate.View.AdministratorViews
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvUsers
             // 
+            this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
@@ -49,74 +49,67 @@ namespace TurnpikeGate.View.AdministratorViews
             this.JMBG,
             this.email,
             this.phoneNumber,
-            this.salary,
-            this.isActive});
-            this.dgvUsers.Location = new System.Drawing.Point(27, 23);
+            this.salary});
+            this.dgvUsers.Location = new System.Drawing.Point(45, 45);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.RowTemplate.Height = 29;
-            this.dgvUsers.Size = new System.Drawing.Size(1043, 613);
+            this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUsers.Size = new System.Drawing.Size(1215, 750);
             this.dgvUsers.TabIndex = 0;
             // 
             // name
             // 
+            this.name.FillWeight = 110F;
             this.name.HeaderText = "Ime";
             this.name.MinimumWidth = 6;
             this.name.Name = "name";
             this.name.ReadOnly = true;
-            this.name.Width = 140;
+            this.name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // lastName
             // 
+            this.lastName.FillWeight = 110F;
             this.lastName.HeaderText = "Prezime";
             this.lastName.MinimumWidth = 6;
             this.lastName.Name = "lastName";
             this.lastName.ReadOnly = true;
-            this.lastName.Width = 140;
             // 
             // JMBG
             // 
+            this.JMBG.FillWeight = 110F;
             this.JMBG.HeaderText = "JMBG";
             this.JMBG.MinimumWidth = 6;
             this.JMBG.Name = "JMBG";
             this.JMBG.ReadOnly = true;
-            this.JMBG.Width = 125;
             // 
             // email
             // 
+            this.email.FillWeight = 110F;
             this.email.HeaderText = "Email";
             this.email.MinimumWidth = 6;
             this.email.Name = "email";
             this.email.ReadOnly = true;
-            this.email.Width = 190;
             // 
             // phoneNumber
             // 
+            this.phoneNumber.FillWeight = 110F;
             this.phoneNumber.HeaderText = "Broj telefona";
             this.phoneNumber.MinimumWidth = 6;
             this.phoneNumber.Name = "phoneNumber";
-            this.phoneNumber.Width = 120;
             // 
             // salary
             // 
+            this.salary.FillWeight = 110F;
             this.salary.HeaderText = "Plata";
             this.salary.MinimumWidth = 6;
             this.salary.Name = "salary";
-            this.salary.Width = 90;
-            // 
-            // isActive
-            // 
-            this.isActive.HeaderText = "Aktivan";
-            this.isActive.MinimumWidth = 6;
-            this.isActive.Name = "isActive";
-            this.isActive.ReadOnly = true;
-            this.isActive.Width = 55;
             // 
             // UsersDisplayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 750);
+            this.ClientSize = new System.Drawing.Size(1300, 840);
             this.Controls.Add(this.dgvUsers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UsersDisplayForm";
@@ -136,6 +129,5 @@ namespace TurnpikeGate.View.AdministratorViews
         private DataGridViewTextBoxColumn email;
         private DataGridViewTextBoxColumn phoneNumber;
         private DataGridViewTextBoxColumn salary;
-        private DataGridViewTextBoxColumn isActive;
     }
 }
