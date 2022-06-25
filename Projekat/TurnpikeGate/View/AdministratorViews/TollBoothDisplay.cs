@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TurnpikeGate.Core.Interfaces;
+using TurnpikeGate.Core.TollStations;
+using TurnpikeGate.Core.TollStations.Model;
 using TurnpikeGate.Core.TollStations.Service;
 
 namespace TurnpikeGate.View.AdministratorViews
@@ -16,10 +18,13 @@ namespace TurnpikeGate.View.AdministratorViews
     public partial class TollBoothDisplay : Form, IObserver
     {
         private readonly ITollBoothService _tollBoothService;
+        private readonly ITollStationService _tollStationService;
+
         public TollBoothDisplay()
         {
             InitializeComponent();
             _tollBoothService = Globals.Container.Resolve<ITollBoothService>();
+            _tollStationService = Globals.Container.Resolve<ITollStationService>();
             LoadData();
         }
 
@@ -34,10 +39,6 @@ namespace TurnpikeGate.View.AdministratorViews
             addForm.ShowDialog();
         }
 
-        private void TollBoothDisplay_Load(object sender, EventArgs e)
-        {
-            LoadData();
-        }
 
         private void LoadData()
         {
@@ -49,12 +50,46 @@ namespace TurnpikeGate.View.AdministratorViews
 
                 int index = dgvBooths.Rows.Add();
                 dgvBooths.Rows[index].Tag = o;
-                dgvBooths.Rows[index].Cells["type"].Value = o.Type;
-                dgvBooths.Rows[index].Cells["tollStationId"].Value = o.TollStationId;
+                dgvBooths.Rows[index].Cells["type"].Value = o.Type.ToString();
+                dgvBooths.Rows[index].Cells["tollStationId"].Value = _tollStationService.GetById(o.TollStationId).Name;
                 dgvBooths.Rows[index].Cells["rampId"].Value = o.RampId;
-                dgvBooths.Rows[index].Cells["semaphoreId"].Value = o.TraficLightId;
+                dgvBooths.Rows[index].Cells["trafficLightId"].Value = o.TraficLightId;
                 dgvBooths.Rows[index].Cells["cameraId"].Value = o.CameraId;
             });
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var choice = MessageBox.Show("Da li ste sigurni?", "Obrisati?", MessageBoxButtons.YesNo);
+            if (choice == DialogResult.Yes)
+            {
+                TollBooth tb = (TollBooth)dgvBooths.SelectedRows[0].Tag;
+
+                if (tb != null)
+                {
+                    _tollBoothService.Delete(tb.ID.ToString());
+                    tb.Notify();
+                    MessageBox.Show("Uspesno ste obrisali naplatno mesto.");
+                }
+                
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (dgvBooths.SelectedRows.Count > 0)
+            {
+                TollBooth tollBooth = (TollBooth)dgvBooths.SelectedRows[0].Tag;
+                if (tollBooth != null)
+                {
+                    AddTollBoothForm aeForm = new AddTollBoothForm(this, tollBooth.ID.ToString());
+                    aeForm.ShowDialog();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selektujte red prvo!");
+            }
         }
     }
 }

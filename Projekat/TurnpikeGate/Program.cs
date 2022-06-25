@@ -39,8 +39,8 @@ namespace TurnpikeGate
             //LoginForm lf = new LoginForm();
             //lf.ShowDialog();
 
-            ReferentForm rf = new ReferentForm();
-            rf.ShowDialog();
+            //ReferentForm rf = new ReferentForm();
+            //rf.ShowDialog();
 
             //EntranceTicketIssuingForm eti = new EntranceTicketIssuingForm();
             //eti.ShowDialog();
@@ -49,7 +49,7 @@ namespace TurnpikeGate
 //             tf.ShowDialog();
 
             AdministratorForm tsf = new AdministratorForm();
-            TagSellerMainForm tsf = new TagSellerMainForm();
+            //TagSellerMainForm tsf = new TagSellerMainForm();
             tsf.ShowDialog();
 
 
