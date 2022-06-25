@@ -23,7 +23,7 @@ namespace TurnpikeGate.View.MainViews
 
         private void btnFirstSurvey_Click(object sender, EventArgs e)
         {
-            LoadForm(new TotalncomeForm());
+            LoadForm(new IncomeReportForm());
         }
         private void LoadForm(object Form)
         {
