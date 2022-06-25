@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TurnpikeGate.Core.Interfaces;
 using TurnpikeGate.Core.Users.Model;
 using TurnpikeGate.Core.Users.Repository;
+using TurnpikeGate.View;
 using TurnpikeGate.View.AdministratorViews;
 using TurnpikeGate.View.MainViews;
 using TurnpikeGate.View.ReferentViews;
@@ -34,7 +35,7 @@ namespace TurnpikeGate.Core.Users.Service
             Globals.LoggedUser = foundUser;
         }
 
-        public void RedirectUser()
+        public void RedirectUser(LoginForm loginForm)
         {
             switch (Globals.LoggedUser.Type)
             {
@@ -47,10 +48,10 @@ namespace TurnpikeGate.Core.Users.Service
                     managerForm.Show();
                     break;
                 case UserType.STATION_MANAGER:
-                    Console.WriteLine("STATION");
+                    Console.WriteLine("STATION MANAGER");
                     break;
                 case UserType.REFERENT:
-                    ReferentForm referentForm = new ReferentForm();
+                    ReferentForm referentForm = new ReferentForm(loginForm);
                     referentForm.Show();
                     break;
                 case UserType.TAG_SELLER:
