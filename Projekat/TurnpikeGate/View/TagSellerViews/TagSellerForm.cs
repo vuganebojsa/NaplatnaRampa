@@ -12,6 +12,7 @@ using Autofac;
 using TurnpikeGate.Core.Tags.Service;
 using TurnpikeGate.Core.Tags.Model;
 using MongoDB.Bson;
+using TurnpikeGate.Core.Users.Service;
 
 namespace TurnpikeGate.View.TagSellerViews
 {

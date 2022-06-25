@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TurnpikeGate.Core.Users.Service;
 
 namespace TurnpikeGate.View.TagSellerViews
 {
     public partial class TagSellerMainForm : Form
     {
-        public TagSellerMainForm()
+        ILoginService _loginService;
+
+        public TagSellerMainForm(ILoginService loginService)
         {
             InitializeComponent();
         }
@@ -38,6 +41,11 @@ namespace TurnpikeGate.View.TagSellerViews
             this.pnlView.Tag = selectedButton;
             selectedButton.Show();
 
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            _loginService.Logout(this);
         }
     }
 }

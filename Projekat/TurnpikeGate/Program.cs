@@ -35,8 +35,7 @@ namespace TurnpikeGate
             DatabaseConnection.Init();
             Globals.Load();
 
-            EntranceTicketIssuingForm ef = new EntranceTicketIssuingForm();
-            ef.ShowDialog();
+            Application.Run(new LoginForm());
 
 
         }
