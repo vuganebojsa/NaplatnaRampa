@@ -31,10 +31,10 @@ namespace TurnpikeGate.View.ReferentViews
         private readonly IPhysicalTollPaymentService _physicalTollPaymentService;
 
         IPhysicalTollPaymentRepository _physicalTollPaymentRepository;
-        IRoadSectionRepository _roadSectionRepository;
+        readonly IRoadSectionRepository _roadSectionRepository;
 
         private List<System.Threading.Timer> _timers;
-        private List<PhysicalTollPayment> _vehicleQueue;
+        private readonly List<PhysicalTollPayment> _vehicleQueue;
         private TollStation _entranceStation;
         private TollStation _exitStation;
 
@@ -49,16 +49,12 @@ namespace TurnpikeGate.View.ReferentViews
 
             _selectedPicture = pbCar;
             _selectedVehicleType = VehicleType.AUTOMOBILE;
+            _exitStation = _tollStationService.GetById(StationInformation.ExitStationId);
 
             _vehicleQueue = new List<PhysicalTollPayment>();
             InitTimer();
             StartSimulation();
 
-
-        }
-
-        private void ExitTicketIssuingForm_Load(object sender, EventArgs e)
-        {
 
         }
 
@@ -155,15 +151,15 @@ namespace TurnpikeGate.View.ReferentViews
         {
             tbPlates.Text = physicalTollPayment.RegistrationPlate;
 
-            TollStation entranceStation = _tollStationService.GetById(physicalTollPayment.EntranceStationId);
-            _entranceStation = entranceStation;
-            tbEntranceStation.Text = "tamo";
+            _entranceStation = _tollStationService.GetById(physicalTollPayment.EntranceStationId);
+            Console.WriteLine(_entranceStation.Name);
+            tbEntranceStation.Text = _entranceStation.Name;
 
             tbEntranceTime.Text = physicalTollPayment.EntranceTime.ToString();
             tbExitTime.Text = DateTime.Now.ToString();
 
             // TODO: ucitati iz fajla
-            tbExitStation.Text = "ovde";
+            tbExitStation.Text = _exitStation.Name;
         }
 
         private void tbReceivedSum_keyDown(object sender, KeyEventArgs e)
@@ -178,6 +174,11 @@ namespace TurnpikeGate.View.ReferentViews
                     tbChange.Text = (Convert.ToDouble(tbSumReceived.Text) - Convert.ToDouble(tbTollPrice.Text)).ToString();
                 }
             }
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

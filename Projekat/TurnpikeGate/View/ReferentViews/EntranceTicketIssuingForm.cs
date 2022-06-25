@@ -34,7 +34,7 @@ namespace TurnpikeGate.View.ReferentViews
             _physicalTollPaymentService = Globals.Container.Resolve<IPhysicalTollPaymentService>();
             _carPlates = new List<string>();
             
-            tbEntry.Text = _tollStationService.GetAll()[0].Name;
+            tbEntry.Text = _tollStationService.GetById(StationInformation.EntryStationId).Name;
             InitTimer();
             GenerateVehicleThreads();
 
@@ -43,21 +43,19 @@ namespace TurnpikeGate.View.ReferentViews
 
         private void btnIssue_Click(object sender, EventArgs e)
         {
-
-
-//;            PhysicalTollPayment tollPayment = new PhysicalTollPayment(_carPlates[0], DateTime.Now, DateTime.MaxValue,
-//                                                                        _selectedVehicleType , _tollStationService.GetAll()[0].ID, ObjectId.Empty, ObjectId.Empty);
+            PhysicalTollPayment tollPayment = new PhysicalTollPayment(_carPlates[0], DateTime.Now, DateTime.MaxValue,
+                                                                        VehicleType.AUTOMOBILE , _tollStationService.GetAll()[0].ID, ObjectId.Empty, ObjectId.Empty);
             
-//            _physicalTollPaymentService.Insert(tollPayment);
+            _physicalTollPaymentService.Insert(tollPayment);
 
-//            _carPlates.RemoveAt(0);
+            _carPlates.RemoveAt(0);
 
-//            tbPlates.Text = "";
-//            if (_carPlates.Count > 0)
-//            {
-//                tbPlates.Text = _carPlates[0];
+            tbPlates.Text = "";
+            if (_carPlates.Count > 0)
+            {
+                tbPlates.Text = _carPlates[0];
 
-//            }
+            }
         }
 
         
