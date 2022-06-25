@@ -18,7 +18,7 @@ namespace TurnpikeGate.View.TagSellerViews
         public TagSellerMainForm(ILoginService loginService)
         {
             InitializeComponent();
-            _loginService = loginService
+            _loginService = loginService;
         }
 
         private void btnTags_Click(object sender, EventArgs e)
