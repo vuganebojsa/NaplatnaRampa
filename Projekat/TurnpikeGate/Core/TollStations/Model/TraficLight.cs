@@ -12,6 +12,7 @@ namespace TurnpikeGate.Core.TollStations.Model
     {
         [BsonElement("_id")]
         public ObjectId ID { get; set; }
+
         [BsonElement("toolBoothId")]
         public ObjectId ToolBoothId { get; set; }
 
