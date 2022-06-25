@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TurnpikeGate.Core.Users.Service;
 using TurnpikeGate.View.ManagerViews;
 
 namespace TurnpikeGate.View.MainViews
 {
     public partial class ManagerForm : Form
     {
-        public ManagerForm()
+        private ILoginService _loginService;
+
+        public ManagerForm(ILoginService loginService)
         {
             InitializeComponent();
         }
@@ -45,11 +48,7 @@ namespace TurnpikeGate.View.MainViews
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            var choice = MessageBox.Show("Da li ste sigurni?", "Odjava?", MessageBoxButtons.YesNo);
-            if (choice == DialogResult.Yes)
-            {
-                
-            }
+            _loginService.Logout(this);
         }
     }
 }

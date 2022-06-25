@@ -19,8 +19,8 @@ namespace TurnpikeGate.View
 
         public LoginForm()
         {
-            InitializeComponent();
             _loginService = Globals.Container.Resolve<LoginService>();
+            InitializeComponent();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)

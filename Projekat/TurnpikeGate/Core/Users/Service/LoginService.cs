@@ -17,6 +17,7 @@ namespace TurnpikeGate.Core.Users.Service
     public class LoginService : ILoginService
     {
         private ICredentialsRepository _credentialsRepository;
+        private LoginForm _loginForm;
 
         public LoginService(ICredentialsRepository credentialsRepository)
         {
@@ -37,29 +38,43 @@ namespace TurnpikeGate.Core.Users.Service
 
         public void RedirectUser(LoginForm loginForm)
         {
+            _loginForm = loginForm;
+
             switch (Globals.LoggedUser.Type)
             {
                 case UserType.ADMINISTRATOR:
-                    AdministratorForm adminForm = new AdministratorForm();
+                    AdministratorForm adminForm = new AdministratorForm(this);
                     adminForm.Show();
                     break;
                 case UserType.MAIN_MANAGER:
-                    ManagerForm managerForm = new ManagerForm();
+                    ManagerForm managerForm = new ManagerForm(this);
                     managerForm.Show();
                     break;
                 case UserType.STATION_MANAGER:
                     Console.WriteLine("STATION MANAGER");
                     break;
                 case UserType.REFERENT:
-                    ReferentForm referentForm = new ReferentForm(loginForm);
+                    ReferentForm referentForm = new ReferentForm(this);
                     referentForm.Show();
                     break;
                 case UserType.TAG_SELLER:
-                    TagSellerMainForm sellerMainForm = new TagSellerMainForm();
+                    TagSellerMainForm sellerMainForm = new TagSellerMainForm(this);
                     sellerMainForm.Show();
                     break;
                 default:
                     throw new LoggedUserException("Tip ulogovanog korisnika ne odgovara predefinisanim tipovima.");
+            }
+        }
+
+        public void Logout(Form form)
+        {
+            var Result = MessageBox.Show("Da li ste sigurni da zelite da se odjavite sa sistema?", "Odjava?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (Result == DialogResult.Yes)
+            {
+                Globals.LoggedUser = null;
+                form.Close();
+
+                _loginForm.Show();
             }
         }
     }

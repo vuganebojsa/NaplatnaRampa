@@ -11,6 +11,7 @@ namespace TurnpikeGate.Core.Users.Service
     public interface ILoginService
     {
         void Login(string username, string password);
+        void Logout(Form form);
         void RedirectUser(LoginForm loginForm);
     }
 }

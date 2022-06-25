@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autofac;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,31 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TurnpikeGate.Core.Users.Service;
 
 namespace TurnpikeGate.View.ReferentViews
 {
     public partial class ReferentForm : Form
     {
-        private LoginForm _loginForm;
+        private ILoginService _loginService;
 
-        public ReferentForm(LoginForm loginform)
+        public ReferentForm(ILoginService loginService)
         {
-            _loginForm = loginform;
+            _loginService = loginService;
             InitializeComponent();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            var Result = MessageBox.Show("Da li ste sigurni da zelite da se odjavite sa sistema?", "Odjava?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (Result == DialogResult.Yes)
-            {
-                Globals.LoggedUser = null;
-                this.Close();
-
-                LoginForm loginForm = new LoginForm();
-                _loginForm.Show();
-            }
-            
+            _loginService.Logout(this);
         }
 
         private void btnTollPayment_Click(object sender, EventArgs e)
