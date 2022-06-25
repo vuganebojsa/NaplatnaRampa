@@ -19,13 +19,14 @@ namespace TurnpikeGate.View
 
         public LoginForm()
         {
-            InitializeComponent();
             _loginService = Globals.Container.Resolve<LoginService>();
+            InitializeComponent();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
+            if (Globals.LoggedUser != null)
+                this.Close();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -39,9 +40,12 @@ namespace TurnpikeGate.View
                     changePasswordForm.ShowDialog();
                 }
 
-                _loginService.RedirectUser();
-                //this.Close();
+                tbPassword.Text = "";
+                tbUsername.Text = "";
 
+                this.Hide();
+                _loginService.RedirectUser(this);
+                
             }
             catch (Exception ex)
             {

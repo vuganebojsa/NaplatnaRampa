@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TurnpikeGate.Core.Users.Service;
 
 namespace TurnpikeGate.View.AdministratorViews
 {
     public partial class AdministratorForm : Form
     {
-        public AdministratorForm()
+        private ILoginService _loginService;
+
+        public AdministratorForm(ILoginService loginService)
         {
+            _loginService = loginService;
             InitializeComponent();
         }
 
@@ -31,9 +35,7 @@ namespace TurnpikeGate.View.AdministratorViews
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            DialogResult exit = MessageBox.Show("Are you sure?", "Logout?", MessageBoxButtons.YesNo);
-
-            //if (exit == DialogResult.Yes) { SuperForm.Show(); this.Close(); }
+            _loginService.Logout(this);
         }
 
         private void btnTollBooths_Click(object sender, EventArgs e)
