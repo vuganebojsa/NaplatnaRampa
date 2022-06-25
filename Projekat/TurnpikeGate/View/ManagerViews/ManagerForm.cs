@@ -43,7 +43,7 @@ namespace TurnpikeGate.View.MainViews
 
         private void btnSecondSurvey_Click(object sender, EventArgs e)
         {
-            LoadForm(new BussiestStationForm());
+            LoadForm(new BusiestStationReportForm());
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
