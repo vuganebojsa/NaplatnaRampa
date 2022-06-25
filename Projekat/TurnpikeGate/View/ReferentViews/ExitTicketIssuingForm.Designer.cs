@@ -271,7 +271,7 @@
             this.tbSumReceived.Name = "tbSumReceived";
             this.tbSumReceived.Size = new System.Drawing.Size(268, 39);
             this.tbSumReceived.TabIndex = 18;
-            this.tbSumReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbReceivedSum_keyUp);
+            this.tbSumReceived.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbReceivedSum_keyDown);
             // 
             // tbChange
             // 

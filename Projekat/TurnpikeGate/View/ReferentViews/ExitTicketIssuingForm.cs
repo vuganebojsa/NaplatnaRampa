@@ -170,6 +170,7 @@ namespace TurnpikeGate.View.ReferentViews
         {
             if (e.KeyCode == Keys.Enter)
             {
+                MessageBox.Show("Pritisnuto.", "Greska");
                 if (tbSumReceived.Text == "" || tbTollPrice.Text == "")
                     MessageBox.Show("Da bi se izracunao kusur, cena putarine i preuzet iznos moraju biti popunjeni.", "Greska");
                 else
