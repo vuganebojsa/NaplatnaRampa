@@ -20,92 +20,42 @@ namespace TurnpikeGate.View.ReferentViews
 {
     public partial class EntranceTicketIssuingForm : Form
     {
-        private PictureBox _selectedPicture;
-        private VehicleType _selectedVehicleType;
+
         private List<System.Threading.Timer> _timers;
         private readonly List<String> _carPlates;
         private readonly ITollStationService _tollStationService;
-        private readonly IPriceListEntryService _priceListEntryService;
         private readonly IPhysicalTollPaymentService _physicalTollPaymentService;
 
-        
         public EntranceTicketIssuingForm()
         {
 
             InitializeComponent();
-            _selectedPicture = pbCar;
-            _selectedVehicleType = VehicleType.AUTOMOBILE;
             _tollStationService = Globals.Container.Resolve<ITollStationService>();
-            _priceListEntryService = Globals.Container.Resolve<IPriceListEntryService>();
             _physicalTollPaymentService = Globals.Container.Resolve<IPhysicalTollPaymentService>();
             _carPlates = new List<string>();
             
             tbEntry.Text = _tollStationService.GetAll()[0].Name;
-            InitTimer();
+            InitPlatesTimer();
             GenerateVehicleThreads();
+            InitIssuingTimer();
 
-           
+
+
         }
 
-        private void btnIssue_Click(object sender, EventArgs e)
+        private void IssueTicket()
         {
+            PhysicalTollPayment tollPayment = new PhysicalTollPayment(_carPlates[0], DateTime.Now, DateTime.MaxValue,
+                VehicleType.AUTOMOBILE, _tollStationService.GetAll()[0].ID, ObjectId.Empty, ObjectId.Empty);
 
-
-;            PhysicalTollPayment tollPayment = new PhysicalTollPayment(_carPlates[0], DateTime.Now, DateTime.MaxValue,
-                                                                        _selectedVehicleType , _tollStationService.GetAll()[0].ID, ObjectId.Empty, ObjectId.Empty);
-            
             _physicalTollPaymentService.Insert(tollPayment);
-
             _carPlates.RemoveAt(0);
-
             tbPlates.Text = "";
             if (_carPlates.Count > 0)
             {
                 tbPlates.Text = _carPlates[0];
 
             }
-        }
-
-        private void pbCar_Click(object sender, EventArgs e)
-        {
-            SetSelectedPictureValues(pbCar, VehicleType.AUTOMOBILE);
-        }
-
-        private void SetSelectedPictureValues(PictureBox pictureBox, VehicleType vehicleType)
-        {
-            _selectedPicture.BorderStyle = BorderStyle.None;
-            _selectedPicture.BackColor = Color.Transparent;
-            pictureBox.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox.BackColor = Color.Bisque;
-            
-            _selectedPicture = pictureBox;
-            _selectedVehicleType = vehicleType;
-
-        }
-
-        private void pbBus_Click(object sender, EventArgs e)
-        {
-            SetSelectedPictureValues(pbBus, VehicleType.BUS);
-        }
-
-        private void pbTruck_Click(object sender, EventArgs e)
-        {
-            SetSelectedPictureValues(pbTruck, VehicleType.TRUCK);
-        }
-
-        private void pbMotorcycle_Click(object sender, EventArgs e)
-        {
-            SetSelectedPictureValues(pbMotorcycle, VehicleType.MOTOCYCLE);
-        }
-
-        private void pbMinivan_Click(object sender, EventArgs e)
-        {
-            SetSelectedPictureValues(pbMinivan, VehicleType.MINIVAN);
-        }
-
-        private void pbCarWithTrailer_Click(object sender, EventArgs e)
-        {
-            SetSelectedPictureValues(pbCarWithTrailer, VehicleType.CAR_WITH_TRAILER);
         }
 
         private void GenerateVehicleThreads()
@@ -143,18 +93,39 @@ namespace TurnpikeGate.View.ReferentViews
             return firsTwo + threeNumbers + lastTwo;
 
         }
-        public void InitTimer()
+        private void InitPlatesTimer()
         {
             platesTimer = new System.Windows.Forms.Timer();
             platesTimer.Tick += new EventHandler(platesTimer_Tick_1);
-            platesTimer.Interval = 1000;
+            platesTimer.Interval = 800;
             platesTimer.Start();
 
         }
+
         private void platesTimer_Tick_1(object sender, EventArgs e)
         {
             if (tbPlates.Text == "" && _carPlates.Any())
+            {
                 tbPlates.Text = _carPlates[0];
+                tbSuccess.Text = "";
+            }
+        }
+
+        private void InitIssuingTimer()
+        {
+            issuingTimer = new System.Windows.Forms.Timer();
+            issuingTimer.Tick += new EventHandler(issuingTimer_Tick);
+            issuingTimer.Interval = 2600;
+            issuingTimer.Start();
+        }
+
+        private void issuingTimer_Tick(object sender, EventArgs e)
+        {
+            if (tbSuccess.Text == "" && _carPlates.Any())
+            {
+                tbSuccess.Text = "Uspesno izdat tiket za sledece tablice: " + _carPlates[0];
+                IssueTicket();
+            }
         }
     }
 }

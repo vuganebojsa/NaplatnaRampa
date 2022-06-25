@@ -35,22 +35,8 @@ namespace TurnpikeGate
             DatabaseConnection.Init();
             Globals.Load();
 
-
-            //LoginForm lf = new LoginForm();
-            //lf.ShowDialog();
-
-            ReferentForm rf = new ReferentForm();
-            rf.ShowDialog();
-
-            //EntranceTicketIssuingForm eti = new EntranceTicketIssuingForm();
-            //eti.ShowDialog();
-
-//             TagSellerForm tf = new TagSellerForm();
-//             tf.ShowDialog();
-
-            AdministratorForm tsf = new AdministratorForm();
-            TagSellerMainForm tsf = new TagSellerMainForm();
-            tsf.ShowDialog();
+            EntranceTicketIssuingForm ef = new EntranceTicketIssuingForm();
+            ef.ShowDialog();
 
 
         }
