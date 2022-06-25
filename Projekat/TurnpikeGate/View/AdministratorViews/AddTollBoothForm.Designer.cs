@@ -55,8 +55,14 @@ namespace TurnpikeGate.View.AdministratorViews
             // 
             // cbTrafficLights
             // 
+            this.cbTrafficLights.AutoCompleteCustomSource.AddRange(new string[] {
+            "ISPRAVNO",
+            "NEISPRAVNO"});
             this.cbTrafficLights.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbTrafficLights.FormattingEnabled = true;
+            this.cbTrafficLights.Items.AddRange(new object[] {
+            "ISPRAVNO",
+            "NEISPRAVNO"});
             this.cbTrafficLights.Location = new System.Drawing.Point(202, 166);
             this.cbTrafficLights.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbTrafficLights.Name = "cbTrafficLights";
@@ -65,8 +71,14 @@ namespace TurnpikeGate.View.AdministratorViews
             // 
             // cbRamps
             // 
+            this.cbRamps.AutoCompleteCustomSource.AddRange(new string[] {
+            "ISPRAVNO",
+            "NEISPRAVNO"});
             this.cbRamps.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbRamps.FormattingEnabled = true;
+            this.cbRamps.Items.AddRange(new object[] {
+            "ISPRAVNO",
+            "NEISPRAVNO"});
             this.cbRamps.Location = new System.Drawing.Point(202, 122);
             this.cbRamps.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbRamps.Name = "cbRamps";
@@ -85,8 +97,14 @@ namespace TurnpikeGate.View.AdministratorViews
             // 
             // cbCameras
             // 
+            this.cbCameras.AutoCompleteCustomSource.AddRange(new string[] {
+            "ISPRAVNO",
+            "NEISPRAVNO"});
             this.cbCameras.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbCameras.FormattingEnabled = true;
+            this.cbCameras.Items.AddRange(new object[] {
+            "ISPRAVNO",
+            "NEISPRAVNO"});
             this.cbCameras.Location = new System.Drawing.Point(202, 209);
             this.cbCameras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbCameras.Name = "cbCameras";
