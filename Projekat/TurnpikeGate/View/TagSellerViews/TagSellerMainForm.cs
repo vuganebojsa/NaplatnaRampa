@@ -13,11 +13,12 @@ namespace TurnpikeGate.View.TagSellerViews
 {
     public partial class TagSellerMainForm : Form
     {
-        ILoginService _loginService;
+        private readonly ILoginService _loginService;
 
         public TagSellerMainForm(ILoginService loginService)
         {
             InitializeComponent();
+            _loginService = loginService
         }
 
         private void btnTags_Click(object sender, EventArgs e)
