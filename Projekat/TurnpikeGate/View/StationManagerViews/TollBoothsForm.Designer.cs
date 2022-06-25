@@ -30,12 +30,12 @@ namespace TurnpikeGate.View.StationManagerViews
         private void InitializeComponent()
         {
             this.dgvTollBooths = new System.Windows.Forms.DataGridView();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnChange = new System.Windows.Forms.Button();
+            this.stationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ramp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.camera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trafficLight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnChange = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTollBooths)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +45,7 @@ namespace TurnpikeGate.View.StationManagerViews
             this.dgvTollBooths.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvTollBooths.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTollBooths.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.name,
+            this.stationName,
             this.type,
             this.ramp,
             this.camera,
@@ -57,10 +57,24 @@ namespace TurnpikeGate.View.StationManagerViews
             this.dgvTollBooths.Size = new System.Drawing.Size(1019, 347);
             this.dgvTollBooths.TabIndex = 0;
             // 
-            // name
+            // btnChange
             // 
-            this.name.HeaderText = "Naziv";
-            this.name.Name = "name";
+            this.btnChange.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChange.FlatAppearance.BorderSize = 2;
+            this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChange.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnChange.Location = new System.Drawing.Point(839, 434);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(221, 73);
+            this.btnChange.TabIndex = 1;
+            this.btnChange.Text = "IZMENI STANJE UREDJAJA";
+            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
+            // 
+            // stationName
+            // 
+            this.stationName.HeaderText = "Naziv Stanice";
+            this.stationName.Name = "stationName";
             // 
             // type
             // 
@@ -82,19 +96,6 @@ namespace TurnpikeGate.View.StationManagerViews
             this.trafficLight.HeaderText = "Semafor";
             this.trafficLight.Name = "trafficLight";
             // 
-            // btnChange
-            // 
-            this.btnChange.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChange.FlatAppearance.BorderSize = 2;
-            this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChange.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnChange.Location = new System.Drawing.Point(839, 434);
-            this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(221, 73);
-            this.btnChange.TabIndex = 1;
-            this.btnChange.Text = "IZMENI STANJE UREDJAJA";
-            this.btnChange.UseVisualStyleBackColor = true;
-            // 
             // TollBoothsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -113,11 +114,11 @@ namespace TurnpikeGate.View.StationManagerViews
         #endregion
 
         private DataGridView dgvTollBooths;
-        private DataGridViewTextBoxColumn name;
+        private Button btnChange;
+        private DataGridViewTextBoxColumn stationName;
         private DataGridViewTextBoxColumn type;
         private DataGridViewTextBoxColumn ramp;
         private DataGridViewTextBoxColumn camera;
         private DataGridViewTextBoxColumn trafficLight;
-        private Button btnChange;
     }
 }

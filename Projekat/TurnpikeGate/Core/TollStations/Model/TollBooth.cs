@@ -25,21 +25,21 @@ namespace TurnpikeGate.Core.TollStations.Model
         [BsonElement("tollStationId")]
         public ObjectId TollStationId { get; set; }
         [BsonElement("rampId")]
-        public ObjectId? RampId { get; set; }
+        public ObjectId RampId { get; set; }
         [BsonElement("semaphoreId")]
-        public ObjectId? TraficLightId { get; set; }
+        public ObjectId TrafficLightId { get; set; }
         [BsonElement("cameraId")]
-        public ObjectId? CameraId { get; set; }
+        public ObjectId CameraId { get; set; }
         private List<IObserver> _observers = new List<IObserver>();
 
-        public TollBooth(TypeOfPayment type, ObjectId tollStationId, ObjectId? rampId, ObjectId? traficLightId, ObjectId? cameraId)
+        public TollBooth(TypeOfPayment type, ObjectId tollStationId, ObjectId rampId, ObjectId trafficLightId, ObjectId cameraId)
         {
             ID = ObjectId.GenerateNewId();
             Type = type;
             TollStationId = tollStationId;
             RampId = rampId;
             CameraId = cameraId;
-            TraficLightId = traficLightId;
+            TrafficLightId = trafficLightId;
         }
 
         public void Attach(IObserver observer)

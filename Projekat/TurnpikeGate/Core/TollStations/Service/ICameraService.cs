@@ -8,9 +8,8 @@ using TurnpikeGate.Core.TollStations.Model;
 
 namespace TurnpikeGate.Core.TollStations.Service
 {
-    public interface ICameraService
+    public interface ICameraService : IService<Camera>
     {
-        public List<Camera> GetAll();
-        void Insert(Camera camera);
+
     }
 }

@@ -8,9 +8,7 @@ using TurnpikeGate.Core.TollStations.Model;
 
 namespace TurnpikeGate.Core.TollStations.Service
 {
-    public interface ITrafficLightService
+    public interface ITrafficLightService : IService<TraficLight>
     {
-        public List<TraficLight> GetAll();
-        void Insert(TraficLight rraficLight);
     }
 }
