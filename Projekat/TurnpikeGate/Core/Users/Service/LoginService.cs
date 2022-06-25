@@ -10,6 +10,7 @@ using TurnpikeGate.View;
 using TurnpikeGate.View.AdministratorViews;
 using TurnpikeGate.View.MainViews;
 using TurnpikeGate.View.ReferentViews;
+using TurnpikeGate.View.StationManagerViews;
 using TurnpikeGate.View.TagSellerViews;
 
 namespace TurnpikeGate.Core.Users.Service
@@ -51,7 +52,8 @@ namespace TurnpikeGate.Core.Users.Service
                     managerForm.Show();
                     break;
                 case UserType.STATION_MANAGER:
-                    Console.WriteLine("STATION MANAGER");
+                    StationManagerForm stationManagerForm = new StationManagerForm(this);
+                    stationManagerForm.Show();
                     break;
                 case UserType.REFERENT:
                     ReferentForm referentForm = new ReferentForm(this);

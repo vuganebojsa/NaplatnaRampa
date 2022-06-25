@@ -8,9 +8,8 @@ using TurnpikeGate.Core.TollStations.Model;
 
 namespace TurnpikeGate.Core.TollStations.Service
 {
-    public interface IRampService
+    public interface IRampService:IService<Ramp>
     {
-        public List<Ramp> GetAll();
-        void Insert(Ramp ramp);
+     
     }
 }

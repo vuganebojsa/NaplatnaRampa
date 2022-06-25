@@ -19,7 +19,7 @@ namespace TurnpikeGate.Core.TollStations.Model
         [BsonElement("isWorking")]
         public bool IsWorking { get; set; }
 
-        public TraficLight(ObjectId toolBoothId, bool isWorking=true)
+        public TraficLight(ObjectId toolBoothId, bool isWorking = true)
         {
             ID = ObjectId.GenerateNewId();
             ToolBoothId = toolBoothId;

@@ -18,15 +18,31 @@ namespace TurnpikeGate.Core.TollStations.Service
             _rampRepository = rampRepository;
         }
 
+        public void Delete(string id)
+        {
+            _rampRepository.Delete(ObjectId.Parse(id));
+
+        }
+
         public List<Ramp> GetAll()
         {
             return _rampRepository.GetAll();
         }
 
-        public void Insert(Ramp ramp)
+        public Ramp GetById(ObjectId id)
         {
-            _rampRepository.Insert(ramp);
+            return _rampRepository.GetById(id);
         }
 
+        public void Insert(Ramp rampId)
+        {
+            _rampRepository.Insert(rampId);
+        }
+
+
+        public void Update(Ramp entity)
+        {
+            _rampRepository.Update(entity);
+        }
     }
 }
