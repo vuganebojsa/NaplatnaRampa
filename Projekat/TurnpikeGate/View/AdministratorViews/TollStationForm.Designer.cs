@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.dgvTollStation = new System.Windows.Forms.DataGridView();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.location = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.location = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTollStation)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,24 +56,6 @@
             this.dgvTollStation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTollStation.Size = new System.Drawing.Size(878, 419);
             this.dgvTollStation.TabIndex = 0;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "name";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
-            // 
-            // address
-            // 
-            this.address.HeaderText = "address";
-            this.address.MinimumWidth = 6;
-            this.address.Name = "address";
-            // 
-            // location
-            // 
-            this.location.HeaderText = "location";
-            this.location.MinimumWidth = 6;
-            this.location.Name = "location";
             // 
             // btnAdd
             // 
@@ -129,14 +111,33 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(260, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 40);
+            this.label1.Size = new System.Drawing.Size(195, 31);
             this.label1.TabIndex = 4;
             this.label1.Text = "Naplatne Stanice";
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Naziv";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            // 
+            // address
+            // 
+            this.address.HeaderText = "Adresa";
+            this.address.MinimumWidth = 6;
+            this.address.Name = "address";
+            // 
+            // location
+            // 
+            this.location.HeaderText = "Lokacija";
+            this.location.MinimumWidth = 6;
+            this.location.Name = "location";
             // 
             // TollStationForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(900, 638);
+            this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
@@ -144,6 +145,7 @@
             this.Controls.Add(this.dgvTollStation);
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TollStationForm";
             this.Text = "TollStationForm";
@@ -160,9 +162,9 @@
         private Button btnAdd;
         private Button btnEdit;
         private Button btnDelete;
+        private Label label1;
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn address;
         private DataGridViewTextBoxColumn location;
-        private Label label1;
     }
 }

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TurnpikeGate.Core.Interfaces;
+using TurnpikeGate.Core.TollStations;
 using TurnpikeGate.Core.TollStations.Model;
 using TurnpikeGate.Core.TollStations.Service;
 
@@ -23,7 +24,8 @@ namespace TurnpikeGate.View.AdministratorViews
         private readonly ITrafficLightService _trafficLightService;
         private readonly ICameraService _cameraService;
         private readonly IObserver _observer;
-        public AddTollBoothForm(IObserver observer)
+        private readonly string _tollBoothId;
+        public AddTollBoothForm(IObserver observer, string tollBoothId = "")
         {
             InitializeComponent();
             _observer = observer;
@@ -32,74 +34,128 @@ namespace TurnpikeGate.View.AdministratorViews
             _rampService = Globals.Container.Resolve<IRampService>();
             _trafficLightService = Globals.Container.Resolve<ITrafficLightService>();
             _cameraService = Globals.Container.Resolve<ICameraService>();
+            _tollBoothId = tollBoothId;
             FillComboBoxes();
+            if (tollBoothId != "")
+            {
+                btnAdd.Text = "AZURIRAJ";
+                SetValues();
+            }
         }
 
         public void FillComboBoxes()
         {
-            List<TypeOfPayment> types = Enum.GetValues(typeof(TypeOfPayment)).Cast<TypeOfPayment>().ToList();
-            cbTypes.ValueMember = null;
-            cbTypes.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbTypes.DisplayMember = "Tipovi naplate";
-            cbTypes.DataSource = types;
+            FillTypeComboBox();
 
-            var stations = _tollStationService.GetAll();
-            List<ObjectId> stationsIDs = new List<ObjectId>();
-            stations.ForEach(p =>
-            {
-                stationsIDs.Add(p.ID);
-            });
-            cbStations.ValueMember = null;
-            cbStations.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbStations.DisplayMember = "Stanice";
-            cbStations.DataSource = stationsIDs;
+            FillStationComboBox();
 
-            var cameras = _cameraService.GetAll();
-            List<ObjectId> camerasIDs = new List<ObjectId>();
-            cameras.ForEach(p =>
-            {
-                camerasIDs.Add(p.ID);
-            });
-            cbCameras.ValueMember = null;
-            cbCameras.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbCameras.DisplayMember = "Kamere";
-            cbCameras.DataSource = camerasIDs;
+            FillCameraComboBox();
 
-            var trafficLights = _trafficLightService.GetAll();
-            List<ObjectId> trafficLightsIDs = new List<ObjectId>();
-            trafficLights.ForEach(p =>
-            {
-                trafficLightsIDs.Add(p.ID);
-            });
-            cbTrafficLights.ValueMember = null;
-            cbTrafficLights.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbTrafficLights.DisplayMember = "Semafori";
-            cbTrafficLights.DataSource = trafficLightsIDs;
+            FillTrafficLightComboBox();
 
+            FillRampComboBox();
+        }
+
+        private void FillRampComboBox()
+        {
             var ramps = _rampService.GetAll();
             List<ObjectId> rampsIDs = new List<ObjectId>();
-            ramps.ForEach(p =>
-            {
-                rampsIDs.Add(p.ID);
-            });
+            ramps.ForEach(p => { rampsIDs.Add(p.ID); });
             cbRamps.ValueMember = null;
             cbRamps.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbRamps.DisplayMember = "Rampe";
+            cbRamps.DisplayMember = "ID";
             cbRamps.DataSource = rampsIDs;
         }
 
-        private void InsertTollBooth()
+        private void FillTrafficLightComboBox()
         {
-            TollBooth tollBooth = new TollBooth((TypeOfPayment) cbTypes.SelectedValue, (ObjectId)cbStations.SelectedValue, 
-                (ObjectId) cbRamps.SelectedValue, (ObjectId) cbTrafficLights.SelectedValue,  (ObjectId)cbCameras.SelectedValue);
+            var trafficLights = _trafficLightService.GetAll();
+            List<ObjectId> trafficLightsIDs = new List<ObjectId>();
+            trafficLights.ForEach(p => { trafficLightsIDs.Add(p.ID); });
+            cbTrafficLights.ValueMember = null;
+            cbTrafficLights.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbTrafficLights.DisplayMember = "ID";
+            cbTrafficLights.DataSource = trafficLightsIDs;
+        }
+
+        private void FillCameraComboBox()
+        {
+            var cameras = _cameraService.GetAll();
+            List<ObjectId> camerasIDs = new List<ObjectId>();
+            cameras.ForEach(p => { camerasIDs.Add(p.ID); });
+            cbCameras.ValueMember = null;
+            cbCameras.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbCameras.DisplayMember = "ID";
+            cbCameras.DataSource = camerasIDs;
+        }
+
+        private void FillStationComboBox()
+        {
+            var stations = _tollStationService.GetAll();
+            cbStations.ValueMember = null;
+            cbStations.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbStations.DisplayMember = "Name";
+            cbStations.DataSource = stations;
+        }
+
+        private void FillTypeComboBox()
+        {
+            List<TypeOfPayment> types = Enum.GetValues(typeof(TypeOfPayment)).Cast<TypeOfPayment>().ToList();
+            cbTypes.ValueMember = null;
+            cbTypes.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbTypes.DisplayMember = "TypeOfPayment";
+            cbTypes.DataSource = types;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (_tollBoothId == "")
+                AddTollBooth();
+            else
+                EditTollBooth();
+            this.Close();
+        }
+
+        private void AddTollBooth()
+        {
+            TollBooth tollBooth = new TollBooth((TypeOfPayment)cbTypes.SelectedValue,
+                ((TollStation)cbStations.SelectedValue).ID,
+                (ObjectId)cbRamps.SelectedValue, (ObjectId)cbTrafficLights.SelectedValue, (ObjectId)cbCameras.SelectedValue);
             _tollBoothService.Insert(tollBooth);
             tollBooth.Attach(_observer);
             tollBooth.Notify();
+            MessageBox.Show("Uspesno ste dodali novo naplatno mesto!");
         }
 
-        private void AddTollBoothForm_Load(object sender, EventArgs e)
+        private void EditTollBooth()
         {
-            InsertTollBooth();
+            TollBooth tb = _tollBoothService.GetById(ObjectId.Parse(_tollBoothId));
+            tb.CameraId = ObjectId.Parse(cbCameras.Text);
+            tb.RampId = ObjectId.Parse(cbRamps.Text);
+            tb.TraficLightId = ObjectId.Parse(cbTrafficLights.Text);
+            tb.Type = (TypeOfPayment)cbTypes.SelectedValue;
+            tb.TollStationId = ((TollStation)cbStations.SelectedItem).ID;
+            _tollBoothService.Update(tb);
+            tb.Attach(_observer);
+            tb.Notify();
+            MessageBox.Show("Uspesno ste izmenili naplatno mesto!");
+        }
+        private void SetValues()
+        {
+            TollBooth tollBooth = _tollBoothService.GetById(ObjectId.Parse(_tollBoothId));
+            TollStation ts = _tollStationService.GetById(tollBooth.TollStationId);
+
+            cbStations.Text = ts.Name;
+            cbCameras.Text = tollBooth.CameraId.ToString();
+            cbRamps.Text = tollBooth.RampId.ToString();
+            cbTrafficLights.Text = tollBooth.TraficLightId.ToString();
+            cbTypes.Text = tollBooth.Type.ToString();
+
         }
     }
 }
