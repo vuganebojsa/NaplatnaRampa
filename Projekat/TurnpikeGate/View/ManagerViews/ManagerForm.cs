@@ -14,10 +14,11 @@ namespace TurnpikeGate.View.MainViews
 {
     public partial class ManagerForm : Form
     {
-        private ILoginService _loginService;
+        private readonly ILoginService _loginService;
 
         public ManagerForm(ILoginService loginService)
         {
+            _loginService = loginService;
             InitializeComponent();
         }
 
