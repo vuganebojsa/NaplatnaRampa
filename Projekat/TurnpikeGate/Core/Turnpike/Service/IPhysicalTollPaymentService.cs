@@ -8,7 +8,8 @@ using TurnpikeGate.Core.Turnpike.Model;
 
 namespace TurnpikeGate.Core.Turnpike.Service
 {
-    interface IPhysicalTollPaymentService:IService<PhysicalTollPayment>
+    interface IPhysicalTollPaymentService : IService<PhysicalTollPayment>
     {
+        List<PhysicalTollPayment> GetUntilDate(DateTime untilDate);
     }
 }
