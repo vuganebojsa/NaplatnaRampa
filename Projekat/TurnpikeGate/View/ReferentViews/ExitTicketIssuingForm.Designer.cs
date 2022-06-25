@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExitTicketIssuingForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,8 +43,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbRSD = new System.Windows.Forms.RadioButton();
+            this.rbEUR = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
             this.tbExitStation = new System.Windows.Forms.TextBox();
             this.tbExitTime = new System.Windows.Forms.TextBox();
@@ -62,6 +63,7 @@
             this.pbCar = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.vehiclesTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -194,29 +196,29 @@
             this.label9.TabIndex = 9;
             this.label9.Text = "Preuzet iznos:";
             // 
-            // radioButton1
+            // rbRSD
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton1.Location = new System.Drawing.Point(263, 188);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(79, 36);
-            this.radioButton1.TabIndex = 10;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "RSD";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbRSD.AutoSize = true;
+            this.rbRSD.Checked = true;
+            this.rbRSD.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rbRSD.Location = new System.Drawing.Point(263, 188);
+            this.rbRSD.Name = "rbRSD";
+            this.rbRSD.Size = new System.Drawing.Size(79, 36);
+            this.rbRSD.TabIndex = 10;
+            this.rbRSD.TabStop = true;
+            this.rbRSD.Text = "RSD";
+            this.rbRSD.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbEUR
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton2.Location = new System.Drawing.Point(359, 188);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(77, 36);
-            this.radioButton2.TabIndex = 11;
-            this.radioButton2.Text = "EUR";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbEUR.AutoSize = true;
+            this.rbEUR.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rbEUR.Location = new System.Drawing.Point(359, 188);
+            this.rbEUR.Name = "rbEUR";
+            this.rbEUR.Size = new System.Drawing.Size(77, 36);
+            this.rbEUR.TabIndex = 11;
+            this.rbEUR.Text = "EUR";
+            this.rbEUR.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -269,6 +271,7 @@
             this.tbSumReceived.Name = "tbSumReceived";
             this.tbSumReceived.Size = new System.Drawing.Size(268, 39);
             this.tbSumReceived.TabIndex = 18;
+            this.tbSumReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbReceivedSum_keyUp);
             // 
             // tbChange
             // 
@@ -307,9 +310,9 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.tbTollPrice);
-            this.groupBox3.Controls.Add(this.radioButton2);
+            this.groupBox3.Controls.Add(this.rbEUR);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Controls.Add(this.rbRSD);
             this.groupBox3.Controls.Add(this.tbSumReceived);
             this.groupBox3.Controls.Add(this.tbChange);
             this.groupBox3.Controls.Add(this.label11);
@@ -460,8 +463,8 @@
         private Label label7;
         private Label label8;
         private Label label9;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
+        private RadioButton rbRSD;
+        private RadioButton rbEUR;
         private Label label10;
         private TextBox tbEntranceTime;
         private TextBox tbEntranceStation;
@@ -482,5 +485,6 @@
         private PictureBox pbCar;
         private Label label12;
         private GroupBox groupBox4;
+        private System.Windows.Forms.Timer vehiclesTimer;
     }
 }

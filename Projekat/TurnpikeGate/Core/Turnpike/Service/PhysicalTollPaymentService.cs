@@ -5,18 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using TurnpikeGate.Core.Prices.Model;
+using TurnpikeGate.Core.Prices.Repository;
 using TurnpikeGate.Core.Turnpike.Model;
 using TurnpikeGate.Core.Turnpike.Repository;
 
 namespace TurnpikeGate.Core.Turnpike.Service
 {
-    class PhysicalTollPaymentService:IPhysicalTollPaymentService
+    class PhysicalTollPaymentService : IPhysicalTollPaymentService
     {
         private readonly IPhysicalTollPaymentRepository _physicalTollPaymentRepository;
+        private readonly IPriceListRepository _priceListRepository;
+        private readonly IPriceListEntryRepository _priceListEntryRepository;
 
-        public PhysicalTollPaymentService(IPhysicalTollPaymentRepository physicalTollPaymentRepository)
+        public PhysicalTollPaymentService(IPhysicalTollPaymentRepository physicalTollPaymentRepository, 
+                                          IPriceListEntryRepository priceListEntryRepository, IPriceListRepository priceListRepository)
         {
             _physicalTollPaymentRepository = physicalTollPaymentRepository;
+            _priceListRepository = priceListRepository;
+            _priceListEntryRepository = priceListEntryRepository;
         }
 
         public void Insert(PhysicalTollPayment tollPayment)
@@ -41,6 +47,13 @@ namespace TurnpikeGate.Core.Turnpike.Service
         public PhysicalTollPayment GetById(ObjectId id)
         {
             return _physicalTollPaymentRepository.GetById(id);
+        }
+
+        public double CalculateTollPrice(VehicleType selectedVehicleType, ObjectId roadSectionId, Currency currency)
+        {
+            PriceList activePriceList = _priceListRepository.GetActivePriceList();
+            PriceListEntry priceListEntry = _priceListEntryRepository.GetByParameters(activePriceList.PriceListEntries, selectedVehicleType, roadSectionId, currency);
+            return priceListEntry.Amount.Total;
         }
     }
 }

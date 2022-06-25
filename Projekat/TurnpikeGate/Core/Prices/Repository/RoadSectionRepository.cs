@@ -33,6 +33,11 @@ namespace TurnpikeGate.Core.Prices.Repository
             return _collection.Find(item => item.ID == id).FirstOrDefault();
         }
 
+        public RoadSection GetByLocations(ObjectId entranceStationId, ObjectId exitStationId)
+        {
+            return _collection.Find(item => item.DepartureStationId == entranceStationId && item.DestinationStationId == exitStationId).FirstOrDefault();
+        }
+
         public void Insert(RoadSection entity)
         {
             _collection.InsertOne(entity);
