@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autofac;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,19 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TurnpikeGate.Core.Users.Service;
 
 namespace TurnpikeGate.View.ReferentViews
 {
     public partial class ReferentForm : Form
     {
-        public ReferentForm()
+        private ILoginService _loginService;
+
+        public ReferentForm(ILoginService loginService)
         {
+            _loginService = loginService;
             InitializeComponent();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-
+            _loginService.Logout(this);
         }
 
         private void btnTollPayment_Click(object sender, EventArgs e)

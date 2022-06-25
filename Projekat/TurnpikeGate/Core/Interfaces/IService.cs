@@ -26,7 +26,7 @@ namespace TurnpikeGate.Core.Interfaces
 
     public class BadCredentialsException : Exception
     {
-        public BadCredentialsException() : base("Pogresno korisnicko ime i/ili lozinka.")
+        public BadCredentialsException() : base("Neispravno korisnicko ime i/ili lozinka.")
         {
 
         }
