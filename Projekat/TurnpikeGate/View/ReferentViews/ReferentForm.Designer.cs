@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReferentForm));
             this.pnlControls = new System.Windows.Forms.Panel();
+            this.btnEntrance = new System.Windows.Forms.Button();
             this.btnReportMalfunction = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnTollPayment = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.lblName = new System.Windows.Forms.Label();
             this.pbUser = new System.Windows.Forms.PictureBox();
             this.pnlView = new System.Windows.Forms.Panel();
-            this.btnEntrance = new System.Windows.Forms.Button();
             this.pnlControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.SuspendLayout();
@@ -57,53 +57,79 @@
             this.pnlControls.Size = new System.Drawing.Size(250, 853);
             this.pnlControls.TabIndex = 0;
             // 
+            // btnEntrance
+            // 
+            this.btnEntrance.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnEntrance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEntrance.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnEntrance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEntrance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEntrance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEntrance.Location = new System.Drawing.Point(0, 309);
+            this.btnEntrance.Name = "btnEntrance";
+            this.btnEntrance.Size = new System.Drawing.Size(250, 70);
+            this.btnEntrance.TabIndex = 6;
+            this.btnEntrance.Text = "IZDAVANJE TIKETA";
+            this.btnEntrance.UseVisualStyleBackColor = false;
+            this.btnEntrance.Click += new System.EventHandler(this.btnEntrance_Click);
+            // 
             // btnReportMalfunction
             // 
+            this.btnReportMalfunction.BackColor = System.Drawing.Color.SteelBlue;
             this.btnReportMalfunction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportMalfunction.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnReportMalfunction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportMalfunction.Location = new System.Drawing.Point(0, 445);
+            this.btnReportMalfunction.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnReportMalfunction.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnReportMalfunction.Location = new System.Drawing.Point(0, 443);
             this.btnReportMalfunction.Name = "btnReportMalfunction";
             this.btnReportMalfunction.Size = new System.Drawing.Size(250, 70);
             this.btnReportMalfunction.TabIndex = 5;
             this.btnReportMalfunction.Text = "PREGLED UREDJAJA";
-            this.btnReportMalfunction.UseVisualStyleBackColor = true;
+            this.btnReportMalfunction.UseVisualStyleBackColor = false;
             this.btnReportMalfunction.Click += new System.EventHandler(this.btnReportMalfunction_Click);
             // 
             // btnLogout
             // 
+            this.btnLogout.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLogout.Location = new System.Drawing.Point(0, 783);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(250, 70);
             this.btnLogout.TabIndex = 4;
             this.btnLogout.Text = "ODJAVA";
-            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnTollPayment
             // 
+            this.btnTollPayment.BackColor = System.Drawing.Color.SteelBlue;
             this.btnTollPayment.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTollPayment.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnTollPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTollPayment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTollPayment.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnTollPayment.Location = new System.Drawing.Point(0, 376);
             this.btnTollPayment.Name = "btnTollPayment";
             this.btnTollPayment.Size = new System.Drawing.Size(250, 70);
             this.btnTollPayment.TabIndex = 3;
             this.btnTollPayment.Text = "NAPLATA PUTARINE";
-            this.btnTollPayment.UseVisualStyleBackColor = true;
+            this.btnTollPayment.UseVisualStyleBackColor = false;
             this.btnTollPayment.Click += new System.EventHandler(this.btnTollPayment_Click);
             // 
             // lblRole
             // 
             this.lblRole.AutoSize = true;
-            this.lblRole.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lblRole.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblRole.ForeColor = System.Drawing.Color.SteelBlue;
             this.lblRole.Location = new System.Drawing.Point(50, 245);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(49, 20);
+            this.lblRole.Size = new System.Drawing.Size(57, 23);
             this.lblRole.TabIndex = 2;
             this.lblRole.Text = "Uloga";
             // 
@@ -111,9 +137,10 @@
             // 
             this.lblName.AccessibleDescription = "";
             this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblName.Location = new System.Drawing.Point(50, 215);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(34, 20);
+            this.lblName.Size = new System.Drawing.Size(40, 23);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Ime";
             // 
@@ -135,19 +162,6 @@
             this.pnlView.Name = "pnlView";
             this.pnlView.Size = new System.Drawing.Size(1292, 853);
             this.pnlView.TabIndex = 1;
-            // 
-            // btnEntrance
-            // 
-            this.btnEntrance.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEntrance.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnEntrance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntrance.Location = new System.Drawing.Point(0, 310);
-            this.btnEntrance.Name = "btnEntrance";
-            this.btnEntrance.Size = new System.Drawing.Size(250, 70);
-            this.btnEntrance.TabIndex = 6;
-            this.btnEntrance.Text = "IZDAVANJE TIKETA";
-            this.btnEntrance.UseVisualStyleBackColor = true;
-            this.btnEntrance.Click += new System.EventHandler(this.btnEntrance_Click);
             // 
             // ReferentForm
             // 

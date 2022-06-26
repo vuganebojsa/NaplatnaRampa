@@ -43,17 +43,17 @@ namespace TurnpikeGate.View.ReferentViews
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(209, 185);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(219, 226);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 37);
+            this.label1.Size = new System.Drawing.Size(91, 32);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Tablice";
+            this.label1.Text = "Tablice:";
             // 
             // tbPlates
             // 
             this.tbPlates.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbPlates.Location = new System.Drawing.Point(481, 185);
+            this.tbPlates.Location = new System.Drawing.Point(338, 226);
             this.tbPlates.Name = "tbPlates";
             this.tbPlates.Size = new System.Drawing.Size(397, 42);
             this.tbPlates.TabIndex = 9;
@@ -61,27 +61,28 @@ namespace TurnpikeGate.View.ReferentViews
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(517, 90);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label3.Location = new System.Drawing.Point(373, 133);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(323, 50);
+            this.label3.Size = new System.Drawing.Size(325, 46);
             this.label3.TabIndex = 11;
             this.label3.Text = "IZDAVANJE TIKETA";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(209, 271);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(151, 309);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(206, 37);
+            this.label4.Size = new System.Drawing.Size(159, 32);
             this.label4.TabIndex = 12;
-            this.label4.Text = "MESTO ULASKA";
+            this.label4.Text = "Mesto ulaska:";
             // 
             // tbEntry
             // 
             this.tbEntry.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbEntry.Location = new System.Drawing.Point(481, 268);
+            this.tbEntry.Location = new System.Drawing.Point(338, 309);
             this.tbEntry.Name = "tbEntry";
             this.tbEntry.Size = new System.Drawing.Size(397, 42);
             this.tbEntry.TabIndex = 13;
@@ -92,10 +93,10 @@ namespace TurnpikeGate.View.ReferentViews
             // 
             // tbSuccess
             // 
-            this.tbSuccess.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbSuccess.Location = new System.Drawing.Point(209, 452);
+            this.tbSuccess.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbSuccess.Location = new System.Drawing.Point(191, 441);
             this.tbSuccess.Name = "tbSuccess";
-            this.tbSuccess.Size = new System.Drawing.Size(669, 42);
+            this.tbSuccess.Size = new System.Drawing.Size(669, 43);
             this.tbSuccess.TabIndex = 14;
             // 
             // issuingTimer
