@@ -56,8 +56,9 @@ namespace TurnpikeGate.View.AdministratorViews
             this.pnlControls.Controls.Add(this.pbUser);
             this.pnlControls.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlControls.Location = new System.Drawing.Point(0, 0);
+            this.pnlControls.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlControls.Name = "pnlControls";
-            this.pnlControls.Size = new System.Drawing.Size(250, 853);
+            this.pnlControls.Size = new System.Drawing.Size(219, 640);
             this.pnlControls.TabIndex = 0;
             // 
             // btnLogOut
@@ -68,11 +69,12 @@ namespace TurnpikeGate.View.AdministratorViews
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLogOut.ForeColor = System.Drawing.Color.White;
-            this.btnLogOut.Location = new System.Drawing.Point(0, 783);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 587);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(250, 70);
+            this.btnLogOut.Size = new System.Drawing.Size(219, 52);
             this.btnLogOut.TabIndex = 7;
-            this.btnLogOut.Text = "Odjava";
+            this.btnLogOut.Text = "ODJAVA";
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
@@ -84,11 +86,12 @@ namespace TurnpikeGate.View.AdministratorViews
             this.btnTollBooths.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTollBooths.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTollBooths.ForeColor = System.Drawing.Color.White;
-            this.btnTollBooths.Location = new System.Drawing.Point(0, 369);
+            this.btnTollBooths.Location = new System.Drawing.Point(0, 277);
+            this.btnTollBooths.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTollBooths.Name = "btnTollBooths";
-            this.btnTollBooths.Size = new System.Drawing.Size(250, 70);
+            this.btnTollBooths.Size = new System.Drawing.Size(219, 52);
             this.btnTollBooths.TabIndex = 6;
-            this.btnTollBooths.Text = "Naplatna mesta";
+            this.btnTollBooths.Text = "NAPLATNA MESTA";
             this.btnTollBooths.UseVisualStyleBackColor = false;
             this.btnTollBooths.Click += new System.EventHandler(this.btnTollBooths_Click);
             // 
@@ -100,11 +103,12 @@ namespace TurnpikeGate.View.AdministratorViews
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsers.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUsers.ForeColor = System.Drawing.Color.White;
-            this.btnUsers.Location = new System.Drawing.Point(0, 438);
+            this.btnUsers.Location = new System.Drawing.Point(0, 328);
+            this.btnUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(250, 70);
+            this.btnUsers.Size = new System.Drawing.Size(219, 52);
             this.btnUsers.TabIndex = 5;
-            this.btnUsers.Text = "Korisnici";
+            this.btnUsers.Text = "KORISNICI";
             this.btnUsers.UseVisualStyleBackColor = false;
             this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
@@ -116,11 +120,12 @@ namespace TurnpikeGate.View.AdministratorViews
             this.btnPriceList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPriceList.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPriceList.ForeColor = System.Drawing.Color.White;
-            this.btnPriceList.Location = new System.Drawing.Point(0, 507);
+            this.btnPriceList.Location = new System.Drawing.Point(0, 380);
+            this.btnPriceList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPriceList.Name = "btnPriceList";
-            this.btnPriceList.Size = new System.Drawing.Size(250, 70);
+            this.btnPriceList.Size = new System.Drawing.Size(219, 52);
             this.btnPriceList.TabIndex = 3;
-            this.btnPriceList.Text = "Cenovnici";
+            this.btnPriceList.Text = "CENOVNICI";
             this.btnPriceList.UseVisualStyleBackColor = false;
             this.btnPriceList.Click += new System.EventHandler(this.btnPriceList_Click);
             // 
@@ -132,39 +137,43 @@ namespace TurnpikeGate.View.AdministratorViews
             this.btnTollStation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTollStation.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTollStation.ForeColor = System.Drawing.Color.White;
-            this.btnTollStation.Location = new System.Drawing.Point(0, 300);
+            this.btnTollStation.Location = new System.Drawing.Point(0, 225);
+            this.btnTollStation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTollStation.Name = "btnTollStation";
-            this.btnTollStation.Size = new System.Drawing.Size(250, 70);
+            this.btnTollStation.Size = new System.Drawing.Size(219, 52);
             this.btnTollStation.TabIndex = 2;
-            this.btnTollStation.Text = "Naplatne stanice";
+            this.btnTollStation.Text = "NAPLATNE STANICE";
             this.btnTollStation.UseVisualStyleBackColor = false;
             this.btnTollStation.Click += new System.EventHandler(this.btnTollStation_Click);
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(50, 215);
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblName.Location = new System.Drawing.Point(44, 161);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(34, 20);
+            this.lblName.Size = new System.Drawing.Size(31, 17);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Ime";
             // 
             // lblRole
             // 
             this.lblRole.AutoSize = true;
+            this.lblRole.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblRole.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.lblRole.Location = new System.Drawing.Point(50, 245);
+            this.lblRole.Location = new System.Drawing.Point(44, 184);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(49, 20);
+            this.lblRole.Size = new System.Drawing.Size(44, 17);
             this.lblRole.TabIndex = 1;
             this.lblRole.Text = "Uloga";
             // 
             // pbUser
             // 
             this.pbUser.Image = global::TurnpikeGate.Properties.Resources._219986;
-            this.pbUser.Location = new System.Drawing.Point(50, 50);
+            this.pbUser.Location = new System.Drawing.Point(44, 38);
+            this.pbUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbUser.Name = "pbUser";
-            this.pbUser.Size = new System.Drawing.Size(150, 150);
+            this.pbUser.Size = new System.Drawing.Size(131, 112);
             this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbUser.TabIndex = 0;
             this.pbUser.TabStop = false;
@@ -172,19 +181,21 @@ namespace TurnpikeGate.View.AdministratorViews
             // pnlView
             // 
             this.pnlView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlView.Location = new System.Drawing.Point(250, 0);
+            this.pnlView.Location = new System.Drawing.Point(219, 0);
+            this.pnlView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlView.Name = "pnlView";
-            this.pnlView.Size = new System.Drawing.Size(1292, 853);
+            this.pnlView.Size = new System.Drawing.Size(1130, 640);
             this.pnlView.TabIndex = 1;
             // 
             // AdministratorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1542, 853);
+            this.ClientSize = new System.Drawing.Size(1349, 640);
             this.Controls.Add(this.pnlView);
             this.Controls.Add(this.pnlControls);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AdministratorForm";
             this.Text = "AdministratorForm";
             this.pnlControls.ResumeLayout(false);

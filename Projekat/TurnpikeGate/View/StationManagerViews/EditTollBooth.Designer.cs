@@ -73,9 +73,10 @@ namespace TurnpikeGate.View.StationManagerViews
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(403, 609);
+            this.btnCancel.Location = new System.Drawing.Point(353, 457);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(191, 74);
+            this.btnCancel.Size = new System.Drawing.Size(167, 56);
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "OTKAZI";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -89,9 +90,10 @@ namespace TurnpikeGate.View.StationManagerViews
             this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccept.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAccept.ForeColor = System.Drawing.Color.White;
-            this.btnAccept.Location = new System.Drawing.Point(179, 609);
+            this.btnAccept.Location = new System.Drawing.Point(157, 457);
+            this.btnAccept.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(218, 74);
+            this.btnAccept.Size = new System.Drawing.Size(191, 56);
             this.btnAccept.TabIndex = 16;
             this.btnAccept.Text = "IZMENI";
             this.btnAccept.UseVisualStyleBackColor = false;
@@ -102,9 +104,9 @@ namespace TurnpikeGate.View.StationManagerViews
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(267, 63);
+            this.label1.Location = new System.Drawing.Point(234, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(278, 46);
+            this.label1.Size = new System.Drawing.Size(225, 37);
             this.label1.TabIndex = 9;
             this.label1.Text = "Naplatno Mesto";
             // 
@@ -113,9 +115,9 @@ namespace TurnpikeGate.View.StationManagerViews
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(329, 136);
+            this.label2.Location = new System.Drawing.Point(288, 102);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 37);
+            this.label2.Size = new System.Drawing.Size(89, 30);
             this.label2.TabIndex = 22;
             this.label2.Text = "Uredjaji";
             // 
@@ -125,11 +127,9 @@ namespace TurnpikeGate.View.StationManagerViews
             this.gbRamp.Controls.Add(this.rbRampFalse);
             this.gbRamp.Controls.Add(this.rbRampTrue);
             this.gbRamp.Controls.Add(this.label4);
-            this.gbRamp.Location = new System.Drawing.Point(179, 216);
-            this.gbRamp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbRamp.Location = new System.Drawing.Point(157, 162);
             this.gbRamp.Name = "gbRamp";
-            this.gbRamp.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbRamp.Size = new System.Drawing.Size(362, 105);
+            this.gbRamp.Size = new System.Drawing.Size(317, 79);
             this.gbRamp.TabIndex = 23;
             this.gbRamp.TabStop = false;
             // 
@@ -138,11 +138,9 @@ namespace TurnpikeGate.View.StationManagerViews
             this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.radioButton4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(9, 124);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Location = new System.Drawing.Point(8, 93);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(362, 137);
+            this.groupBox1.Size = new System.Drawing.Size(317, 103);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             // 
@@ -150,10 +148,9 @@ namespace TurnpikeGate.View.StationManagerViews
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton3.Location = new System.Drawing.Point(177, 83);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioButton3.Location = new System.Drawing.Point(155, 62);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(131, 32);
+            this.radioButton3.Size = new System.Drawing.Size(107, 25);
             this.radioButton3.TabIndex = 16;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Neispravna";
@@ -163,10 +160,9 @@ namespace TurnpikeGate.View.StationManagerViews
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton4.Location = new System.Drawing.Point(177, 41);
-            this.radioButton4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioButton4.Location = new System.Drawing.Point(155, 31);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(106, 32);
+            this.radioButton4.Size = new System.Drawing.Size(87, 25);
             this.radioButton4.TabIndex = 15;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Ispravna";
@@ -176,9 +172,9 @@ namespace TurnpikeGate.View.StationManagerViews
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(22, 63);
+            this.label3.Location = new System.Drawing.Point(19, 47);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 32);
+            this.label3.Size = new System.Drawing.Size(70, 25);
             this.label3.TabIndex = 14;
             this.label3.Text = "Rampa";
             // 
@@ -186,10 +182,9 @@ namespace TurnpikeGate.View.StationManagerViews
             // 
             this.rbRampFalse.AutoSize = true;
             this.rbRampFalse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rbRampFalse.Location = new System.Drawing.Point(163, 59);
-            this.rbRampFalse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rbRampFalse.Location = new System.Drawing.Point(143, 44);
             this.rbRampFalse.Name = "rbRampFalse";
-            this.rbRampFalse.Size = new System.Drawing.Size(131, 32);
+            this.rbRampFalse.Size = new System.Drawing.Size(107, 25);
             this.rbRampFalse.TabIndex = 16;
             this.rbRampFalse.TabStop = true;
             this.rbRampFalse.Text = "Neispravna";
@@ -199,10 +194,9 @@ namespace TurnpikeGate.View.StationManagerViews
             // 
             this.rbRampTrue.AutoSize = true;
             this.rbRampTrue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rbRampTrue.Location = new System.Drawing.Point(163, 17);
-            this.rbRampTrue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rbRampTrue.Location = new System.Drawing.Point(143, 13);
             this.rbRampTrue.Name = "rbRampTrue";
-            this.rbRampTrue.Size = new System.Drawing.Size(106, 32);
+            this.rbRampTrue.Size = new System.Drawing.Size(87, 25);
             this.rbRampTrue.TabIndex = 15;
             this.rbRampTrue.TabStop = true;
             this.rbRampTrue.Text = "Ispravna";
@@ -212,9 +206,9 @@ namespace TurnpikeGate.View.StationManagerViews
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(22, 41);
+            this.label4.Location = new System.Drawing.Point(19, 31);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 32);
+            this.label4.Size = new System.Drawing.Size(70, 25);
             this.label4.TabIndex = 14;
             this.label4.Text = "Rampa";
             // 
@@ -224,11 +218,9 @@ namespace TurnpikeGate.View.StationManagerViews
             this.gbCamera.Controls.Add(this.rbCameraFalse);
             this.gbCamera.Controls.Add(this.rbCameraTrue);
             this.gbCamera.Controls.Add(this.label6);
-            this.gbCamera.Location = new System.Drawing.Point(182, 340);
-            this.gbCamera.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbCamera.Location = new System.Drawing.Point(159, 255);
             this.gbCamera.Name = "gbCamera";
-            this.gbCamera.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbCamera.Size = new System.Drawing.Size(362, 105);
+            this.gbCamera.Size = new System.Drawing.Size(317, 79);
             this.gbCamera.TabIndex = 25;
             this.gbCamera.TabStop = false;
             // 
@@ -237,11 +229,9 @@ namespace TurnpikeGate.View.StationManagerViews
             this.groupBox3.Controls.Add(this.radioButton5);
             this.groupBox3.Controls.Add(this.radioButton6);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Location = new System.Drawing.Point(9, 124);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox3.Location = new System.Drawing.Point(8, 93);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox3.Size = new System.Drawing.Size(362, 137);
+            this.groupBox3.Size = new System.Drawing.Size(317, 103);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
             // 
@@ -249,10 +239,9 @@ namespace TurnpikeGate.View.StationManagerViews
             // 
             this.radioButton5.AutoSize = true;
             this.radioButton5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton5.Location = new System.Drawing.Point(177, 83);
-            this.radioButton5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioButton5.Location = new System.Drawing.Point(155, 62);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(131, 32);
+            this.radioButton5.Size = new System.Drawing.Size(107, 25);
             this.radioButton5.TabIndex = 16;
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "Neispravna";
@@ -262,10 +251,9 @@ namespace TurnpikeGate.View.StationManagerViews
             // 
             this.radioButton6.AutoSize = true;
             this.radioButton6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton6.Location = new System.Drawing.Point(177, 41);
-            this.radioButton6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioButton6.Location = new System.Drawing.Point(155, 31);
             this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(106, 32);
+            this.radioButton6.Size = new System.Drawing.Size(87, 25);
             this.radioButton6.TabIndex = 15;
             this.radioButton6.TabStop = true;
             this.radioButton6.Text = "Ispravna";
@@ -275,9 +263,9 @@ namespace TurnpikeGate.View.StationManagerViews
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(22, 63);
+            this.label5.Location = new System.Drawing.Point(19, 47);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 32);
+            this.label5.Size = new System.Drawing.Size(70, 25);
             this.label5.TabIndex = 14;
             this.label5.Text = "Rampa";
             // 
@@ -285,10 +273,9 @@ namespace TurnpikeGate.View.StationManagerViews
             // 
             this.rbCameraFalse.AutoSize = true;
             this.rbCameraFalse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rbCameraFalse.Location = new System.Drawing.Point(163, 59);
-            this.rbCameraFalse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rbCameraFalse.Location = new System.Drawing.Point(143, 44);
             this.rbCameraFalse.Name = "rbCameraFalse";
-            this.rbCameraFalse.Size = new System.Drawing.Size(131, 32);
+            this.rbCameraFalse.Size = new System.Drawing.Size(107, 25);
             this.rbCameraFalse.TabIndex = 16;
             this.rbCameraFalse.TabStop = true;
             this.rbCameraFalse.Text = "Neispravna";
@@ -298,10 +285,9 @@ namespace TurnpikeGate.View.StationManagerViews
             // 
             this.rbCameraTrue.AutoSize = true;
             this.rbCameraTrue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rbCameraTrue.Location = new System.Drawing.Point(163, 17);
-            this.rbCameraTrue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rbCameraTrue.Location = new System.Drawing.Point(143, 13);
             this.rbCameraTrue.Name = "rbCameraTrue";
-            this.rbCameraTrue.Size = new System.Drawing.Size(106, 32);
+            this.rbCameraTrue.Size = new System.Drawing.Size(87, 25);
             this.rbCameraTrue.TabIndex = 15;
             this.rbCameraTrue.TabStop = true;
             this.rbCameraTrue.Text = "Ispravna";
@@ -311,9 +297,9 @@ namespace TurnpikeGate.View.StationManagerViews
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(22, 41);
+            this.label6.Location = new System.Drawing.Point(19, 31);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 32);
+            this.label6.Size = new System.Drawing.Size(76, 25);
             this.label6.TabIndex = 14;
             this.label6.Text = "Kamera";
             // 
@@ -323,11 +309,9 @@ namespace TurnpikeGate.View.StationManagerViews
             this.gbTrafficLight.Controls.Add(this.rbTrafficLightFalse);
             this.gbTrafficLight.Controls.Add(this.rbTrafficLightTrue);
             this.gbTrafficLight.Controls.Add(this.label8);
-            this.gbTrafficLight.Location = new System.Drawing.Point(182, 464);
-            this.gbTrafficLight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gbTrafficLight.Location = new System.Drawing.Point(159, 348);
             this.gbTrafficLight.Name = "gbTrafficLight";
-            this.gbTrafficLight.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gbTrafficLight.Size = new System.Drawing.Size(362, 105);
+            this.gbTrafficLight.Size = new System.Drawing.Size(317, 79);
             this.gbTrafficLight.TabIndex = 26;
             this.gbTrafficLight.TabStop = false;
             // 
@@ -336,11 +320,9 @@ namespace TurnpikeGate.View.StationManagerViews
             this.groupBox5.Controls.Add(this.radioButton9);
             this.groupBox5.Controls.Add(this.radioButton10);
             this.groupBox5.Controls.Add(this.label7);
-            this.groupBox5.Location = new System.Drawing.Point(9, 124);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox5.Location = new System.Drawing.Point(8, 93);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox5.Size = new System.Drawing.Size(362, 137);
+            this.groupBox5.Size = new System.Drawing.Size(317, 103);
             this.groupBox5.TabIndex = 24;
             this.groupBox5.TabStop = false;
             // 
@@ -348,10 +330,9 @@ namespace TurnpikeGate.View.StationManagerViews
             // 
             this.radioButton9.AutoSize = true;
             this.radioButton9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton9.Location = new System.Drawing.Point(177, 83);
-            this.radioButton9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioButton9.Location = new System.Drawing.Point(155, 62);
             this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(131, 32);
+            this.radioButton9.Size = new System.Drawing.Size(107, 25);
             this.radioButton9.TabIndex = 16;
             this.radioButton9.TabStop = true;
             this.radioButton9.Text = "Neispravna";
@@ -361,10 +342,9 @@ namespace TurnpikeGate.View.StationManagerViews
             // 
             this.radioButton10.AutoSize = true;
             this.radioButton10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButton10.Location = new System.Drawing.Point(177, 41);
-            this.radioButton10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioButton10.Location = new System.Drawing.Point(155, 31);
             this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(106, 32);
+            this.radioButton10.Size = new System.Drawing.Size(87, 25);
             this.radioButton10.TabIndex = 15;
             this.radioButton10.TabStop = true;
             this.radioButton10.Text = "Ispravna";
@@ -374,9 +354,9 @@ namespace TurnpikeGate.View.StationManagerViews
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(22, 63);
+            this.label7.Location = new System.Drawing.Point(19, 47);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 32);
+            this.label7.Size = new System.Drawing.Size(70, 25);
             this.label7.TabIndex = 14;
             this.label7.Text = "Rampa";
             // 
@@ -384,10 +364,9 @@ namespace TurnpikeGate.View.StationManagerViews
             // 
             this.rbTrafficLightFalse.AutoSize = true;
             this.rbTrafficLightFalse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rbTrafficLightFalse.Location = new System.Drawing.Point(163, 59);
-            this.rbTrafficLightFalse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rbTrafficLightFalse.Location = new System.Drawing.Point(143, 44);
             this.rbTrafficLightFalse.Name = "rbTrafficLightFalse";
-            this.rbTrafficLightFalse.Size = new System.Drawing.Size(131, 32);
+            this.rbTrafficLightFalse.Size = new System.Drawing.Size(107, 25);
             this.rbTrafficLightFalse.TabIndex = 16;
             this.rbTrafficLightFalse.TabStop = true;
             this.rbTrafficLightFalse.Text = "Neispravan";
@@ -397,10 +376,9 @@ namespace TurnpikeGate.View.StationManagerViews
             // 
             this.rbTrafficLightTrue.AutoSize = true;
             this.rbTrafficLightTrue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rbTrafficLightTrue.Location = new System.Drawing.Point(163, 17);
-            this.rbTrafficLightTrue.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rbTrafficLightTrue.Location = new System.Drawing.Point(143, 13);
             this.rbTrafficLightTrue.Name = "rbTrafficLightTrue";
-            this.rbTrafficLightTrue.Size = new System.Drawing.Size(106, 32);
+            this.rbTrafficLightTrue.Size = new System.Drawing.Size(87, 25);
             this.rbTrafficLightTrue.TabIndex = 15;
             this.rbTrafficLightTrue.TabStop = true;
             this.rbTrafficLightTrue.Text = "Ispravan";
@@ -410,17 +388,17 @@ namespace TurnpikeGate.View.StationManagerViews
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(22, 41);
+            this.label8.Location = new System.Drawing.Point(19, 31);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 32);
+            this.label8.Size = new System.Drawing.Size(82, 25);
             this.label8.TabIndex = 14;
             this.label8.Text = "Semafor";
             // 
             // EditTollBooth
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 772);
+            this.ClientSize = new System.Drawing.Size(681, 579);
             this.Controls.Add(this.gbTrafficLight);
             this.Controls.Add(this.gbCamera);
             this.Controls.Add(this.gbRamp);
@@ -428,8 +406,7 @@ namespace TurnpikeGate.View.StationManagerViews
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "EditTollBooth";
             this.gbRamp.ResumeLayout(false);
             this.gbRamp.PerformLayout();
