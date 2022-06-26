@@ -66,5 +66,10 @@ namespace TurnpikeGate.Core.Turnpike.Service
         {
             return (mileage / (currentTollPayment.ExitTime - currentTollPayment.EntranceTime).TotalMinutes)*60;
         }
+
+        public List<PhysicalTollPayment> GetPending()
+        {
+            return _physicalTollPaymentRepository.GetPending();
+        }
     }
 }

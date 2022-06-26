@@ -11,5 +11,6 @@ namespace TurnpikeGate.Core.Prices.Service
     public interface IRoadSectionService
     {
         public RoadSection GetById(ObjectId roadSectionId);
+        public RoadSection GetByLocations(ObjectId iD1, ObjectId iD2);
     }
 }
