@@ -20,7 +20,6 @@ namespace TurnpikeGate.View.TagSellerViews
             _loginService = loginService;
             InitializeComponent();
             _loginService = loginService;
-            btnTags.BackColor = Color.FromArgb(90, Color.Red);
             InitName();
             
         }

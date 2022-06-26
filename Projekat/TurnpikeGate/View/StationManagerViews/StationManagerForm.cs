@@ -18,6 +18,13 @@ namespace TurnpikeGate.View.StationManagerViews
         {
             InitializeComponent();
             _loginService = loginService;
+            InitName();
+        }
+
+        private void InitName()
+        {
+            lbName.Text = Globals.LoggedUserInfo.Name + " " + Globals.LoggedUserInfo.LastName;
+            lbRole.Text = "Upravnik Stanice";
         }
 
         private void btnTollBooths_Click(object sender, EventArgs e)

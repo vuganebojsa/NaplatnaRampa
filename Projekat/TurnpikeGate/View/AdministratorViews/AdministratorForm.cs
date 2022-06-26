@@ -19,7 +19,15 @@ namespace TurnpikeGate.View.AdministratorViews
         {
             _loginService = loginService;
             InitializeComponent();
+            InitName();
         }
+        private void InitName()
+        {
+            lblName.Text = Globals.LoggedUserInfo.Name + " " + Globals.LoggedUserInfo.LastName;
+            lblRole.Text = "Administrator";
+        }
+
+
 
         public void LoadForm(object Form)
         {

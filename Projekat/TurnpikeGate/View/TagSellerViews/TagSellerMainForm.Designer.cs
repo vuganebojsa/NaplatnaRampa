@@ -45,6 +45,7 @@
             this.pnlControls.BackColor = System.Drawing.SystemColors.Control;
             this.pnlControls.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlControls.BackgroundImage")));
             this.pnlControls.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlControls.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlControls.Controls.Add(this.btnLogout);
             this.pnlControls.Controls.Add(this.btnTags);
             this.pnlControls.Controls.Add(this.lbRole);
@@ -59,15 +60,16 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLogout.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLogout.Location = new System.Drawing.Point(0, 619);
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Location = new System.Drawing.Point(0, 617);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(201, 56);
+            this.btnLogout.Size = new System.Drawing.Size(199, 56);
             this.btnLogout.TabIndex = 5;
             this.btnLogout.Text = "ODJAVA";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -75,12 +77,13 @@
             // 
             // btnTags
             // 
-            this.btnTags.BackColor = System.Drawing.Color.Transparent;
+            this.btnTags.BackColor = System.Drawing.Color.SteelBlue;
             this.btnTags.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnTags.FlatAppearance.BorderSize = 0;
             this.btnTags.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTags.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnTags.Location = new System.Drawing.Point(2, 302);
+            this.btnTags.ForeColor = System.Drawing.Color.White;
+            this.btnTags.Location = new System.Drawing.Point(-1, 302);
             this.btnTags.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnTags.Name = "btnTags";
             this.btnTags.Size = new System.Drawing.Size(206, 56);
@@ -94,7 +97,7 @@
             this.lbRole.AutoSize = true;
             this.lbRole.BackColor = System.Drawing.Color.Transparent;
             this.lbRole.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbRole.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbRole.ForeColor = System.Drawing.Color.SteelBlue;
             this.lbRole.Location = new System.Drawing.Point(40, 220);
             this.lbRole.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbRole.Name = "lbRole";

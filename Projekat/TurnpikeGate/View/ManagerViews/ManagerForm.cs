@@ -20,6 +20,12 @@ namespace TurnpikeGate.View.MainViews
         {
             _loginService = loginService;
             InitializeComponent();
+            InitName();
+        }
+        private void InitName()
+        {
+            lbName.Text = Globals.LoggedUserInfo.Name + " " + Globals.LoggedUserInfo.LastName;
+            lbRole.Text = "Upravnik";
         }
 
         private void btnFirstSurvey_Click(object sender, EventArgs e)
