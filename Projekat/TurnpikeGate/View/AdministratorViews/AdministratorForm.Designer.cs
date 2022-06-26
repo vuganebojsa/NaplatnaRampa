@@ -62,67 +62,82 @@ namespace TurnpikeGate.View.AdministratorViews
             // 
             // btnLogOut
             // 
+            this.btnLogOut.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogOut.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnLogOut.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogOut.ForeColor = System.Drawing.Color.White;
             this.btnLogOut.Location = new System.Drawing.Point(0, 783);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(250, 70);
             this.btnLogOut.TabIndex = 7;
             this.btnLogOut.Text = "Odjava";
-            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnTollBooths
             // 
+            this.btnTollBooths.BackColor = System.Drawing.Color.SteelBlue;
             this.btnTollBooths.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTollBooths.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnTollBooths.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnTollBooths.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTollBooths.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTollBooths.ForeColor = System.Drawing.Color.White;
             this.btnTollBooths.Location = new System.Drawing.Point(0, 369);
             this.btnTollBooths.Name = "btnTollBooths";
             this.btnTollBooths.Size = new System.Drawing.Size(250, 70);
             this.btnTollBooths.TabIndex = 6;
             this.btnTollBooths.Text = "Naplatna mesta";
-            this.btnTollBooths.UseVisualStyleBackColor = true;
+            this.btnTollBooths.UseVisualStyleBackColor = false;
             this.btnTollBooths.Click += new System.EventHandler(this.btnTollBooths_Click);
             // 
             // btnUsers
             // 
+            this.btnUsers.BackColor = System.Drawing.Color.SteelBlue;
             this.btnUsers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUsers.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnUsers.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsers.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnUsers.ForeColor = System.Drawing.Color.White;
             this.btnUsers.Location = new System.Drawing.Point(0, 438);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Size = new System.Drawing.Size(250, 70);
             this.btnUsers.TabIndex = 5;
             this.btnUsers.Text = "Korisnici";
-            this.btnUsers.UseVisualStyleBackColor = true;
+            this.btnUsers.UseVisualStyleBackColor = false;
             this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // btnPriceList
             // 
+            this.btnPriceList.BackColor = System.Drawing.Color.SteelBlue;
             this.btnPriceList.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPriceList.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnPriceList.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnPriceList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPriceList.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPriceList.ForeColor = System.Drawing.Color.White;
             this.btnPriceList.Location = new System.Drawing.Point(0, 507);
             this.btnPriceList.Name = "btnPriceList";
             this.btnPriceList.Size = new System.Drawing.Size(250, 70);
             this.btnPriceList.TabIndex = 3;
             this.btnPriceList.Text = "Cenovnici";
-            this.btnPriceList.UseVisualStyleBackColor = true;
+            this.btnPriceList.UseVisualStyleBackColor = false;
             this.btnPriceList.Click += new System.EventHandler(this.btnPriceList_Click);
             // 
             // btnTollStation
             // 
+            this.btnTollStation.BackColor = System.Drawing.Color.SteelBlue;
             this.btnTollStation.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTollStation.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnTollStation.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnTollStation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTollStation.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTollStation.ForeColor = System.Drawing.Color.White;
             this.btnTollStation.Location = new System.Drawing.Point(0, 300);
             this.btnTollStation.Name = "btnTollStation";
             this.btnTollStation.Size = new System.Drawing.Size(250, 70);
             this.btnTollStation.TabIndex = 2;
             this.btnTollStation.Text = "Naplatne stanice";
-            this.btnTollStation.UseVisualStyleBackColor = true;
+            this.btnTollStation.UseVisualStyleBackColor = false;
             this.btnTollStation.Click += new System.EventHandler(this.btnTollStation_Click);
             // 
             // lblName
