@@ -27,7 +27,6 @@ namespace TurnpikeGate.View.ReferentViews
 
         public EntranceTicketIssuingForm()
         {
-
             InitializeComponent();
             _tollStationService = Globals.Container.Resolve<ITollStationService>();
             _physicalTollPaymentService = Globals.Container.Resolve<IPhysicalTollPaymentService>();
@@ -37,9 +36,6 @@ namespace TurnpikeGate.View.ReferentViews
             InitPlatesTimer();
             GenerateVehicleThreads();
             InitIssuingTimer();
-
-
-
         }
 
         private void IssueTicket()

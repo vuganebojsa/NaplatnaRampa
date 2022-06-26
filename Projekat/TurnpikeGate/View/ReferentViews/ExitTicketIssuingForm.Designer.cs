@@ -86,7 +86,7 @@
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
             this.label1.Location = new System.Drawing.Point(181, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(349, 46);
+            this.label1.Size = new System.Drawing.Size(337, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "NAPLATA PUTARINE";
             // 
@@ -212,6 +212,7 @@
             this.rbRSD.TabStop = true;
             this.rbRSD.Text = "RSD";
             this.rbRSD.UseVisualStyleBackColor = true;
+            this.rbRSD.CheckedChanged += new System.EventHandler(this.rbRSD_CheckedChanged);
             // 
             // rbEUR
             // 
@@ -223,6 +224,7 @@
             this.rbEUR.TabIndex = 11;
             this.rbEUR.Text = "EUR";
             this.rbEUR.UseVisualStyleBackColor = true;
+            this.rbEUR.CheckedChanged += new System.EventHandler(this.rbEUR_CheckedChanged);
             // 
             // label10
             // 

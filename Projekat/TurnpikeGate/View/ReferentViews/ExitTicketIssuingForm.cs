@@ -102,8 +102,8 @@ namespace TurnpikeGate.View.ReferentViews
         private void CalculateTollPrice(RoadSection roadSection)
         {
             Currency currency = GetSelectedCurrency();
+            Console.WriteLine(currency);
             tbTollPrice.Text = _physicalTollPaymentService.CalculateTollPrice(_selectedVehicleType, roadSection.ID, currency, out _priceListEntryId).ToString();
-            Console.WriteLine(_priceListEntryId);
         }
 
         private Currency GetSelectedCurrency()
@@ -266,6 +266,22 @@ namespace TurnpikeGate.View.ReferentViews
             RaiseRamp();
             btnRaiseRamp.Enabled = false;
 
+        }
+
+        private void rbRSD_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbRSD.Checked)
+            {
+                CalculateTollPrice(_selectedRoadSection);
+            }
+        }
+
+        private void rbEUR_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbEUR.Checked)
+            {
+                CalculateTollPrice(_selectedRoadSection);
+            }
         }
     }
 }
