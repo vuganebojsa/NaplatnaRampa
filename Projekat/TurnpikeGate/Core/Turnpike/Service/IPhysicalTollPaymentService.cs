@@ -15,5 +15,6 @@ namespace TurnpikeGate.Core.Turnpike.Service
         double CalculateTollPrice(VehicleType selectedVehicleType, ObjectId roadSectionId, Currency currency, out ObjectId priceListEntryId);
         List<PhysicalTollPayment> GetUntilDate(DateTime untilDate);
         double CalculateVelocity(PhysicalTollPayment currentTollPayment, double mileage);
+        List<PhysicalTollPayment> GetPending();
     }
 }

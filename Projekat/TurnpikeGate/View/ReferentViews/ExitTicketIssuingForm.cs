@@ -34,10 +34,7 @@ namespace TurnpikeGate.View.ReferentViews
         private readonly ITollStationService _tollStationService;
         private readonly IPriceListEntryService _priceListEntryService;
         private readonly IPhysicalTollPaymentService _physicalTollPaymentService;
-
-        private readonly IPhysicalTollPaymentRepository _physicalTollPaymentRepository;
-        private readonly IRoadSectionRepository _roadSectionRepository;
-        private readonly IPriceListEntryRepository _priceListEntryRepository;
+        private readonly IRoadSectionService _roadSectionService;
         private readonly IRampService _rampService;
         private readonly ITollBoothService _boothService;
 
@@ -59,24 +56,25 @@ namespace TurnpikeGate.View.ReferentViews
             _tollStationService = Globals.Container.Resolve<ITollStationService>();
             _priceListEntryService = Globals.Container.Resolve<IPriceListEntryService>();
             _physicalTollPaymentService = Globals.Container.Resolve<IPhysicalTollPaymentService>();
-            _physicalTollPaymentRepository = Globals.Container.Resolve<IPhysicalTollPaymentRepository>();
-            _roadSectionRepository = Globals.Container.Resolve<IRoadSectionRepository>();
-            _priceListEntryRepository = Globals.Container.Resolve<IPriceListEntryRepository>();
+            _roadSectionService = Globals.Container.Resolve<IRoadSectionService>();
+            _rampService = Globals.Container.Resolve<IRampService>();
+            _boothService = Globals.Container.Resolve<ITollBoothService>();
 
+            InitializeFields();
+            InitTimer();
+            StartSimulation();
+        }
+
+        private void InitializeFields()
+        {
             _selectedPicture = pbCar;
             _selectedVehicleType = VehicleType.AUTOMOBILE;
             _exitStation = _tollStationService.GetById(StationInformation.ExitStationId);
 
             _vehicleQueue = new List<PhysicalTollPayment>();
             tbExitStation.Text = _exitStation.Name;
-            InitTimer();
-            StartSimulation();
-
-            _rampService = Globals.Container.Resolve<IRampService>();
-            _boothService = Globals.Container.Resolve<ITollBoothService>();
             tollBooth = _boothService.GetById(StationInformation.TollBoothId);
             ramp = _rampService.GetById(tollBooth.RampId);
-
         }
 
         private void pbCar_Click(object sender, EventArgs e)
@@ -136,7 +134,7 @@ namespace TurnpikeGate.View.ReferentViews
         }
         public void StartSimulation()
         {
-            List<PhysicalTollPayment> tollPayments = _physicalTollPaymentRepository.GetPending();
+            List<PhysicalTollPayment> tollPayments = _physicalTollPaymentService.GetPending();
 
             int i = 0;
 
@@ -181,7 +179,7 @@ namespace TurnpikeGate.View.ReferentViews
             tbEntranceTime.Text = physicalTollPayment.EntranceTime.ToString();
             tbExitTime.Text = DateTime.Now.ToString();
             _currentTollPayment.ExitTime = DateTime.Now;
-            _selectedRoadSection = _roadSectionRepository.GetByLocations(_entranceStation.ID, _exitStation.ID);
+            _selectedRoadSection = _roadSectionService.GetByLocations(_entranceStation.ID, _exitStation.ID);
             tbMileage.Text = _selectedRoadSection.Mileage.ToString();
             tbVelocity.Text = ((int)_physicalTollPaymentService.CalculateVelocity(_currentTollPayment, _selectedRoadSection.Mileage)).ToString();
         }
@@ -211,7 +209,7 @@ namespace TurnpikeGate.View.ReferentViews
                 _currentTollPayment.ReferentId = Globals.LoggedUser.UserId;
                 _currentTollPayment.PriceListEntryId = _priceListEntryId;
 
-                _physicalTollPaymentRepository.Update(_currentTollPayment);
+                _physicalTollPaymentService.Update(_currentTollPayment);
 
                 MessageBox.Show("Putarina naplacena, tiket uspesno izdat :).", "Uspeh");
                 btnRaiseRamp.Enabled = true;
@@ -227,6 +225,7 @@ namespace TurnpikeGate.View.ReferentViews
             tbTollPrice.Text = "";
             tbSumReceived.Text = "";
             tbChange.Text = "";
+            _selectedPicture.BackColor = Color.Transparent;
         }
 
         

@@ -23,5 +23,9 @@ namespace TurnpikeGate.Core.Prices.Service
             return _roadSectionRepository.GetById(id);
         }
 
+        public RoadSection GetByLocations(ObjectId entranceStationId, ObjectId exitStationId)
+        {
+            return _roadSectionRepository.GetByLocations(entranceStationId, exitStationId);
+        }
     }
 }
