@@ -17,11 +17,11 @@ namespace TurnpikeGate.Core.TollStations.Model
         [BsonElement("toolBoothId")]
         public ObjectId ToolBoothId { get; set; }
 
-        [BsonElement("state")]
-        public State State { get; set; }
-
         [BsonElement("isWorking")]
         public bool IsWorking { get; set; }
+
+        [BsonElement("State")]
+        public State State { get; set; }
 
         public Ramp(ObjectId toolBoothId, bool isWorking = true)
         {

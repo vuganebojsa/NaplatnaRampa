@@ -88,6 +88,7 @@ namespace TurnpikeGate.View.AdministratorViews
         private void AddTollBooth()
         {
             var ramp = new Ramp(ObjectId.Empty, cbRamps.Text == "ISPRAVNO");
+            ramp.State = null;
             var camera = new Camera(ObjectId.Empty, cbCameras.Text == "ISPRAVNO");
             var trafficLight = new TraficLight(ObjectId.Empty, cbTrafficLights.Text == "ISPRAVNO");
             
@@ -97,7 +98,6 @@ namespace TurnpikeGate.View.AdministratorViews
             
 
             ramp.ToolBoothId = tollBooth.ID;
-            ramp.ChangeState(new Lowered(ramp));
             camera.ToolBoothId = tollBooth.ID;
             trafficLight.ToolBoothId = tollBooth.ID;
             _rampService.Insert(ramp);
@@ -119,6 +119,7 @@ namespace TurnpikeGate.View.AdministratorViews
             var trafficLight = _trafficLightService.GetById(tb.TrafficLightId);
 
             ramp.IsWorking = cbRamps.Text == "ISPRAVNO";
+            ramp.State = null;
             camera.IsWorking = cbCameras.Text == "ISPRAVNO";
             trafficLight.IsWorking = cbTrafficLights.Text == "ISPRAVNO";
             tb.Type = (TypeOfPayment)cbTypes.SelectedValue;
