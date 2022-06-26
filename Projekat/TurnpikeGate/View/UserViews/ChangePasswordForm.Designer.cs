@@ -38,49 +38,57 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(115, 102);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label1.Location = new System.Drawing.Point(60, 67);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(591, 32);
+            this.label1.Size = new System.Drawing.Size(728, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "Izmenite inicijalnu lozinku koju Vam je dodelio admin:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(167, 143);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label2.Location = new System.Drawing.Point(93, 128);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(472, 23);
+            this.label2.Size = new System.Drawing.Size(632, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "Izmenom inicijalne lozinke aktivirate nalog za dalje korisenje.";
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(253, 202);
+            this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbPassword.Location = new System.Drawing.Point(250, 207);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.PlaceholderText = "nova lozinka";
-            this.tbPassword.Size = new System.Drawing.Size(314, 27);
+            this.tbPassword.Size = new System.Drawing.Size(314, 38);
             this.tbPassword.TabIndex = 2;
             // 
             // tbRepeatedPass
             // 
-            this.tbRepeatedPass.Location = new System.Drawing.Point(253, 254);
+            this.tbRepeatedPass.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbRepeatedPass.Location = new System.Drawing.Point(250, 259);
             this.tbRepeatedPass.Name = "tbRepeatedPass";
             this.tbRepeatedPass.PasswordChar = '*';
             this.tbRepeatedPass.PlaceholderText = "ponovite novu lozinku";
-            this.tbRepeatedPass.Size = new System.Drawing.Size(314, 27);
+            this.tbRepeatedPass.Size = new System.Drawing.Size(314, 38);
             this.tbRepeatedPass.TabIndex = 3;
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(363, 317);
+            this.btnConfirm.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnConfirm.ForeColor = System.Drawing.Color.White;
+            this.btnConfirm.Location = new System.Drawing.Point(301, 324);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(94, 29);
+            this.btnConfirm.Size = new System.Drawing.Size(210, 58);
             this.btnConfirm.TabIndex = 4;
-            this.btnConfirm.Text = "Potvrdi";
-            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Text = "POTVRDI";
+            this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // ChangePasswordForm
