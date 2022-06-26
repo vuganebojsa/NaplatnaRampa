@@ -36,12 +36,14 @@
             this.lblName = new System.Windows.Forms.Label();
             this.pbUser = new System.Windows.Forms.PictureBox();
             this.pnlView = new System.Windows.Forms.Panel();
+            this.btnReportMalfunction = new System.Windows.Forms.Button();
             this.pnlControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlControls
             // 
+            this.pnlControls.Controls.Add(this.btnReportMalfunction);
             this.pnlControls.Controls.Add(this.btnLogout);
             this.pnlControls.Controls.Add(this.btnTollPayment);
             this.pnlControls.Controls.Add(this.lblRole);
@@ -119,6 +121,19 @@
             this.pnlView.Size = new System.Drawing.Size(1292, 853);
             this.pnlView.TabIndex = 1;
             // 
+            // btnReportMalfunction
+            // 
+            this.btnReportMalfunction.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportMalfunction.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnReportMalfunction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportMalfunction.Location = new System.Drawing.Point(0, 369);
+            this.btnReportMalfunction.Name = "btnReportMalfunction";
+            this.btnReportMalfunction.Size = new System.Drawing.Size(250, 70);
+            this.btnReportMalfunction.TabIndex = 5;
+            this.btnReportMalfunction.Text = "PREGLED UREDJAJA";
+            this.btnReportMalfunction.UseVisualStyleBackColor = true;
+            this.btnReportMalfunction.Click += new System.EventHandler(this.btnReportMalfunction_Click);
+            // 
             // ReferentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -145,5 +160,6 @@
         private Label lblName;
         private PictureBox pbUser;
         private Panel pnlView;
+        private Button btnReportMalfunction;
     }
 }
