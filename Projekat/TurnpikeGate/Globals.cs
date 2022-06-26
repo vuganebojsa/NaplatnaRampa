@@ -13,6 +13,7 @@ namespace TurnpikeGate
     {
         public static IContainer Container;
         public static Credentials LoggedUser;
+        public static User LoggedUserInfo;
         public static void Load()
         {
             var containerBuilder = new ContainerBuilder();

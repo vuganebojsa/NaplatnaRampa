@@ -18,7 +18,11 @@ using TurnpikeGate.Core.TollStations;
 using TurnpikeGate.Core.TollStations.Service;
 using TurnpikeGate.Core.Turnpike.Model;
 using TurnpikeGate.Core.Turnpike.Repository;
+using TurnpikeGate.Core.TollStations.Model;
+using TurnpikeGate.Core.TollStations.Service;
+using TurnpikeGate.Core.TollStations.States;
 using TurnpikeGate.Core.Turnpike.Service;
+using TurnpikeGate.Core.Users.Model;
 
 namespace TurnpikeGate.View.ReferentViews
 {
@@ -34,6 +38,8 @@ namespace TurnpikeGate.View.ReferentViews
         private readonly IPhysicalTollPaymentRepository _physicalTollPaymentRepository;
         private readonly IRoadSectionRepository _roadSectionRepository;
         private readonly IPriceListEntryRepository _priceListEntryRepository;
+        private readonly IRampService _rampService;
+        private readonly ITollBoothService _boothService;
 
 
         private List<System.Threading.Timer> _timers;
@@ -43,6 +49,9 @@ namespace TurnpikeGate.View.ReferentViews
         private PhysicalTollPayment _currentTollPayment;
         private RoadSection _selectedRoadSection;
         private ObjectId _priceListEntryId;
+        private TollBooth tollBooth;
+        Ramp ramp;
+        int tickCount = 0;
 
         public ExitTicketIssuingForm()
         {
@@ -62,6 +71,12 @@ namespace TurnpikeGate.View.ReferentViews
             tbExitStation.Text = _exitStation.Name;
             InitTimer();
             StartSimulation();
+
+            _rampService = Globals.Container.Resolve<IRampService>();
+            _boothService = Globals.Container.Resolve<ITollBoothService>();
+            tollBooth = _boothService.GetById(StationInformation.TollBoothId);
+            ramp = _rampService.GetById(tollBooth.RampId);
+
         }
 
         private void pbCar_Click(object sender, EventArgs e)
@@ -196,8 +211,7 @@ namespace TurnpikeGate.View.ReferentViews
                 _physicalTollPaymentRepository.Update(_currentTollPayment);
 
                 MessageBox.Show("Putarina naplacena, tiket uspesno izdat :).", "Uspeh");
-                _vehicleQueue.RemoveAt(0);
-                ClearFields();
+                btnRaiseRamp.Enabled = true;
             }
         }
 
@@ -210,6 +224,48 @@ namespace TurnpikeGate.View.ReferentViews
             tbTollPrice.Text = "";
             tbSumReceived.Text = "";
             tbChange.Text = "";
+        }
+
+        
+
+        public void RaiseRamp( )
+        {
+            
+            ramp.ChangeState(new Raising(ramp));
+            lbRamp.Text = "Rampa se dize!";
+            InitRampStateTimer();
+
+        }
+
+        private void rampTimer_Tick(object sender, EventArgs e)
+        {
+            if (tickCount < 3)
+            {
+                lbRamp.Text = ramp.State.Do();
+                tickCount++;
+            }
+            else 
+            {
+                rampTimer.Enabled = false;
+                tickCount = 0;
+                ClearFields();
+                _vehicleQueue.RemoveAt(0);
+            }
+        }
+
+        private void InitRampStateTimer() 
+        {
+            rampTimer = new System.Windows.Forms.Timer();
+            rampTimer.Tick += new EventHandler(rampTimer_Tick);
+            rampTimer.Interval = 3000;
+            rampTimer.Start();
+        }
+
+        private void btnRaiseRamp_Click_1(object sender, EventArgs e)
+        {
+            RaiseRamp();
+            btnRaiseRamp.Enabled = false;
+
         }
     }
 }

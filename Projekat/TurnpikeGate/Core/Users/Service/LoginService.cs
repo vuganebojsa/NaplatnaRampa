@@ -23,6 +23,7 @@ namespace TurnpikeGate.Core.Users.Service
         public LoginService(ICredentialsRepository credentialsRepository)
         {
             _credentialsRepository = credentialsRepository;
+           
         }
 
         public void Login(string username, string password)
