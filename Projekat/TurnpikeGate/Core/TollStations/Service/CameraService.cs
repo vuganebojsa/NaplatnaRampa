@@ -34,6 +34,11 @@ namespace TurnpikeGate.Core.TollStations.Service
             return _cameraRepository.GetById(id);
         }
 
+        public Camera GetByTollBoothId(ObjectId tollBoothId)
+        {
+            return _cameraRepository.GetByTollBoothId(tollBoothId);
+        }
+
         public void Insert(Camera cameraId)
         {
             _cameraRepository.Insert(cameraId);
