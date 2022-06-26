@@ -111,9 +111,9 @@ namespace TurnpikeGate.View.AdministratorViews
             // 
             this.btnAdd.BackColor = System.Drawing.Color.SteelBlue;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(231, 403);
+            this.btnAdd.Location = new System.Drawing.Point(119, 397);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(152, 63);
             this.btnAdd.TabIndex = 5;
@@ -175,9 +175,9 @@ namespace TurnpikeGate.View.AdministratorViews
             // 
             this.btnBack.BackColor = System.Drawing.Color.SteelBlue;
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(390, 403);
+            this.btnBack.Location = new System.Drawing.Point(278, 397);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(137, 63);
             this.btnBack.TabIndex = 11;
@@ -200,7 +200,7 @@ namespace TurnpikeGate.View.AdministratorViews
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 524);
+            this.ClientSize = new System.Drawing.Size(546, 513);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label5);
