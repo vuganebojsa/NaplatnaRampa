@@ -13,7 +13,6 @@ using System.Windows.Forms;
 using TurnpikeGate.Core.Prices.Model;
 using TurnpikeGate.Core.Prices.Repository;
 using TurnpikeGate.Core.Prices.Service;
-using TurnpikeGate.Core.Simulation;
 using TurnpikeGate.Core.TollStations;
 using TurnpikeGate.Core.TollStations.Service;
 using TurnpikeGate.Core.Turnpike.Model;
