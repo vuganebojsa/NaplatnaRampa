@@ -52,10 +52,10 @@ namespace TurnpikeGate.View.MainViews
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.Location = new System.Drawing.Point(710, 528);
+            this.btnPrint.Location = new System.Drawing.Point(763, 528);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(182, 45);
+            this.btnPrint.Size = new System.Drawing.Size(182, 53);
             this.btnPrint.TabIndex = 16;
             this.btnPrint.Text = "STAMPAJ";
             this.btnPrint.UseVisualStyleBackColor = false;
@@ -78,11 +78,11 @@ namespace TurnpikeGate.View.MainViews
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnShow.ForeColor = System.Drawing.Color.White;
-            this.btnShow.Location = new System.Drawing.Point(541, 528);
+            this.btnShow.Location = new System.Drawing.Point(534, 528);
             this.btnShow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShow.Name = "btnShow";
             this.btnShow.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.btnShow.Size = new System.Drawing.Size(163, 45);
+            this.btnShow.Size = new System.Drawing.Size(223, 53);
             this.btnShow.TabIndex = 16;
             this.btnShow.Text = "PRIKAZI STANICU";
             this.btnShow.UseVisualStyleBackColor = false;
