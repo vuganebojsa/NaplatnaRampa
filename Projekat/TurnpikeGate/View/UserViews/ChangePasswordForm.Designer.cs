@@ -38,11 +38,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(60, 67);
+            this.label1.Location = new System.Drawing.Point(35, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(728, 41);
+            this.label1.Size = new System.Drawing.Size(781, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "Izmenite inicijalnu lozinku koju Vam je dodelio admin:";
             // 
@@ -83,7 +83,7 @@
             this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnConfirm.Location = new System.Drawing.Point(301, 324);
+            this.btnConfirm.Location = new System.Drawing.Point(299, 360);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(210, 58);
             this.btnConfirm.TabIndex = 4;
@@ -95,7 +95,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(859, 488);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.tbRepeatedPass);
             this.Controls.Add(this.tbPassword);
