@@ -76,8 +76,8 @@ namespace TurnpikeGate.View.ManagerViews
                             incomeRSD += entry.Amount.Total;
                         else
                             incomeEUR += entry.Amount.Total;
+                        timesVisited++;
                     }
-                    timesVisited++;
                 });
                 int index = dgvReport.Rows.Add();
                 dgvReport.Rows[index].Cells["station"].Value = s.Name;

@@ -51,7 +51,7 @@ namespace TurnpikeGate.Core.Turnpike.Service
 
         public double CalculateTollPrice(VehicleType selectedVehicleType, ObjectId roadSectionId, Currency currency, out ObjectId priceListEntryId)
         {
-            PriceList activePriceList = _priceListRepository.GetActivePriceList();
+            PriceList activePriceList = _priceListRepository.GetActive();
             PriceListEntry priceListEntry = _priceListEntryRepository.GetByParameters(activePriceList.PriceListEntries, selectedVehicleType, roadSectionId, currency);
             priceListEntryId = priceListEntry.ID;
             return priceListEntry.Amount.Total;

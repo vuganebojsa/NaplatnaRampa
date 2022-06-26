@@ -40,7 +40,7 @@ namespace TurnpikeGate.Core.Turnpike.Repository
         
         public List<PhysicalTollPayment> GetUntilDate(DateTime untilDate)
         {
-            return _collection.Find(item => item.ExitTime < untilDate).ToList();
+            return _collection.Find(item => item.ExitTime >= untilDate && item.PriceListEntryId != ObjectId.Empty).ToList();
         }
 
         public void Insert(PhysicalTollPayment entity)
