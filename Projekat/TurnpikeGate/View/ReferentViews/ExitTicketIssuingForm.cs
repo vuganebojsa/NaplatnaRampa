@@ -62,8 +62,6 @@ namespace TurnpikeGate.View.ReferentViews
             tbExitStation.Text = _exitStation.Name;
             InitTimer();
             StartSimulation();
-
-
         }
 
         private void pbCar_Click(object sender, EventArgs e)
@@ -193,7 +191,6 @@ namespace TurnpikeGate.View.ReferentViews
                 _currentTollPayment.RoadSectionId = _selectedRoadSection.ID;
                 _currentTollPayment.PriceListEntryId = _selectedRoadSection.ID;
                 _currentTollPayment.ReferentId = Globals.LoggedUser.UserId;
-                //TODO povezati price list entry
                 _currentTollPayment.PriceListEntryId = _priceListEntryId;
 
                 _physicalTollPaymentRepository.Update(_currentTollPayment);
