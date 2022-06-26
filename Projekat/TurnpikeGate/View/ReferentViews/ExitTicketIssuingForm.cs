@@ -99,7 +99,6 @@ namespace TurnpikeGate.View.ReferentViews
         private void CalculateTollPrice(RoadSection roadSection)
         {
             Currency currency = GetSelectedCurrency();
-            Console.WriteLine(currency);
             tbTollPrice.Text = _physicalTollPaymentService.CalculateTollPrice(_selectedVehicleType, roadSection.ID, currency, out _priceListEntryId).ToString();
         }
 
@@ -172,7 +171,6 @@ namespace TurnpikeGate.View.ReferentViews
 
             tbPlates.Text = physicalTollPayment.RegistrationPlate;
 
-            Console.WriteLine(physicalTollPayment.EntranceStationId);
             _entranceStation = _tollStationService.GetById(physicalTollPayment.EntranceStationId);
             tbEntranceStation.Text = _entranceStation.Name;
 
