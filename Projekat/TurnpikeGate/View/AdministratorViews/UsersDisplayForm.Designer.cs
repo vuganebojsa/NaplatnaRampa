@@ -51,7 +51,7 @@ namespace TurnpikeGate.View.AdministratorViews
             this.email,
             this.phoneNumber,
             this.salary});
-            this.dgvUsers.Location = new System.Drawing.Point(23, 114);
+            this.dgvUsers.Location = new System.Drawing.Point(61, 111);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.RowTemplate.Height = 29;
