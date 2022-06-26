@@ -44,7 +44,7 @@
             this.tbUsername.Location = new System.Drawing.Point(170, 201);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.PlaceholderText = "korisnicko ime";
-            this.tbUsername.Size = new System.Drawing.Size(278, 38);
+            this.tbUsername.Size = new System.Drawing.Size(354, 38);
             this.tbUsername.TabIndex = 0;
             // 
             // tbPassword
@@ -54,7 +54,7 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.PlaceholderText = "lozinka";
-            this.tbPassword.Size = new System.Drawing.Size(278, 38);
+            this.tbPassword.Size = new System.Drawing.Size(354, 38);
             this.tbPassword.TabIndex = 1;
             // 
             // label1
@@ -62,7 +62,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(152, 61);
+            this.label1.Location = new System.Drawing.Point(195, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(313, 46);
             this.label1.TabIndex = 2;
@@ -77,11 +77,11 @@
             // 
             this.btnLogin.BackColor = System.Drawing.Color.SteelBlue;
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(195, 362);
+            this.btnLogin.Location = new System.Drawing.Point(205, 399);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(223, 65);
+            this.btnLogin.Size = new System.Drawing.Size(286, 71);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "PRIJAVI SE";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -113,7 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 453);
+            this.ClientSize = new System.Drawing.Size(775, 531);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnLogin);
