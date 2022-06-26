@@ -36,16 +36,25 @@ namespace TurnpikeGate.View.ReferentViews
         {
             if (_camera.IsWorking)
                 lblCamera.ForeColor = System.Drawing.Color.SteelBlue;
-            else
+            else 
+            { 
                 lblCamera.ForeColor = System.Drawing.Color.Maroon;
+                btnReportCamera.Enabled = false;
+            }
             if (_ramp.IsWorking)
                 lblRamp.ForeColor = System.Drawing.Color.SteelBlue;
             else
-                lblCamera.ForeColor = System.Drawing.Color.Maroon;
+            {
+                lblRamp.ForeColor = System.Drawing.Color.Maroon;
+                btnRamp.Enabled = false;
+            }
             if (_trafficLight.IsWorking)
                 lblTrafficLight.ForeColor = System.Drawing.Color.SteelBlue;
             else
+            {
                 lblTrafficLight.ForeColor = System.Drawing.Color.Maroon;
+                btnReportTrafficLight.Enabled = false;
+            }
         }
 
         private void LoadDevices()
