@@ -34,7 +34,7 @@ namespace TurnpikeGate.View.ReferentViews
             _carPlates = new List<string>();
             
             tbEntry.Text = _tollStationService.GetById(StationInformation.EntryStationId).Name;
-            InitTimer();
+            InitPlatesTimer();
             GenerateVehicleThreads();
             InitIssuingTimer();
 

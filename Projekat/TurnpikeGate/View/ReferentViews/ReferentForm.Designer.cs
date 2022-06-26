@@ -30,19 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReferentForm));
             this.pnlControls = new System.Windows.Forms.Panel();
+            this.btnReportMalfunction = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnTollPayment = new System.Windows.Forms.Button();
             this.lblRole = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.pbUser = new System.Windows.Forms.PictureBox();
             this.pnlView = new System.Windows.Forms.Panel();
-            this.btnReportMalfunction = new System.Windows.Forms.Button();
+            this.btnEntrance = new System.Windows.Forms.Button();
             this.pnlControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlControls
             // 
+            this.pnlControls.Controls.Add(this.btnEntrance);
             this.pnlControls.Controls.Add(this.btnReportMalfunction);
             this.pnlControls.Controls.Add(this.btnLogout);
             this.pnlControls.Controls.Add(this.btnTollPayment);
@@ -54,6 +56,19 @@
             this.pnlControls.Name = "pnlControls";
             this.pnlControls.Size = new System.Drawing.Size(250, 853);
             this.pnlControls.TabIndex = 0;
+            // 
+            // btnReportMalfunction
+            // 
+            this.btnReportMalfunction.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportMalfunction.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnReportMalfunction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportMalfunction.Location = new System.Drawing.Point(0, 445);
+            this.btnReportMalfunction.Name = "btnReportMalfunction";
+            this.btnReportMalfunction.Size = new System.Drawing.Size(250, 70);
+            this.btnReportMalfunction.TabIndex = 5;
+            this.btnReportMalfunction.Text = "PREGLED UREDJAJA";
+            this.btnReportMalfunction.UseVisualStyleBackColor = true;
+            this.btnReportMalfunction.Click += new System.EventHandler(this.btnReportMalfunction_Click);
             // 
             // btnLogout
             // 
@@ -74,7 +89,7 @@
             this.btnTollPayment.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTollPayment.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnTollPayment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTollPayment.Location = new System.Drawing.Point(0, 300);
+            this.btnTollPayment.Location = new System.Drawing.Point(0, 376);
             this.btnTollPayment.Name = "btnTollPayment";
             this.btnTollPayment.Size = new System.Drawing.Size(250, 70);
             this.btnTollPayment.TabIndex = 3;
@@ -121,18 +136,18 @@
             this.pnlView.Size = new System.Drawing.Size(1292, 853);
             this.pnlView.TabIndex = 1;
             // 
-            // btnReportMalfunction
+            // btnEntrance
             // 
-            this.btnReportMalfunction.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportMalfunction.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnReportMalfunction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportMalfunction.Location = new System.Drawing.Point(0, 369);
-            this.btnReportMalfunction.Name = "btnReportMalfunction";
-            this.btnReportMalfunction.Size = new System.Drawing.Size(250, 70);
-            this.btnReportMalfunction.TabIndex = 5;
-            this.btnReportMalfunction.Text = "PREGLED UREDJAJA";
-            this.btnReportMalfunction.UseVisualStyleBackColor = true;
-            this.btnReportMalfunction.Click += new System.EventHandler(this.btnReportMalfunction_Click);
+            this.btnEntrance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEntrance.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnEntrance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEntrance.Location = new System.Drawing.Point(0, 310);
+            this.btnEntrance.Name = "btnEntrance";
+            this.btnEntrance.Size = new System.Drawing.Size(250, 70);
+            this.btnEntrance.TabIndex = 6;
+            this.btnEntrance.Text = "IZDAVANJE TIKETA";
+            this.btnEntrance.UseVisualStyleBackColor = true;
+            this.btnEntrance.Click += new System.EventHandler(this.btnEntrance_Click);
             // 
             // ReferentForm
             // 
@@ -161,5 +176,6 @@
         private PictureBox pbUser;
         private Panel pnlView;
         private Button btnReportMalfunction;
+        private Button btnEntrance;
     }
 }

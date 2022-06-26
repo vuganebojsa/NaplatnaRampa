@@ -52,5 +52,10 @@ namespace TurnpikeGate.View.ReferentViews
         {
             LoadForm(new ReportMalfunctionForm());
         }
+
+        private void btnEntrance_Click(object sender, EventArgs e)
+        {
+            LoadForm(new EntranceTicketIssuingForm());
+        }
     }
 }
