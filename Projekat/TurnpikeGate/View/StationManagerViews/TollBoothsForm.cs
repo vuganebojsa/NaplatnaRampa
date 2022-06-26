@@ -55,11 +55,9 @@ namespace TurnpikeGate.View.StationManagerViews
             dgvTollBooths.Rows.Clear();
             var tollBooths = _tollBoothService.GetAll();
 
-            // TODO 
-            // izmeniti da ne bude fiksan tollstation, nego onaj iz fajla
             tollBooths.ForEach(o =>
             {
-                var tollStation = _tollStationService.GetAll()[4];
+                var tollStation = _tollStationService.GetById(StationInformation.ExitStationId);
                 if (o.TollStationId == tollStation.ID)
                 {
                     o.Attach(this);

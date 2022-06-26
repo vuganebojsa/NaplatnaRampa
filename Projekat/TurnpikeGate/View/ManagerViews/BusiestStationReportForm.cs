@@ -95,8 +95,8 @@ namespace TurnpikeGate.View.MainViews
                             incomeRSD += entry.Amount.Total;
                         else
                             incomeEUR += entry.Amount.Total;
+                        timesVisited++;
                     }
-                    timesVisited++;
                 });
                 if(timesVisited >= mostVisitedTimes)
                 {

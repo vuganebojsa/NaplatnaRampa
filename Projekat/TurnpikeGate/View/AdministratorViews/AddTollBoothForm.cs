@@ -13,6 +13,7 @@ using TurnpikeGate.Core.Interfaces;
 using TurnpikeGate.Core.TollStations;
 using TurnpikeGate.Core.TollStations.Model;
 using TurnpikeGate.Core.TollStations.Service;
+using TurnpikeGate.Core.TollStations.States;
 
 namespace TurnpikeGate.View.AdministratorViews
 {
@@ -89,19 +90,22 @@ namespace TurnpikeGate.View.AdministratorViews
             var ramp = new Ramp(ObjectId.Empty, cbRamps.Text == "ISPRAVNO");
             var camera = new Camera(ObjectId.Empty, cbCameras.Text == "ISPRAVNO");
             var trafficLight = new TraficLight(ObjectId.Empty, cbTrafficLights.Text == "ISPRAVNO");
-
+            
             TollBooth tollBooth = new TollBooth((TypeOfPayment)cbTypes.SelectedValue,
                 ((TollStation)cbStations.SelectedValue).ID,
                 ramp.ID, trafficLight.ID, camera.ID);
+            
 
             ramp.ToolBoothId = tollBooth.ID;
+            ramp.ChangeState(new Lowered(ramp));
             camera.ToolBoothId = tollBooth.ID;
             trafficLight.ToolBoothId = tollBooth.ID;
             _rampService.Insert(ramp);
             _cameraService.Insert(camera);
             _trafficLightService.Insert(trafficLight);
-
             _tollBoothService.Insert(tollBooth);
+
+
             tollBooth.Attach(_observer);
             tollBooth.Notify();
             MessageBox.Show("Uspesno ste dodali novo naplatno mesto!");

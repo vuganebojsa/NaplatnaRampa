@@ -23,9 +23,9 @@ namespace TurnpikeGate.Core.Prices.Repository
             _collection.DeleteOne(item => item.ID == id);
         }
 
-        public PriceList GetActivePriceList()
+        public PriceList GetActive()
         {
-            return _collection.Find(a => true).SortByDescending((a) => a.ActivationDate).FirstOrDefault();
+            return _collection.Find(a => a.ActivationDate <= DateTime.Now).SortByDescending((a) => a.ActivationDate).FirstOrDefault();
         }
 
         public List<PriceList> GetAll()
