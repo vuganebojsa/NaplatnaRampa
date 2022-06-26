@@ -19,6 +19,7 @@ namespace TurnpikeGate
             var containerBuilder = new ContainerBuilder();
             containerBuilder.RegisterModule<ProgramModule>();
             Container = containerBuilder.Build();
+            
         }
     }
 }

@@ -20,11 +20,21 @@ namespace TurnpikeGate.View.TagSellerViews
             _loginService = loginService;
             InitializeComponent();
             _loginService = loginService;
+            btnTags.BackColor = Color.FromArgb(90, Color.Red);
+            InitName();
+            
         }
+
+        private void InitName()
+        { 
+            lbName.Text = Globals.LoggedUserInfo.Name + " " + Globals.LoggedUserInfo.LastName;
+            lbRole.Text = "Pumpadzija";
+        }
+
 
         private void btnTags_Click(object sender, EventArgs e)
         {
-            label1.Text = this.Size.Width.ToString();
+            
             TagSellerForm frm = new TagSellerForm();
             LoadForm(frm);
 

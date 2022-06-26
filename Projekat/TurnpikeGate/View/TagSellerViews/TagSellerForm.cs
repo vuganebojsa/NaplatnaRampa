@@ -34,7 +34,7 @@ namespace TurnpikeGate.View.TagSellerViews
         {
             if (chbAddFounds.Checked)
             {
-                this.BackColor = Color.FromArgb(245,245,245);
+                this.BackColor = Color.IndianRed;
                 panel1.BackColor = Color.DarkGray;
                 chbRegisterTag.Checked = false;
                 tbAmount.Enabled = true;
@@ -57,7 +57,7 @@ namespace TurnpikeGate.View.TagSellerViews
             {
                 chbAddFounds.Checked = false;
                 this.BackColor = Color.DarkGray;
-                panel1.BackColor = Color.FromArgb(245, 245, 245);
+                panel1.BackColor = Color.IndianRed;
                 tbName.Enabled = true;
                 tbLastName.Enabled = true;
                 cbType.Enabled = true;
@@ -101,7 +101,7 @@ namespace TurnpikeGate.View.TagSellerViews
 
         private void TagSellerForm_Load(object sender, EventArgs e)
         {
-            this.BackColor = Color.FromArgb(245, 245, 245);
+            this.BackColor = Color.IndianRed;
             panel1.BackColor = Color.DarkGray;
             chbAddFounds.Checked = true;
             chbRegisterTag.Checked = false;
