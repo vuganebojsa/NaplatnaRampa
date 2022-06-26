@@ -47,5 +47,10 @@ namespace TurnpikeGate.View.ReferentViews
             selectedButton.Show();
 
         }
+
+        private void btnReportMalfunction_Click(object sender, EventArgs e)
+        {
+            LoadForm(new ReportMalfunctionForm());
+        }
     }
 }
