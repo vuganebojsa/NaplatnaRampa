@@ -35,6 +35,11 @@ namespace TurnpikeGate.Core.TollStations.Service
             return _rampRepository.GetById(id);
         }
 
+        public Ramp GetByTollBoothId(ObjectId tollBoothId)
+        {
+            return _rampRepository.GetTollBoothId(tollBoothId);
+        }
+
         public void Insert(Ramp rampId)
         {
             _rampRepository.Insert(rampId);

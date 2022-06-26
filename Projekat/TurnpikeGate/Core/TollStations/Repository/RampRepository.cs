@@ -33,6 +33,11 @@ namespace TurnpikeGate.Core.TollStations.Repository
             return _collection.Find(item => item.ID == id).FirstOrDefault();
         }
 
+        public Ramp GetTollBoothId(ObjectId tollBoothId)
+        {
+            return _collection.Find(item => item.ToolBoothId == tollBoothId).FirstOrDefault();
+        }
+
         public void Insert(Ramp entity)
         {
             _collection.InsertOne(entity);
