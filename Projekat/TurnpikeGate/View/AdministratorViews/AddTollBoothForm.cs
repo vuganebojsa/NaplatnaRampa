@@ -13,6 +13,7 @@ using TurnpikeGate.Core.Interfaces;
 using TurnpikeGate.Core.TollStations;
 using TurnpikeGate.Core.TollStations.Model;
 using TurnpikeGate.Core.TollStations.Service;
+using TurnpikeGate.Core.TollStations.States;
 
 namespace TurnpikeGate.View.AdministratorViews
 {
@@ -87,12 +88,14 @@ namespace TurnpikeGate.View.AdministratorViews
         private void AddTollBooth()
         {
             var ramp = new Ramp(ObjectId.Empty, cbRamps.Text == "ISPRAVNO");
+            ramp.State = null;
             var camera = new Camera(ObjectId.Empty, cbCameras.Text == "ISPRAVNO");
             var trafficLight = new TraficLight(ObjectId.Empty, cbTrafficLights.Text == "ISPRAVNO");
-
+            
             TollBooth tollBooth = new TollBooth((TypeOfPayment)cbTypes.SelectedValue,
                 ((TollStation)cbStations.SelectedValue).ID,
                 ramp.ID, trafficLight.ID, camera.ID);
+            
 
             ramp.ToolBoothId = tollBooth.ID;
             camera.ToolBoothId = tollBooth.ID;
@@ -100,8 +103,9 @@ namespace TurnpikeGate.View.AdministratorViews
             _rampService.Insert(ramp);
             _cameraService.Insert(camera);
             _trafficLightService.Insert(trafficLight);
-
             _tollBoothService.Insert(tollBooth);
+
+
             tollBooth.Attach(_observer);
             tollBooth.Notify();
             MessageBox.Show("Uspesno ste dodali novo naplatno mesto!");
@@ -115,6 +119,7 @@ namespace TurnpikeGate.View.AdministratorViews
             var trafficLight = _trafficLightService.GetById(tb.TrafficLightId);
 
             ramp.IsWorking = cbRamps.Text == "ISPRAVNO";
+            ramp.State = null;
             camera.IsWorking = cbCameras.Text == "ISPRAVNO";
             trafficLight.IsWorking = cbTrafficLights.Text == "ISPRAVNO";
             tb.Type = (TypeOfPayment)cbTypes.SelectedValue;

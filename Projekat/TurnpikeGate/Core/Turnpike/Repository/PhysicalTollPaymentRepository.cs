@@ -33,9 +33,14 @@ namespace TurnpikeGate.Core.Turnpike.Repository
             return _collection.Find(item => item.ID == id).FirstOrDefault();
         }
 
+        public List<PhysicalTollPayment> GetPending()
+        {
+            return _collection.Find(item => item.PriceListEntryId == new ObjectId("000000000000000000000000")).ToList();
+        }
+        
         public List<PhysicalTollPayment> GetUntilDate(DateTime untilDate)
         {
-            return _collection.Find(item => item.ExitTime < untilDate).ToList();
+            return _collection.Find(item => item.ExitTime >= untilDate && item.PriceListEntryId != ObjectId.Empty).ToList();
         }
 
         public void Insert(PhysicalTollPayment entity)

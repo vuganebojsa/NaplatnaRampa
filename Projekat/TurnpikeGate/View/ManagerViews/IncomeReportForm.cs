@@ -31,6 +31,7 @@ namespace TurnpikeGate.View.ManagerViews
             _physicalTollPaymentService = Globals.Container.Resolve<IPhysicalTollPaymentService>();
             _priceListEntryService = Globals.Container.Resolve<IPriceListEntryService>();
             _roadSectionService = Globals.Container.Resolve<IRoadSectionService>();
+            dgvReport.DefaultCellStyle.Font = new Font("Segoe", 14);
             FillPriceListComboBox();
         }
 
@@ -71,12 +72,12 @@ namespace TurnpikeGate.View.ManagerViews
                     PriceListEntry entry = _priceListEntryService.GetById(t.PriceListEntryId);
                     if (_roadSectionService.GetById(entry.RoadSectionId).DestinationStationId == s.ID)
                     {
-                        if(entry.Amount.Currency == Currency.RSD)
+                        if (entry.Amount.Currency == Currency.RSD)
                             incomeRSD += entry.Amount.Total;
                         else
                             incomeEUR += entry.Amount.Total;
+                        timesVisited++;
                     }
-                    timesVisited++;
                 });
                 int index = dgvReport.Rows.Add();
                 dgvReport.Rows[index].Cells["station"].Value = s.Name;
@@ -113,6 +114,8 @@ namespace TurnpikeGate.View.ManagerViews
                     tw.WriteLine();
                 }
             }
+
         }
+
     }
 }

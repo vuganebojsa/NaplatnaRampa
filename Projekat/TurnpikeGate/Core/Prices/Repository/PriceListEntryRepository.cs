@@ -33,6 +33,11 @@ namespace TurnpikeGate.Core.Prices.Repository
             return _collection.Find(item => item.ID == id).FirstOrDefault();
         }
 
+        public PriceListEntry GetByParameters(List<ObjectId> priceListEntries, VehicleType selectedVehicleType, ObjectId roadSectionId, Currency currency)
+        {
+            return _collection.Find(item => priceListEntries.Contains(item.ID) && item.VehicleType == selectedVehicleType && item.RoadSectionId == roadSectionId && item.Amount.Currency == currency).FirstOrDefault();
+        }
+
         public void Insert(PriceListEntry entity)
         {
             _collection.InsertOne(entity);

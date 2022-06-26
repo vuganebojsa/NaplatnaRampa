@@ -20,7 +20,6 @@ namespace TurnpikeGate.View.ReferentViews
 {
     public partial class EntranceTicketIssuingForm : Form
     {
-
         private List<System.Threading.Timer> _timers;
         private readonly List<String> _carPlates;
         private readonly ITollStationService _tollStationService;
@@ -28,26 +27,22 @@ namespace TurnpikeGate.View.ReferentViews
 
         public EntranceTicketIssuingForm()
         {
-
             InitializeComponent();
             _tollStationService = Globals.Container.Resolve<ITollStationService>();
             _physicalTollPaymentService = Globals.Container.Resolve<IPhysicalTollPaymentService>();
             _carPlates = new List<string>();
             
-            tbEntry.Text = _tollStationService.GetAll()[0].Name;
+            tbEntry.Text = _tollStationService.GetById(StationInformation.EntryStationId).Name;
             InitPlatesTimer();
             GenerateVehicleThreads();
             InitIssuingTimer();
-
-
-
         }
 
         private void IssueTicket()
         {
             PhysicalTollPayment tollPayment = new PhysicalTollPayment(_carPlates[0], DateTime.Now, DateTime.MaxValue,
-                VehicleType.AUTOMOBILE, _tollStationService.GetAll()[0].ID, ObjectId.Empty, ObjectId.Empty);
-
+                                                                        VehicleType.AUTOMOBILE , StationInformation.EntryStationId, ObjectId.Empty, ObjectId.Empty, ObjectId.Empty);
+            
             _physicalTollPaymentService.Insert(tollPayment);
             _carPlates.RemoveAt(0);
             tbPlates.Text = "";
@@ -57,6 +52,8 @@ namespace TurnpikeGate.View.ReferentViews
 
             }
         }
+
+        
 
         private void GenerateVehicleThreads()
         {

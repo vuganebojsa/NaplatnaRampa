@@ -17,12 +17,15 @@ namespace TurnpikeGate.Core.Users.Service
 {
     public class LoginService : ILoginService
     {
+        private IUserRepository _userRepository;
         private ICredentialsRepository _credentialsRepository;
         private LoginForm _loginForm;
+       
 
-        public LoginService(ICredentialsRepository credentialsRepository)
+        public LoginService(ICredentialsRepository credentialsRepository,IUserRepository userRepository)
         {
             _credentialsRepository = credentialsRepository;
+            _userRepository = userRepository;
            
         }
 
@@ -36,6 +39,8 @@ namespace TurnpikeGate.Core.Users.Service
                 throw new BadCredentialsException();
 
             Globals.LoggedUser = foundUser;
+            User user = _userRepository.GetById(foundUser.UserId);
+            Globals.LoggedUserInfo = user;
         }
 
         public void RedirectUser(LoginForm loginForm)

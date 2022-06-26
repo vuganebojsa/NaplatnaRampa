@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,6 @@ namespace TurnpikeGate.Core.TollStations.Service
 {
     public interface ICameraService : IService<Camera>
     {
-
+        Camera GetByTollBoothId(ObjectId tollBoothId);
     }
 }

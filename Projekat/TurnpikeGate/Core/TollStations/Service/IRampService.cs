@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,8 @@ using TurnpikeGate.Core.TollStations.Model;
 
 namespace TurnpikeGate.Core.TollStations.Service
 {
-    public interface IRampService:IService<Ramp>
+    public interface IRampService : IService<Ramp>
     {
-
+        Ramp GetByTollBoothId(ObjectId tollBoothId);
     }
 }

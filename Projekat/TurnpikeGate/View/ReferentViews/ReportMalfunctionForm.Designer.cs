@@ -40,57 +40,72 @@ namespace TurnpikeGate.View.ReferentViews
             // lblCamera
             // 
             this.lblCamera.AutoSize = true;
-            this.lblCamera.Location = new System.Drawing.Point(426, 233);
+            this.lblCamera.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCamera.Location = new System.Drawing.Point(390, 271);
             this.lblCamera.Name = "lblCamera";
-            this.lblCamera.Size = new System.Drawing.Size(68, 20);
+            this.lblCamera.Size = new System.Drawing.Size(106, 32);
             this.lblCamera.TabIndex = 0;
             this.lblCamera.Text = "KAMERA";
             // 
             // btnReportCamera
             // 
-            this.btnReportCamera.Location = new System.Drawing.Point(784, 229);
+            this.btnReportCamera.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnReportCamera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportCamera.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnReportCamera.ForeColor = System.Drawing.Color.White;
+            this.btnReportCamera.Location = new System.Drawing.Point(748, 267);
             this.btnReportCamera.Name = "btnReportCamera";
-            this.btnReportCamera.Size = new System.Drawing.Size(94, 29);
+            this.btnReportCamera.Size = new System.Drawing.Size(188, 43);
             this.btnReportCamera.TabIndex = 1;
-            this.btnReportCamera.Text = "PRIJAVI";
-            this.btnReportCamera.UseVisualStyleBackColor = true;
+            this.btnReportCamera.Text = "PRIJAVI KVAR";
+            this.btnReportCamera.UseVisualStyleBackColor = false;
             this.btnReportCamera.Click += new System.EventHandler(this.btnReportCamera_Click);
             // 
             // btnReportTrafficLight
             // 
-            this.btnReportTrafficLight.Location = new System.Drawing.Point(784, 328);
+            this.btnReportTrafficLight.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnReportTrafficLight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportTrafficLight.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnReportTrafficLight.ForeColor = System.Drawing.Color.White;
+            this.btnReportTrafficLight.Location = new System.Drawing.Point(748, 359);
             this.btnReportTrafficLight.Name = "btnReportTrafficLight";
-            this.btnReportTrafficLight.Size = new System.Drawing.Size(94, 29);
+            this.btnReportTrafficLight.Size = new System.Drawing.Size(188, 43);
             this.btnReportTrafficLight.TabIndex = 3;
             this.btnReportTrafficLight.Text = "PRIJAVI KVAR";
-            this.btnReportTrafficLight.UseVisualStyleBackColor = true;
+            this.btnReportTrafficLight.UseVisualStyleBackColor = false;
             this.btnReportTrafficLight.Click += new System.EventHandler(this.btnReportTrafficLight_Click);
             // 
             // lblTrafficLight
             // 
             this.lblTrafficLight.AutoSize = true;
-            this.lblTrafficLight.Location = new System.Drawing.Point(426, 332);
+            this.lblTrafficLight.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTrafficLight.Location = new System.Drawing.Point(390, 370);
             this.lblTrafficLight.Name = "lblTrafficLight";
-            this.lblTrafficLight.Size = new System.Drawing.Size(75, 20);
+            this.lblTrafficLight.Size = new System.Drawing.Size(120, 32);
             this.lblTrafficLight.TabIndex = 2;
             this.lblTrafficLight.Text = "SEMAFOR";
             // 
             // btnRamp
             // 
-            this.btnRamp.Location = new System.Drawing.Point(784, 429);
+            this.btnRamp.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnRamp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRamp.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRamp.ForeColor = System.Drawing.Color.White;
+            this.btnRamp.Location = new System.Drawing.Point(748, 460);
             this.btnRamp.Name = "btnRamp";
-            this.btnRamp.Size = new System.Drawing.Size(94, 29);
+            this.btnRamp.Size = new System.Drawing.Size(188, 43);
             this.btnRamp.TabIndex = 5;
-            this.btnRamp.Text = "PRIJAVI";
-            this.btnRamp.UseVisualStyleBackColor = true;
+            this.btnRamp.Text = "PRIJAVI KVAR";
+            this.btnRamp.UseVisualStyleBackColor = false;
             this.btnRamp.Click += new System.EventHandler(this.btnRamp_Click);
             // 
             // lblRamp
             // 
             this.lblRamp.AutoSize = true;
-            this.lblRamp.Location = new System.Drawing.Point(426, 433);
+            this.lblRamp.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblRamp.Location = new System.Drawing.Point(390, 471);
             this.lblRamp.Name = "lblRamp";
-            this.lblRamp.Size = new System.Drawing.Size(58, 20);
+            this.lblRamp.Size = new System.Drawing.Size(91, 32);
             this.lblRamp.TabIndex = 4;
             this.lblRamp.Text = "RAMPA";
             // 

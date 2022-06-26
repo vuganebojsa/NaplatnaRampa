@@ -34,6 +34,11 @@ namespace TurnpikeGate.Core.TollStations.Service
             return _trafficLightRepository.GetById(id);
         }
 
+        public TraficLight GetByTollBoothId(ObjectId tollBoothId)
+        {
+            return _trafficLightRepository.GetByTollBoothId(tollBoothId);
+        }
+
         public void Insert(TraficLight trafficLightId)
         {
             _trafficLightRepository.Insert(trafficLightId);

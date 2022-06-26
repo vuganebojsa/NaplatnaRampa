@@ -36,6 +36,7 @@ namespace TurnpikeGate.View.AdministratorViews
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,12 +51,12 @@ namespace TurnpikeGate.View.AdministratorViews
             this.email,
             this.phoneNumber,
             this.salary});
-            this.dgvUsers.Location = new System.Drawing.Point(45, 45);
+            this.dgvUsers.Location = new System.Drawing.Point(61, 111);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.RowTemplate.Height = 29;
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsers.Size = new System.Drawing.Size(1215, 750);
+            this.dgvUsers.Size = new System.Drawing.Size(1045, 426);
             this.dgvUsers.TabIndex = 0;
             // 
             // name
@@ -105,18 +106,31 @@ namespace TurnpikeGate.View.AdministratorViews
             this.salary.MinimumWidth = 6;
             this.salary.Name = "salary";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label1.Location = new System.Drawing.Point(475, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(183, 45);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "KORISNICI";
+            // 
             // UsersDisplayForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 840);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1100, 600);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvUsers);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UsersDisplayForm";
             this.Text = "UsersDisplayForm";
             this.Load += new System.EventHandler(this.UsersDisplayForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -129,5 +143,6 @@ namespace TurnpikeGate.View.AdministratorViews
         private DataGridViewTextBoxColumn email;
         private DataGridViewTextBoxColumn phoneNumber;
         private DataGridViewTextBoxColumn salary;
+        private Label label1;
     }
 }

@@ -29,7 +29,6 @@ namespace TurnpikeGate.View.MainViews
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BusiestStationReportForm));
             this.btnPrint = new System.Windows.Forms.Button();
             this.cbPeriod = new System.Windows.Forms.ComboBox();
             this.btnShow = new System.Windows.Forms.Button();
@@ -48,125 +47,150 @@ namespace TurnpikeGate.View.MainViews
             // 
             // btnPrint
             // 
-            this.btnPrint.Location = new System.Drawing.Point(821, 724);
+            this.btnPrint.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Location = new System.Drawing.Point(763, 528);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(178, 33);
+            this.btnPrint.Size = new System.Drawing.Size(182, 53);
             this.btnPrint.TabIndex = 16;
             this.btnPrint.Text = "STAMPAJ";
-            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // cbPeriod
             // 
+            this.cbPeriod.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbPeriod.FormattingEnabled = true;
-            this.cbPeriod.Location = new System.Drawing.Point(312, 727);
+            this.cbPeriod.Location = new System.Drawing.Point(273, 540);
+            this.cbPeriod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbPeriod.Name = "cbPeriod";
-            this.cbPeriod.Size = new System.Drawing.Size(261, 28);
+            this.cbPeriod.Size = new System.Drawing.Size(229, 33);
             this.cbPeriod.TabIndex = 15;
             // 
             // btnShow
             // 
-            this.btnShow.Location = new System.Drawing.Point(610, 724);
+            this.btnShow.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnShow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShow.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnShow.ForeColor = System.Drawing.Color.White;
+            this.btnShow.Location = new System.Drawing.Point(534, 528);
+            this.btnShow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(178, 33);
-            this.btnShow.TabIndex = 14;
+            this.btnShow.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.btnShow.Size = new System.Drawing.Size(223, 53);
+            this.btnShow.TabIndex = 16;
             this.btnShow.Text = "PRIKAZI STANICU";
-            this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.UseVisualStyleBackColor = false;
             this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // lblTickets
             // 
             this.lblTickets.AutoSize = true;
-            this.lblTickets.Location = new System.Drawing.Point(456, 396);
+            this.lblTickets.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTickets.Location = new System.Drawing.Point(399, 297);
             this.lblTickets.Name = "lblTickets";
-            this.lblTickets.Size = new System.Drawing.Size(0, 20);
+            this.lblTickets.Size = new System.Drawing.Size(0, 25);
             this.lblTickets.TabIndex = 32;
             // 
             // lblPlace
             // 
             this.lblPlace.AutoSize = true;
-            this.lblPlace.Location = new System.Drawing.Point(456, 311);
+            this.lblPlace.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblPlace.Location = new System.Drawing.Point(399, 233);
             this.lblPlace.Name = "lblPlace";
-            this.lblPlace.Size = new System.Drawing.Size(0, 20);
+            this.lblPlace.Size = new System.Drawing.Size(0, 25);
             this.lblPlace.TabIndex = 31;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(456, 222);
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblName.Location = new System.Drawing.Point(399, 166);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(0, 20);
+            this.lblName.Size = new System.Drawing.Size(0, 25);
             this.lblName.TabIndex = 30;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(312, 396);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(273, 297);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 20);
+            this.label4.Size = new System.Drawing.Size(99, 25);
             this.label4.TabIndex = 29;
             this.label4.Text = "PRODATO:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(312, 309);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(273, 232);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 20);
+            this.label3.Size = new System.Drawing.Size(76, 25);
             this.label3.TabIndex = 28;
             this.label3.Text = "MESTO:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(312, 222);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(273, 166);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 20);
+            this.label2.Size = new System.Drawing.Size(71, 25);
             this.label2.TabIndex = 27;
             this.label2.Text = "NAZIV:";
             // 
             // lblIncomeEur
             // 
             this.lblIncomeEur.AutoSize = true;
-            this.lblIncomeEur.Location = new System.Drawing.Point(456, 517);
+            this.lblIncomeEur.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblIncomeEur.Location = new System.Drawing.Point(472, 392);
             this.lblIncomeEur.Name = "lblIncomeEur";
-            this.lblIncomeEur.Size = new System.Drawing.Size(46, 20);
+            this.lblIncomeEur.Size = new System.Drawing.Size(58, 25);
             this.lblIncomeEur.TabIndex = 26;
             this.lblIncomeEur.Text = "(EUR)";
             // 
             // lblIncomeRsd
             // 
             this.lblIncomeRsd.AutoSize = true;
-            this.lblIncomeRsd.Location = new System.Drawing.Point(456, 491);
+            this.lblIncomeRsd.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblIncomeRsd.Location = new System.Drawing.Point(472, 368);
             this.lblIncomeRsd.Name = "lblIncomeRsd";
-            this.lblIncomeRsd.Size = new System.Drawing.Size(47, 20);
+            this.lblIncomeRsd.Size = new System.Drawing.Size(58, 25);
             this.lblIncomeRsd.TabIndex = 25;
             this.lblIncomeRsd.Text = "(RSD)";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(312, 491);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(273, 368);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 20);
+            this.label1.Size = new System.Drawing.Size(160, 25);
             this.label1.TabIndex = 24;
             this.label1.Text = "UKUPNI PRIHODI:";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(821, 232);
+            this.pictureBox1.Image = global::TurnpikeGate.Properties.Resources.unnamed;
+            this.pictureBox1.Location = new System.Drawing.Point(913, 32);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(178, 259);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.Size = new System.Drawing.Size(172, 138);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             // 
             // BusiestStationReportForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 840);
+            this.ClientSize = new System.Drawing.Size(1138, 630);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblTickets);
             this.Controls.Add(this.lblPlace);
@@ -181,6 +205,7 @@ namespace TurnpikeGate.View.MainViews
             this.Controls.Add(this.cbPeriod);
             this.Controls.Add(this.btnShow);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BusiestStationReportForm";
             this.Text = "BusiestStationReportForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

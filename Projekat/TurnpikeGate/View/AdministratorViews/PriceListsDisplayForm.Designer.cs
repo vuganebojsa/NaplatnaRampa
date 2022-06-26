@@ -37,6 +37,7 @@ namespace TurnpikeGate.View.AdministratorViews
             this.destination = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnShow = new System.Windows.Forms.Button();
             this.cbPriceList = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPriceList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,11 +51,13 @@ namespace TurnpikeGate.View.AdministratorViews
             this.currency,
             this.departure,
             this.destination});
-            this.dgvPriceList.Location = new System.Drawing.Point(30, 23);
+            this.dgvPriceList.Location = new System.Drawing.Point(54, 110);
             this.dgvPriceList.Name = "dgvPriceList";
             this.dgvPriceList.RowHeadersWidth = 51;
             this.dgvPriceList.RowTemplate.Height = 29;
-            this.dgvPriceList.Size = new System.Drawing.Size(1233, 729);
+
+            this.dgvPriceList.Size = new System.Drawing.Size(977, 359);
+
             this.dgvPriceList.TabIndex = 0;
             // 
             // vehicleType
@@ -94,36 +97,60 @@ namespace TurnpikeGate.View.AdministratorViews
             // 
             // btnShow
             // 
-            this.btnShow.Location = new System.Drawing.Point(680, 767);
+            this.btnShow.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnShow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShow.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnShow.ForeColor = System.Drawing.Color.White;
+
+            this.btnShow.Location = new System.Drawing.Point(524, 501);
+
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(178, 33);
+            this.btnShow.Size = new System.Drawing.Size(218, 61);
             this.btnShow.TabIndex = 2;
             this.btnShow.Text = "PRIKAZI CENE";
-            this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.UseVisualStyleBackColor = false;
             this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // cbPriceList
             // 
+            this.cbPriceList.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbPriceList.FormattingEnabled = true;
-            this.cbPriceList.Location = new System.Drawing.Point(442, 770);
+
+            this.cbPriceList.Location = new System.Drawing.Point(304, 513);
+
             this.cbPriceList.Name = "cbPriceList";
-            this.cbPriceList.Size = new System.Drawing.Size(178, 28);
+            this.cbPriceList.Size = new System.Drawing.Size(178, 39);
             this.cbPriceList.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
+
+            this.label1.Location = new System.Drawing.Point(441, 42);
+
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(189, 45);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "CENOVNIK";
             // 
             // PriceListsDisplayForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 840);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1100, 600);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cbPriceList);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.dgvPriceList);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PriceListsDisplayForm";
             this.Text = "PriceListsDisplayForm";
             this.Load += new System.EventHandler(this.PriceListsDisplayForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPriceList)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -137,5 +164,6 @@ namespace TurnpikeGate.View.AdministratorViews
         private DataGridViewTextBoxColumn currency;
         private DataGridViewTextBoxColumn departure;
         private DataGridViewTextBoxColumn destination;
+        private Label label1;
     }
 }
