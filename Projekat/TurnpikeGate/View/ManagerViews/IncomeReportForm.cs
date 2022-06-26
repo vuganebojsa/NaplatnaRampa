@@ -31,6 +31,7 @@ namespace TurnpikeGate.View.ManagerViews
             _physicalTollPaymentService = Globals.Container.Resolve<IPhysicalTollPaymentService>();
             _priceListEntryService = Globals.Container.Resolve<IPriceListEntryService>();
             _roadSectionService = Globals.Container.Resolve<IRoadSectionService>();
+            dgvReport.DefaultCellStyle.Font = new Font("Segoe", 14);
             FillPriceListComboBox();
         }
 
