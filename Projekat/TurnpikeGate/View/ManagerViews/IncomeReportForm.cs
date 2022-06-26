@@ -72,7 +72,7 @@ namespace TurnpikeGate.View.ManagerViews
                     PriceListEntry entry = _priceListEntryService.GetById(t.PriceListEntryId);
                     if (_roadSectionService.GetById(entry.RoadSectionId).DestinationStationId == s.ID)
                     {
-                        if(entry.Amount.Currency == Currency.RSD)
+                        if (entry.Amount.Currency == Currency.RSD)
                             incomeRSD += entry.Amount.Total;
                         else
                             incomeEUR += entry.Amount.Total;
@@ -114,6 +114,8 @@ namespace TurnpikeGate.View.ManagerViews
                     tw.WriteLine();
                 }
             }
+
         }
+
     }
 }

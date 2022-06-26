@@ -52,7 +52,7 @@ namespace TurnpikeGate.View.AdministratorViews
             this.rampId,
             this.trafficLightId,
             this.cameraId});
-            this.dgvBooths.Location = new System.Drawing.Point(23, 90);
+            this.dgvBooths.Location = new System.Drawing.Point(41, 90);
             this.dgvBooths.Name = "dgvBooths";
             this.dgvBooths.RowHeadersWidth = 51;
             this.dgvBooths.RowTemplate.Height = 29;
@@ -103,7 +103,7 @@ namespace TurnpikeGate.View.AdministratorViews
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(475, 509);
+            this.btnAdd.Location = new System.Drawing.Point(268, 501);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(211, 77);
             this.btnAdd.TabIndex = 1;
@@ -119,7 +119,7 @@ namespace TurnpikeGate.View.AdministratorViews
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(692, 509);
+            this.btnEdit.Location = new System.Drawing.Point(485, 501);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(177, 77);
             this.btnEdit.TabIndex = 2;
@@ -135,7 +135,7 @@ namespace TurnpikeGate.View.AdministratorViews
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(875, 509);
+            this.btnDelete.Location = new System.Drawing.Point(668, 501);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(173, 77);
             this.btnDelete.TabIndex = 3;
@@ -148,9 +148,9 @@ namespace TurnpikeGate.View.AdministratorViews
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(403, 24);
+            this.label1.Location = new System.Drawing.Point(418, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(324, 46);
+            this.label1.Size = new System.Drawing.Size(314, 45);
             this.label1.TabIndex = 4;
             this.label1.Text = "NAPLATNA MESTA";
             // 

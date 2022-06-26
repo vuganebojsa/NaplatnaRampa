@@ -138,6 +138,7 @@ namespace TurnpikeGate.View.ManagerViews
             this.btnPrint.TabIndex = 18;
             this.btnPrint.Text = "STAMPAJ";
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnShow
             // 
@@ -146,8 +147,9 @@ namespace TurnpikeGate.View.ManagerViews
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(178, 39);
             this.btnShow.TabIndex = 17;
-            this.btnShow.Text = "PRIKAZI STANICU";
+            this.btnShow.Text = "PRIKAZI";
             this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // IncomeReportForm
             // 

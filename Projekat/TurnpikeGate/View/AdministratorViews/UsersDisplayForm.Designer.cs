@@ -56,7 +56,7 @@ namespace TurnpikeGate.View.AdministratorViews
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.RowTemplate.Height = 29;
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsers.Size = new System.Drawing.Size(972, 426);
+            this.dgvUsers.Size = new System.Drawing.Size(1045, 426);
             this.dgvUsers.TabIndex = 0;
             // 
             // name
@@ -111,7 +111,7 @@ namespace TurnpikeGate.View.AdministratorViews
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(484, 29);
+            this.label1.Location = new System.Drawing.Point(475, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(183, 45);
             this.label1.TabIndex = 1;
