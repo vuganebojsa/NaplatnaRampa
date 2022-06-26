@@ -48,5 +48,6 @@ namespace TurnpikeGate.Core.TollStations.Service
         {
             _tollStationRepository.Update(entity);
         }
+
     }
 }
