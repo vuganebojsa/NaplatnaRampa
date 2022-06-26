@@ -47,9 +47,10 @@ namespace TurnpikeGate.View.ManagerViews
             // 
             this.cbPeriod.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbPeriod.FormattingEnabled = true;
-            this.cbPeriod.Location = new System.Drawing.Point(534, 773);
+            this.cbPeriod.Location = new System.Drawing.Point(467, 580);
+            this.cbPeriod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbPeriod.Name = "cbPeriod";
-            this.cbPeriod.Size = new System.Drawing.Size(261, 39);
+            this.cbPeriod.Size = new System.Drawing.Size(229, 33);
             this.cbPeriod.TabIndex = 6;
             // 
             // dgvReport
@@ -61,11 +62,12 @@ namespace TurnpikeGate.View.ManagerViews
             this.incomeRSD,
             this.incomeEUR,
             this.timesVisited});
-            this.dgvReport.Location = new System.Drawing.Point(33, 23);
+            this.dgvReport.Location = new System.Drawing.Point(29, 17);
+            this.dgvReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvReport.Name = "dgvReport";
             this.dgvReport.RowHeadersWidth = 51;
             this.dgvReport.RowTemplate.Height = 29;
-            this.dgvReport.Size = new System.Drawing.Size(1233, 729);
+            this.dgvReport.Size = new System.Drawing.Size(1079, 547);
             this.dgvReport.TabIndex = 4;
             // 
             // station
@@ -100,9 +102,9 @@ namespace TurnpikeGate.View.ManagerViews
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(49, 767);
+            this.label1.Location = new System.Drawing.Point(43, 575);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 32);
+            this.label1.Size = new System.Drawing.Size(160, 25);
             this.label1.TabIndex = 8;
             this.label1.Text = "UKUPNI PRIHODI:";
             // 
@@ -110,9 +112,9 @@ namespace TurnpikeGate.View.ManagerViews
             // 
             this.lblIncomeRsd.AutoSize = true;
             this.lblIncomeRsd.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblIncomeRsd.Location = new System.Drawing.Point(272, 767);
+            this.lblIncomeRsd.Location = new System.Drawing.Point(238, 575);
             this.lblIncomeRsd.Name = "lblIncomeRsd";
-            this.lblIncomeRsd.Size = new System.Drawing.Size(72, 32);
+            this.lblIncomeRsd.Size = new System.Drawing.Size(58, 25);
             this.lblIncomeRsd.TabIndex = 9;
             this.lblIncomeRsd.Text = "(RSD)";
             // 
@@ -120,21 +122,23 @@ namespace TurnpikeGate.View.ManagerViews
             // 
             this.lblIncomeEur.AutoSize = true;
             this.lblIncomeEur.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblIncomeEur.Location = new System.Drawing.Point(272, 799);
+            this.lblIncomeEur.Location = new System.Drawing.Point(238, 599);
             this.lblIncomeEur.Name = "lblIncomeEur";
-            this.lblIncomeEur.Size = new System.Drawing.Size(70, 32);
+            this.lblIncomeEur.Size = new System.Drawing.Size(58, 25);
             this.lblIncomeEur.TabIndex = 10;
             this.lblIncomeEur.Text = "(EUR)";
             // 
             // btnPrint
             // 
             this.btnPrint.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.Location = new System.Drawing.Point(1055, 773);
+            this.btnPrint.Location = new System.Drawing.Point(917, 580);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(178, 39);
+            this.btnPrint.Size = new System.Drawing.Size(162, 39);
             this.btnPrint.TabIndex = 18;
             this.btnPrint.Text = "STAMPAJ";
             this.btnPrint.UseVisualStyleBackColor = false;
@@ -142,20 +146,25 @@ namespace TurnpikeGate.View.ManagerViews
             // 
             // btnShow
             // 
+            this.btnShow.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnShow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnShow.Location = new System.Drawing.Point(846, 773);
+            this.btnShow.ForeColor = System.Drawing.Color.White;
+            this.btnShow.Location = new System.Drawing.Point(740, 580);
+            this.btnShow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(178, 39);
+            this.btnShow.Size = new System.Drawing.Size(171, 39);
             this.btnShow.TabIndex = 17;
             this.btnShow.Text = "PRIKAZI";
-            this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.UseVisualStyleBackColor = false;
             this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // IncomeReportForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 840);
+            this.ClientSize = new System.Drawing.Size(1138, 630);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.lblIncomeEur);
@@ -164,6 +173,7 @@ namespace TurnpikeGate.View.ManagerViews
             this.Controls.Add(this.cbPeriod);
             this.Controls.Add(this.dgvReport);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "IncomeReportForm";
             this.Text = "IncomeReportForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).EndInit();
