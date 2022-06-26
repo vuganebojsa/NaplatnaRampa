@@ -30,6 +30,9 @@ namespace TurnpikeGate.Core.Turnpike.Model
         [BsonElement("entranceStation")]
         public ObjectId EntranceStationId { get; set; }
 
+        [BsonElement("roadSection")]
+        public ObjectId RoadSectionId { get; set; }
+
         [BsonElement("priceListEntry")]
         public ObjectId PriceListEntryId { get; set; }
 

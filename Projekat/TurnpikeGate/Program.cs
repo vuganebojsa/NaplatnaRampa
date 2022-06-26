@@ -14,6 +14,7 @@ using TurnpikeGate.Core;
 using TurnpikeGate.Core.Locations.Repository;
 using TurnpikeGate.Core.Locations.Service;
 using TurnpikeGate.Core.TollStations;
+using TurnpikeGate.Core.Turnpike.Service;
 using TurnpikeGate.View.AdministratorViews;
 using TurnpikeGate.View;
 using TurnpikeGate.Core.Users.Service;
@@ -34,6 +35,9 @@ namespace TurnpikeGate
            
             DatabaseConnection.Init();
             Globals.Load();
+
+            StationInformation.LoadFile();
+           
 
             Application.Run(new LoginForm());
 

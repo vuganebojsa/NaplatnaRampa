@@ -11,6 +11,6 @@ namespace TurnpikeGate.Core.Prices.Repository
 {
     public interface IPriceListEntryRepository : IRepository<PriceListEntry>
     {
-
+        PriceListEntry GetByParameters(List<ObjectId> priceListEntries, VehicleType selectedVehicleType, ObjectId roadSectionId, Currency currency);
     }
 }
