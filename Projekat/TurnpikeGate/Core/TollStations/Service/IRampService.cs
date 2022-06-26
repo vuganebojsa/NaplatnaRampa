@@ -10,6 +10,6 @@ namespace TurnpikeGate.Core.TollStations.Service
 {
     public interface IRampService:IService<Ramp>
     {
-        public void RaiseRamp(Ramp ramp);
+
     }
 }

@@ -46,9 +46,6 @@ namespace TurnpikeGate.Core.TollStations.Service
             _rampRepository.Update(entity);
         }
 
-        public void RaiseRamp(Ramp ramp)
-        {
-            ramp.ChangeState(new Raising(ramp));
-        }
+        
     }
 }

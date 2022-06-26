@@ -13,7 +13,7 @@ namespace TurnpikeGate.Core.TollStations.States
         {
         }
 
-        public override void Do()
+        public override String Do()
         {
             throw new NotImplementedException();
         }

@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TurnpikeGate.Core.TollStations.Model;
 using TurnpikeGate.Core.TollStations.Service;
+using TurnpikeGate.Core.TollStations.States;
 using TurnpikeGate.Core.Turnpike.Service;
 using TurnpikeGate.Core.Users.Model;
 
@@ -24,6 +25,7 @@ namespace TurnpikeGate.View.ReferentViews
         ITollBoothService _boothService;
         TollBooth tollBooth;
         Ramp ramp;
+        int tickCount = 0;
 
         public ExitTicketIssuingForm()
         {
@@ -42,7 +44,42 @@ namespace TurnpikeGate.View.ReferentViews
 
         private void btnRaiseRamp_Click(object sender, EventArgs e)
         {
-            _rampService.RaiseRamp(ramp);
+            RaiseRamp();
+            
+        }
+
+        public void RaiseRamp( )
+        {
+            
+            ramp.ChangeState(new Raising(ramp));
+            lbRamp.Text = "Rampa se dize";
+            InitRampStateTimer();
+
+            
+           
+
+        }
+
+        private void rampTimer_Tick(object sender, EventArgs e)
+        {
+            if (tickCount < 3)
+            {
+                lbRamp.Text = ramp.State.Do();
+                tickCount++;
+            }
+            else 
+            {
+                rampTimer.Enabled = false;
+                tickCount = 0;
+            }
+        }
+
+        private void InitRampStateTimer() 
+        {
+            rampTimer = new System.Windows.Forms.Timer();
+            rampTimer.Tick += new EventHandler(rampTimer_Tick);
+            rampTimer.Interval = 3000;
+            rampTimer.Start();
         }
     }
 }
