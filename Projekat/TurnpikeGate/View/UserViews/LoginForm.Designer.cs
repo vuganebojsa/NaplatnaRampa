@@ -64,7 +64,7 @@
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
             this.label1.Location = new System.Drawing.Point(195, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(313, 46);
+            this.label1.Size = new System.Drawing.Size(302, 45);
             this.label1.TabIndex = 2;
             this.label1.Text = "Dobrodosli nazad!";
             // 

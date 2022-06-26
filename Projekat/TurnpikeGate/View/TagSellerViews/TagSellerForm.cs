@@ -34,7 +34,7 @@ namespace TurnpikeGate.View.TagSellerViews
         {
             if (chbAddFounds.Checked)
             {
-                this.BackColor = Color.FromArgb(245,245,245);
+                this.BackColor = Color.FromKnownColor(KnownColor.Control); 
                 panel1.BackColor = Color.DarkGray;
                 chbRegisterTag.Checked = false;
                 tbAmount.Enabled = true;
@@ -57,7 +57,7 @@ namespace TurnpikeGate.View.TagSellerViews
             {
                 chbAddFounds.Checked = false;
                 this.BackColor = Color.DarkGray;
-                panel1.BackColor = Color.FromArgb(245, 245, 245);
+                panel1.BackColor = Color.FromKnownColor(KnownColor.Control);
                 tbName.Enabled = true;
                 tbLastName.Enabled = true;
                 cbType.Enabled = true;
@@ -89,11 +89,11 @@ namespace TurnpikeGate.View.TagSellerViews
                 electronicTagService.Update(electronicTag);
                 System.Windows.Forms.MessageBox.Show("Sredstva dodata!");
             }
-            catch (NullReferenceException ex)
+            catch (Exception ex)
             {
                 if (ex is NullReferenceException)
                 {
-                    System.Windows.Forms.MessageBox.Show(" Tag ne postoji!");
+                    System.Windows.Forms.MessageBox.Show("Greska");
                 }
                 
             }
@@ -101,7 +101,7 @@ namespace TurnpikeGate.View.TagSellerViews
 
         private void TagSellerForm_Load(object sender, EventArgs e)
         {
-            this.BackColor = Color.FromArgb(245, 245, 245);
+            this.BackColor = Color.FromKnownColor(KnownColor.Control);
             panel1.BackColor = Color.DarkGray;
             chbAddFounds.Checked = true;
             chbRegisterTag.Checked = false;

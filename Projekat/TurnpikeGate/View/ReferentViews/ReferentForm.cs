@@ -8,8 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TurnpikeGate.Core.Users.Model;
 using TurnpikeGate.Core.Users.Service;
-
+using Autofac;
 namespace TurnpikeGate.View.ReferentViews
 {
     public partial class ReferentForm : Form
@@ -20,6 +21,15 @@ namespace TurnpikeGate.View.ReferentViews
         {
             _loginService = loginService;
             InitializeComponent();
+            InitName();
+
+
+        }
+
+        private void InitName()
+        {
+            lblName.Text = Globals.LoggedUserInfo.Name + " " + Globals.LoggedUserInfo.LastName;
+            lblRole.Text = "Referent";
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
