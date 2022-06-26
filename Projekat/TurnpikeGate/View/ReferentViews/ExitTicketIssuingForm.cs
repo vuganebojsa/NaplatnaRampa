@@ -30,13 +30,16 @@ namespace TurnpikeGate.View.ReferentViews
         private readonly IPriceListEntryService _priceListEntryService;
         private readonly IPhysicalTollPaymentService _physicalTollPaymentService;
 
-        IPhysicalTollPaymentRepository _physicalTollPaymentRepository;
-        readonly IRoadSectionRepository _roadSectionRepository;
+        private readonly IPhysicalTollPaymentRepository _physicalTollPaymentRepository;
+        private readonly IRoadSectionRepository _roadSectionRepository;
+
 
         private List<System.Threading.Timer> _timers;
-        private readonly List<PhysicalTollPayment> _vehicleQueue;
+        private List<PhysicalTollPayment> _vehicleQueue;
         private TollStation _entranceStation;
         private TollStation _exitStation;
+        private PhysicalTollPayment _currentTollPayment;
+        private RoadSection _selectedRoadSection;
 
         public ExitTicketIssuingForm()
         {
@@ -73,8 +76,8 @@ namespace TurnpikeGate.View.ReferentViews
             _selectedPicture = pictureBox;
             _selectedVehicleType = vehicleType;
 
-            RoadSection roadSection = _roadSectionRepository.GetByLocations(_entranceStation.ID, _exitStation.ID);
-            CalculateTollPrice(roadSection);
+            _selectedRoadSection = _roadSectionRepository.GetByLocations(_entranceStation.ID, _exitStation.ID);
+            CalculateTollPrice(_selectedRoadSection);
 
         }
 
@@ -149,6 +152,8 @@ namespace TurnpikeGate.View.ReferentViews
 
         private void FillFields(PhysicalTollPayment physicalTollPayment)
         {
+            _currentTollPayment = physicalTollPayment;
+
             tbPlates.Text = physicalTollPayment.RegistrationPlate;
 
             _entranceStation = _tollStationService.GetById(physicalTollPayment.EntranceStationId);
@@ -158,7 +163,6 @@ namespace TurnpikeGate.View.ReferentViews
             tbEntranceTime.Text = physicalTollPayment.EntranceTime.ToString();
             tbExitTime.Text = DateTime.Now.ToString();
 
-            // TODO: ucitati iz fajla
             tbExitStation.Text = _exitStation.Name;
         }
 
@@ -178,7 +182,21 @@ namespace TurnpikeGate.View.ReferentViews
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            if (tbTollPrice.Text == "")
+                MessageBox.Show("Da bi se izdao tiket, cena putarine mora biti izracunata.", "Greska");
+            else
+            {
+                _currentTollPayment.ExitTime = DateTime.Parse(tbExitTime.Text);
+                _currentTollPayment.RoadSectionId = _selectedRoadSection.ID;
+                _currentTollPayment.PriceListEntryId = _selectedRoadSection.ID;
+                _currentTollPayment.ReferentId = Globals.LoggedUser.UserId;
+                //TODO povezati price list entry
+                _physicalTollPaymentRepository.Update(_currentTollPayment);
 
+                MessageBox.Show("Putarina naplacena, tiket uspesno izdat :).", "Uspeh");
+                _vehicleQueue.RemoveAt(0);
+            }
         }
+
     }
 }

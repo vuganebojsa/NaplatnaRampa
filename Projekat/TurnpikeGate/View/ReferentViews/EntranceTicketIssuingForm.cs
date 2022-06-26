@@ -44,7 +44,7 @@ namespace TurnpikeGate.View.ReferentViews
         private void btnIssue_Click(object sender, EventArgs e)
         {
             PhysicalTollPayment tollPayment = new PhysicalTollPayment(_carPlates[0], DateTime.Now, DateTime.MaxValue,
-                                                                        VehicleType.AUTOMOBILE , _tollStationService.GetAll()[0].ID, ObjectId.Empty, ObjectId.Empty);
+                                                                        VehicleType.AUTOMOBILE , _tollStationService.GetAll()[0].ID, ObjectId.Empty, ObjectId.Empty, ObjectId.Empty);
             
             _physicalTollPaymentService.Insert(tollPayment);
 

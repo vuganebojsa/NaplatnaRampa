@@ -18,7 +18,7 @@ namespace TurnpikeGate.Core.Prices.Model
     {
         public double Total { get; set; }
 
-        [BsonElement("currency")]
+        [BsonElement("Currency")]
         public Currency Currency { get; set; }
 
         public Amount(double total, Currency currency)
