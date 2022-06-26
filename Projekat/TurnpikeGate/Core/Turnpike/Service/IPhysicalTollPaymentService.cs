@@ -13,5 +13,6 @@ namespace TurnpikeGate.Core.Turnpike.Service
     interface IPhysicalTollPaymentService : IService<PhysicalTollPayment>
     {
         double CalculateTollPrice(VehicleType selectedVehicleType, ObjectId roadSectionId, Currency currency, out ObjectId priceListEntryId);
+        List<PhysicalTollPayment> GetUntilDate(DateTime untilDate);
     }
 }

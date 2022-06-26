@@ -8,43 +8,38 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TurnpikeGate.Core.Users.Service;
-using TurnpikeGate.View.ManagerViews;
 
-namespace TurnpikeGate.View.MainViews
+namespace TurnpikeGate.View.StationManagerViews
 {
-    public partial class ManagerForm : Form
+    public partial class StationManagerForm : Form
     {
         private readonly ILoginService _loginService;
-
-        public ManagerForm(ILoginService loginService)
+        public StationManagerForm(ILoginService loginService)
         {
-            _loginService = loginService;
             InitializeComponent();
+            _loginService = loginService;
         }
 
-        private void btnFirstSurvey_Click(object sender, EventArgs e)
+        private void btnTollBooths_Click(object sender, EventArgs e)
         {
-            LoadForm(new IncomeReportForm());
+            // TODO
+            // Dobaviti iz tininog yaml/json fajla koja je naplatna stanica i onda na osnovu toga njegova mesta ispisati
+            // a ovako uzmi samo prvi
+
+            LoadForm(new TollBoothsForm());
         }
+
         private void LoadForm(object Form)
         {
             if (this.pnlView.Controls.Count > 0)
-            {
                 this.pnlView.Controls.RemoveAt(0);
 
-            }
             Form selectedButton = Form as Form;
             selectedButton.TopLevel = false;
             selectedButton.Dock = DockStyle.Fill;
             this.pnlView.Controls.Add(selectedButton);
             this.pnlView.Tag = selectedButton;
             selectedButton.Show();
-
-        }
-
-        private void btnSecondSurvey_Click(object sender, EventArgs e)
-        {
-            LoadForm(new BusiestStationReportForm());
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

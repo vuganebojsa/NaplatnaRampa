@@ -38,7 +38,6 @@ namespace TurnpikeGate.Core.TollStations.Service
             _tollStationRepository.Insert(tollStationDTO);
         }
 
-        //public static TollStation ParseToEntity(TollStation tollStationDTO);
         public TollStation GetTollStation(string address, string name, string locationId)
         {
             return new TollStation(address, name, ObjectId.Empty, new List<ObjectId>(), ObjectId.Parse(locationId),

@@ -11,5 +11,6 @@ namespace TurnpikeGate.Core.Turnpike.Repository
     public interface IPhysicalTollPaymentRepository : IRepository<PhysicalTollPayment>
     {
         public List<PhysicalTollPayment> GetPending();
+        List<PhysicalTollPayment> GetUntilDate(DateTime untilDate);
     }
 }

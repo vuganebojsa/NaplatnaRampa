@@ -13,7 +13,7 @@ namespace TurnpikeGate.View.AdministratorViews
 {
     public partial class AdministratorForm : Form
     {
-        private ILoginService _loginService;
+        private readonly ILoginService _loginService;
 
         public AdministratorForm(ILoginService loginService)
         {

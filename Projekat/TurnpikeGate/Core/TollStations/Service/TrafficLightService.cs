@@ -18,14 +18,30 @@ namespace TurnpikeGate.Core.TollStations.Service
             _trafficLightRepository = trafficLightRepository;
         }
 
+        public void Delete(string id)
+        {
+            _trafficLightRepository.Delete(ObjectId.Parse(id));
+
+        }
+
         public List<TraficLight> GetAll()
         {
             return _trafficLightRepository.GetAll();
         }
 
-        public void Insert(TraficLight trafficLight)
+        public TraficLight GetById(ObjectId id)
         {
-            _trafficLightRepository.Insert(trafficLight);
+            return _trafficLightRepository.GetById(id);
+        }
+
+        public void Insert(TraficLight trafficLightId)
+        {
+            _trafficLightRepository.Insert(trafficLightId);
+        }
+
+        public void Update(TraficLight entity)
+        {
+            _trafficLightRepository.Update(entity);
         }
 
     }

@@ -18,15 +18,30 @@ namespace TurnpikeGate.Core.TollStations.Service
             _cameraRepository = cameraRepository;
         }
 
+        public void Delete(string id)
+        {
+            _cameraRepository.Delete(ObjectId.Parse(id));
+
+        }
+
         public List<Camera> GetAll()
         {
             return _cameraRepository.GetAll();
         }
 
-        public void Insert(Camera camera)
+        public Camera GetById(ObjectId id)
         {
-            _cameraRepository.Insert(camera);
+            return _cameraRepository.GetById(id);
         }
 
+        public void Insert(Camera cameraId)
+        {
+            _cameraRepository.Insert(cameraId);
+        }
+
+        public void Update(Camera entity)
+        {
+            _cameraRepository.Update(entity);
+        }
     }
 }

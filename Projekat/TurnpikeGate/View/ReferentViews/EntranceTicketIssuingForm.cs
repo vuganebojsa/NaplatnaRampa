@@ -25,7 +25,6 @@ namespace TurnpikeGate.View.ReferentViews
         private readonly ITollStationService _tollStationService;
         private readonly IPhysicalTollPaymentService _physicalTollPaymentService;
 
-        
         public EntranceTicketIssuingForm()
         {
 
@@ -37,19 +36,19 @@ namespace TurnpikeGate.View.ReferentViews
             tbEntry.Text = _tollStationService.GetById(StationInformation.EntryStationId).Name;
             InitTimer();
             GenerateVehicleThreads();
+            InitIssuingTimer();
 
-           
+
+
         }
 
-        private void btnIssue_Click(object sender, EventArgs e)
+        private void IssueTicket()
         {
             PhysicalTollPayment tollPayment = new PhysicalTollPayment(_carPlates[0], DateTime.Now, DateTime.MaxValue,
                                                                         VehicleType.AUTOMOBILE , _tollStationService.GetAll()[0].ID, ObjectId.Empty, ObjectId.Empty, ObjectId.Empty);
             
             _physicalTollPaymentService.Insert(tollPayment);
-
             _carPlates.RemoveAt(0);
-
             tbPlates.Text = "";
             if (_carPlates.Count > 0)
             {
@@ -95,18 +94,39 @@ namespace TurnpikeGate.View.ReferentViews
             return firsTwo + threeNumbers + lastTwo;
 
         }
-        public void InitTimer()
+        private void InitPlatesTimer()
         {
             platesTimer = new System.Windows.Forms.Timer();
             platesTimer.Tick += new EventHandler(platesTimer_Tick_1);
-            platesTimer.Interval = 1000;
+            platesTimer.Interval = 800;
             platesTimer.Start();
 
         }
+
         private void platesTimer_Tick_1(object sender, EventArgs e)
         {
             if (tbPlates.Text == "" && _carPlates.Any())
+            {
                 tbPlates.Text = _carPlates[0];
+                tbSuccess.Text = "";
+            }
+        }
+
+        private void InitIssuingTimer()
+        {
+            issuingTimer = new System.Windows.Forms.Timer();
+            issuingTimer.Tick += new EventHandler(issuingTimer_Tick);
+            issuingTimer.Interval = 2600;
+            issuingTimer.Start();
+        }
+
+        private void issuingTimer_Tick(object sender, EventArgs e)
+        {
+            if (tbSuccess.Text == "" && _carPlates.Any())
+            {
+                tbSuccess.Text = "Uspesno izdat tiket za sledece tablice: " + _carPlates[0];
+                IssueTicket();
+            }
         }
     }
 }

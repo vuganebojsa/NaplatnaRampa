@@ -52,6 +52,7 @@ namespace TurnpikeGate.View.AdministratorViews
 
         private void btnShow_Click(object sender, EventArgs e)
         {
+            dgvPriceList.Rows.Clear();
             DateTime selectedDate = (DateTime)cbPriceList.SelectedValue;
             PriceList priceList = _priceListService.GetByDate(selectedDate);
             priceList.PriceListEntries.ForEach(u =>

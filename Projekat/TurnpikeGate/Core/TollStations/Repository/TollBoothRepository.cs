@@ -1,17 +1,12 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TurnpikeGate.Core.TollStations.Model;
 
 namespace TurnpikeGate.Core.TollStations.Repository
 {
     public class TollBoothRepository : ITollBoothRepository
     {
-        private IMongoCollection<TollBooth> _collection;
+        private readonly IMongoCollection<TollBooth> _collection;
 
         public TollBoothRepository()
         {

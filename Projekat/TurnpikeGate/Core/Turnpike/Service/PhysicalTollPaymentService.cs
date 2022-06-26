@@ -56,5 +56,10 @@ namespace TurnpikeGate.Core.Turnpike.Service
             priceListEntryId = priceListEntry.ID;
             return priceListEntry.Amount.Total;
         }
+        
+        public List<PhysicalTollPayment> GetUntilDate(DateTime untilDate)
+        {
+            return _physicalTollPaymentRepository.GetUntilDate(untilDate);
+        }
     }
 }

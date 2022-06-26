@@ -1,11 +1,7 @@
 ﻿using MongoDB.Bson;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TurnpikeGate.Core.TollStations.Model;
 using TurnpikeGate.Core.TollStations.Repository;
+
 
 namespace TurnpikeGate.Core.TollStations.Service
 {
@@ -18,15 +14,30 @@ namespace TurnpikeGate.Core.TollStations.Service
             _tollBoothRepository = tollBoothRepository;
         }
 
+        public void Delete(string id)
+        {
+            _tollBoothRepository.Delete(ObjectId.Parse(id));
+
+        }
+
         public List<TollBooth> GetAll()
         {
             return _tollBoothRepository.GetAll();
         }
 
-        public void Insert(TollBooth tollBooth)
+        public TollBooth GetById(ObjectId id)
         {
-            _tollBoothRepository.Insert(tollBooth);
+            return _tollBoothRepository.GetById(id);
         }
 
+        public void Insert(TollBooth tollBoothId)
+        {
+            _tollBoothRepository.Insert(tollBoothId);
+        }
+
+        public void Update(TollBooth entity)
+        {
+            _tollBoothRepository.Update(entity);
+        }
     }
 }

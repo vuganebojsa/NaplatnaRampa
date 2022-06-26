@@ -8,9 +8,8 @@ using TurnpikeGate.Core.TollStations.Model;
 
 namespace TurnpikeGate.Core.TollStations.Service
 {
-    public interface ITollBoothService
+    public interface ITollBoothService:IService<TollBooth>
     {
-        public List<TollBooth> GetAll();
-        void Insert(TollBooth tollBooth);
+
     }
 }
