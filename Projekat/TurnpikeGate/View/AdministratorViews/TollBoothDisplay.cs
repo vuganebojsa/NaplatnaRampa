@@ -53,7 +53,7 @@ namespace TurnpikeGate.View.AdministratorViews
                 dgvBooths.Rows[index].Cells["type"].Value = o.Type.ToString();
                 dgvBooths.Rows[index].Cells["tollStationId"].Value = _tollStationService.GetById(o.TollStationId).Name;
                 dgvBooths.Rows[index].Cells["rampId"].Value = o.RampId;
-                dgvBooths.Rows[index].Cells["trafficLightId"].Value = o.TraficLightId;
+                dgvBooths.Rows[index].Cells["trafficLightId"].Value = o.TrafficLightId;
                 dgvBooths.Rows[index].Cells["cameraId"].Value = o.CameraId;
             });
         }

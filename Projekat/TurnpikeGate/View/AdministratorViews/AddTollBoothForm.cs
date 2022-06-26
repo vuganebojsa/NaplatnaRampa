@@ -137,7 +137,7 @@ namespace TurnpikeGate.View.AdministratorViews
             TollBooth tb = _tollBoothService.GetById(ObjectId.Parse(_tollBoothId));
             tb.CameraId = ObjectId.Parse(cbCameras.Text);
             tb.RampId = ObjectId.Parse(cbRamps.Text);
-            tb.TraficLightId = ObjectId.Parse(cbTrafficLights.Text);
+            tb.TrafficLightId = ObjectId.Parse(cbTrafficLights.Text);
             tb.Type = (TypeOfPayment)cbTypes.SelectedValue;
             tb.TollStationId = ((TollStation)cbStations.SelectedItem).ID;
             _tollBoothService.Update(tb);
@@ -153,7 +153,7 @@ namespace TurnpikeGate.View.AdministratorViews
             cbStations.Text = ts.Name;
             cbCameras.Text = tollBooth.CameraId.ToString();
             cbRamps.Text = tollBooth.RampId.ToString();
-            cbTrafficLights.Text = tollBooth.TraficLightId.ToString();
+            cbTrafficLights.Text = tollBooth.TrafficLightId.ToString();
             cbTypes.Text = tollBooth.Type.ToString();
 
         }

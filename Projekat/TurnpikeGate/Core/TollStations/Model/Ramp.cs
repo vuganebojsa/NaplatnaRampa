@@ -13,23 +13,28 @@ namespace TurnpikeGate.Core.TollStations.Model
     {
         [BsonElement("_id")]
         public ObjectId ID { get; set; }
+
         [BsonElement("toolBoothId")]
         public ObjectId ToolBoothId { get; set; }
 
         [BsonElement("state")]
         public State State { get; set; }
 
-        public Ramp(ObjectId toolBoothId)
+        [BsonElement("isWorking")]
+        public bool IsWorking { get; set; }
+
+        public Ramp(ObjectId toolBoothId, bool isWorking = true)
         {
             ID = ObjectId.GenerateNewId();
             ToolBoothId = toolBoothId;
+            IsWorking = isWorking;
             State = new Lowered(this);
         }
 
-        public void ChangeState(State state) 
+        public void ChangeState(State state)
         {
             State = state;
-        
+
         }
     }
 }

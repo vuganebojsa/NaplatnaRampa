@@ -11,11 +11,12 @@ namespace TurnpikeGate.Core.TollStations.States
     {
         public Raised(Ramp ramp) : base(ramp)
         {
+            Do();
         }
 
         public override void Do()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Podize se");
         }
     }
 }

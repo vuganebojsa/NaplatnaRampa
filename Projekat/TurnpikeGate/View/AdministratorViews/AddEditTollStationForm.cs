@@ -76,7 +76,7 @@ namespace TurnpikeGate.View.AdministratorViews
             _tollStationService.Insert(tollStation);
             tollStation.Attach(_observer);
             tollStation.Notify();
-            MessageBox.Show("Succesfully inserted a new Toll Station!");
+            MessageBox.Show("Uspesno ste dodali naplatnu stanicu!");
         }
 
         private void UpdateTollStation()
@@ -89,7 +89,7 @@ namespace TurnpikeGate.View.AdministratorViews
             _tollStationService.Update(tollStation);
             tollStation.Attach(_observer);
             tollStation.Notify();
-            MessageBox.Show("Succesfully updated the Toll Station!");
+            MessageBox.Show("Uspesno ste izmenili naplatnu stanicu!");
         }
     }
 }
