@@ -82,10 +82,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
             this.label1.Location = new System.Drawing.Point(181, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(321, 46);
+            this.label1.Size = new System.Drawing.Size(349, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "NAPLATA PUTARINE";
             // 
@@ -300,13 +301,16 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnConfirm.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnConfirm.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnConfirm.Location = new System.Drawing.Point(374, 732);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(254, 83);
             this.btnConfirm.TabIndex = 21;
             this.btnConfirm.Text = "STAMPAJ TIKET";
-            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // groupBox3
@@ -417,7 +421,8 @@
             // btnRaiseRamp
             // 
             this.btnRaiseRamp.Enabled = false;
-            this.btnRaiseRamp.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRaiseRamp.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRaiseRamp.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnRaiseRamp.Location = new System.Drawing.Point(59, 732);
             this.btnRaiseRamp.Name = "btnRaiseRamp";
             this.btnRaiseRamp.Size = new System.Drawing.Size(254, 83);
@@ -440,6 +445,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1301, 840);
             this.Controls.Add(this.lbRamp);
             this.Controls.Add(this.btnRaiseRamp);
@@ -455,6 +461,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ExitTicketIssuingForm";
             this.Text = "ExitTicketIssuingForm";
