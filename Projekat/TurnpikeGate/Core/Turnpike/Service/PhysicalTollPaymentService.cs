@@ -61,5 +61,10 @@ namespace TurnpikeGate.Core.Turnpike.Service
         {
             return _physicalTollPaymentRepository.GetUntilDate(untilDate);
         }
+
+        public double CalculateVelocity(PhysicalTollPayment currentTollPayment, double mileage)
+        {
+            return (mileage / (currentTollPayment.ExitTime - currentTollPayment.EntranceTime).TotalMinutes)*60;
+        }
     }
 }

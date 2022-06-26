@@ -67,6 +67,10 @@
             this.btnRaiseRamp = new System.Windows.Forms.Button();
             this.lbRamp = new System.Windows.Forms.Label();
             this.rampTimer = new System.Windows.Forms.Timer(this.components);
+            this.tbMileage = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbVelocity = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -94,7 +98,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(25, 64);
+            this.label2.Location = new System.Drawing.Point(25, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(167, 29);
             this.label2.TabIndex = 1;
@@ -104,7 +108,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(25, 135);
+            this.label4.Location = new System.Drawing.Point(25, 128);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 29);
             this.label4.TabIndex = 3;
@@ -114,7 +118,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(25, 205);
+            this.label5.Location = new System.Drawing.Point(25, 198);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(165, 29);
             this.label5.TabIndex = 4;
@@ -124,7 +128,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(25, 67);
+            this.label6.Location = new System.Drawing.Point(25, 57);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(164, 29);
             this.label6.TabIndex = 5;
@@ -139,9 +143,9 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(33, 101);
+            this.groupBox1.Location = new System.Drawing.Point(33, 91);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(623, 280);
+            this.groupBox1.Size = new System.Drawing.Size(623, 275);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ulazni Tiket";
@@ -149,7 +153,7 @@
             // tbEntranceTime
             // 
             this.tbEntranceTime.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbEntranceTime.Location = new System.Drawing.Point(207, 203);
+            this.tbEntranceTime.Location = new System.Drawing.Point(207, 196);
             this.tbEntranceTime.Name = "tbEntranceTime";
             this.tbEntranceTime.Size = new System.Drawing.Size(378, 39);
             this.tbEntranceTime.TabIndex = 8;
@@ -157,7 +161,7 @@
             // tbEntranceStation
             // 
             this.tbEntranceStation.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbEntranceStation.Location = new System.Drawing.Point(207, 129);
+            this.tbEntranceStation.Location = new System.Drawing.Point(207, 122);
             this.tbEntranceStation.Name = "tbEntranceStation";
             this.tbEntranceStation.Size = new System.Drawing.Size(378, 39);
             this.tbEntranceStation.TabIndex = 7;
@@ -165,7 +169,7 @@
             // tbPlates
             // 
             this.tbPlates.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbPlates.Location = new System.Drawing.Point(207, 59);
+            this.tbPlates.Location = new System.Drawing.Point(207, 52);
             this.tbPlates.Name = "tbPlates";
             this.tbPlates.Size = new System.Drawing.Size(378, 39);
             this.tbPlates.TabIndex = 5;
@@ -174,7 +178,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(25, 139);
+            this.label7.Location = new System.Drawing.Point(25, 129);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(169, 29);
             this.label7.TabIndex = 7;
@@ -239,7 +243,7 @@
             // tbExitStation
             // 
             this.tbExitStation.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbExitStation.Location = new System.Drawing.Point(207, 61);
+            this.tbExitStation.Location = new System.Drawing.Point(207, 51);
             this.tbExitStation.Name = "tbExitStation";
             this.tbExitStation.Size = new System.Drawing.Size(378, 39);
             this.tbExitStation.TabIndex = 14;
@@ -247,7 +251,7 @@
             // tbExitTime
             // 
             this.tbExitTime.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbExitTime.Location = new System.Drawing.Point(207, 133);
+            this.tbExitTime.Location = new System.Drawing.Point(207, 123);
             this.tbExitTime.Name = "tbExitTime";
             this.tbExitTime.Size = new System.Drawing.Size(378, 39);
             this.tbExitTime.TabIndex = 15;
@@ -289,17 +293,21 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.tbVelocity);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.tbMileage);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.tbExitTime);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.tbExitStation);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(33, 411);
+            this.groupBox2.Location = new System.Drawing.Point(33, 394);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(623, 221);
+            this.groupBox2.Size = new System.Drawing.Size(623, 268);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Za unos";
+            this.groupBox2.Text = "Generisano";
             // 
             // btnConfirm
             // 
@@ -437,11 +445,47 @@
             // 
             this.lbRamp.AutoSize = true;
             this.lbRamp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbRamp.Location = new System.Drawing.Point(241, 669);
+            this.lbRamp.Location = new System.Drawing.Point(240, 680);
             this.lbRamp.Name = "lbRamp";
             this.lbRamp.Size = new System.Drawing.Size(225, 29);
             this.lbRamp.TabIndex = 32;
             this.lbRamp.Text = "Rampa je spustena!";
+            // 
+            // tbMileage
+            // 
+            this.tbMileage.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbMileage.Location = new System.Drawing.Point(207, 196);
+            this.tbMileage.Name = "tbMileage";
+            this.tbMileage.Size = new System.Drawing.Size(117, 39);
+            this.tbMileage.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(26, 201);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(146, 29);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Kilometraza:";
+            // 
+            // tbVelocity
+            // 
+            this.tbVelocity.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbVelocity.Location = new System.Drawing.Point(482, 196);
+            this.tbVelocity.Name = "tbVelocity";
+            this.tbVelocity.Size = new System.Drawing.Size(103, 39);
+            this.tbVelocity.TabIndex = 19;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(356, 201);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(120, 29);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "Pr. brzina:";
             // 
             // ExitTicketIssuingForm
             // 
@@ -525,5 +569,9 @@
         private Button btnRaiseRamp;
         private Label lbRamp;
         private System.Windows.Forms.Timer rampTimer;
+        private TextBox tbVelocity;
+        private Label label13;
+        private TextBox tbMileage;
+        private Label label3;
     }
 }
