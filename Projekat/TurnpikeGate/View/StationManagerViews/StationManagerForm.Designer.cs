@@ -81,10 +81,10 @@ namespace TurnpikeGate.View.StationManagerViews
             this.btnTollBooths.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTollBooths.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnTollBooths.ForeColor = System.Drawing.Color.White;
-            this.btnTollBooths.Location = new System.Drawing.Point(0, 253);
+            this.btnTollBooths.Location = new System.Drawing.Point(0, 271);
             this.btnTollBooths.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTollBooths.Name = "btnTollBooths";
-            this.btnTollBooths.Size = new System.Drawing.Size(200, 88);
+            this.btnTollBooths.Size = new System.Drawing.Size(200, 70);
             this.btnTollBooths.TabIndex = 6;
             this.btnTollBooths.Text = "NAPLATNA MESTA";
             this.btnTollBooths.UseVisualStyleBackColor = false;
@@ -93,19 +93,21 @@ namespace TurnpikeGate.View.StationManagerViews
             // lbName
             // 
             this.lbName.AutoSize = true;
+            this.lbName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbName.Location = new System.Drawing.Point(32, 169);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(34, 20);
+            this.lbName.Size = new System.Drawing.Size(31, 17);
             this.lbName.TabIndex = 5;
             this.lbName.Text = "Ime";
             // 
             // lbRole
             // 
             this.lbRole.AutoSize = true;
+            this.lbRole.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbRole.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.lbRole.Location = new System.Drawing.Point(32, 196);
             this.lbRole.Name = "lbRole";
-            this.lbRole.Size = new System.Drawing.Size(49, 20);
+            this.lbRole.Size = new System.Drawing.Size(44, 17);
             this.lbRole.TabIndex = 4;
             this.lbRole.Text = "Uloga";
             // 

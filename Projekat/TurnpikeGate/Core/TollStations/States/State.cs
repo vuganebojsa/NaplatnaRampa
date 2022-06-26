@@ -14,6 +14,6 @@ namespace TurnpikeGate.Core.TollStations.States
         { 
             this.ramp = ramp;
         }
-        public abstract String Do();
+        public abstract string Do();
     }
 }
