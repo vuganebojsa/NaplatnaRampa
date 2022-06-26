@@ -33,6 +33,11 @@ namespace TurnpikeGate.Core.TollStations.Repository
             return _collection.Find(item => item.ID == id).FirstOrDefault();
         }
 
+        public Camera GetByTollBoothId(ObjectId tollBoothId)
+        {
+            return _collection.Find(item => item.ToolBoothId == tollBoothId).FirstOrDefault();
+        }
+
         public void Insert(Camera entity)
         {
             _collection.InsertOne(entity);
