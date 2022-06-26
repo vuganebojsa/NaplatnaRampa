@@ -49,10 +49,11 @@ namespace TurnpikeGate.Core.Turnpike.Service
             return _physicalTollPaymentRepository.GetById(id);
         }
 
-        public double CalculateTollPrice(VehicleType selectedVehicleType, ObjectId roadSectionId, Currency currency)
+        public double CalculateTollPrice(VehicleType selectedVehicleType, ObjectId roadSectionId, Currency currency, out ObjectId priceListEntryId)
         {
             PriceList activePriceList = _priceListRepository.GetActivePriceList();
             PriceListEntry priceListEntry = _priceListEntryRepository.GetByParameters(activePriceList.PriceListEntries, selectedVehicleType, roadSectionId, currency);
+            priceListEntryId = priceListEntry.ID;
             return priceListEntry.Amount.Total;
         }
     }

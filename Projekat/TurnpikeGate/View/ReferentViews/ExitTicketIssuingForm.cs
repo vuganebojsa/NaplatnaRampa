@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,6 +33,7 @@ namespace TurnpikeGate.View.ReferentViews
 
         private readonly IPhysicalTollPaymentRepository _physicalTollPaymentRepository;
         private readonly IRoadSectionRepository _roadSectionRepository;
+        private readonly IPriceListEntryRepository _priceListEntryRepository;
 
 
         private List<System.Threading.Timer> _timers;
@@ -40,6 +42,7 @@ namespace TurnpikeGate.View.ReferentViews
         private TollStation _exitStation;
         private PhysicalTollPayment _currentTollPayment;
         private RoadSection _selectedRoadSection;
+        private ObjectId _priceListEntryId;
 
         public ExitTicketIssuingForm()
         {
@@ -49,12 +52,14 @@ namespace TurnpikeGate.View.ReferentViews
             _physicalTollPaymentService = Globals.Container.Resolve<IPhysicalTollPaymentService>();
             _physicalTollPaymentRepository = Globals.Container.Resolve<IPhysicalTollPaymentRepository>();
             _roadSectionRepository = Globals.Container.Resolve<IRoadSectionRepository>();
+            _priceListEntryRepository = Globals.Container.Resolve<IPriceListEntryRepository>();
 
             _selectedPicture = pbCar;
             _selectedVehicleType = VehicleType.AUTOMOBILE;
             _exitStation = _tollStationService.GetById(StationInformation.ExitStationId);
 
             _vehicleQueue = new List<PhysicalTollPayment>();
+            tbExitStation.Text = _exitStation.Name;
             InitTimer();
             StartSimulation();
 
@@ -84,7 +89,8 @@ namespace TurnpikeGate.View.ReferentViews
         private void CalculateTollPrice(RoadSection roadSection)
         {
             Currency currency = GetSelectedCurrency();
-            tbTollPrice.Text = _physicalTollPaymentService.CalculateTollPrice(_selectedVehicleType, roadSection.ID, currency).ToString();
+            tbTollPrice.Text = _physicalTollPaymentService.CalculateTollPrice(_selectedVehicleType, roadSection.ID, currency, out _priceListEntryId).ToString();
+            Console.WriteLine(_priceListEntryId);
         }
 
         private Currency GetSelectedCurrency()
@@ -162,15 +168,12 @@ namespace TurnpikeGate.View.ReferentViews
 
             tbEntranceTime.Text = physicalTollPayment.EntranceTime.ToString();
             tbExitTime.Text = DateTime.Now.ToString();
-
-            tbExitStation.Text = _exitStation.Name;
         }
 
         private void tbReceivedSum_keyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                MessageBox.Show("Pritisnuto.", "Greska");
                 if (tbSumReceived.Text == "" || tbTollPrice.Text == "")
                     MessageBox.Show("Da bi se izracunao kusur, cena putarine i preuzet iznos moraju biti popunjeni.", "Greska");
                 else
@@ -191,12 +194,25 @@ namespace TurnpikeGate.View.ReferentViews
                 _currentTollPayment.PriceListEntryId = _selectedRoadSection.ID;
                 _currentTollPayment.ReferentId = Globals.LoggedUser.UserId;
                 //TODO povezati price list entry
+                _currentTollPayment.PriceListEntryId = _priceListEntryId;
+
                 _physicalTollPaymentRepository.Update(_currentTollPayment);
 
                 MessageBox.Show("Putarina naplacena, tiket uspesno izdat :).", "Uspeh");
                 _vehicleQueue.RemoveAt(0);
+                ClearFields();
             }
         }
 
+        private void ClearFields()
+        {
+            tbEntranceTime.Text = "";
+            tbEntranceStation.Text = "";
+            tbExitTime.Text = "";
+            tbPlates.Text = "";
+            tbTollPrice.Text = "";
+            tbSumReceived.Text = "";
+            tbChange.Text = "";
+        }
     }
 }
