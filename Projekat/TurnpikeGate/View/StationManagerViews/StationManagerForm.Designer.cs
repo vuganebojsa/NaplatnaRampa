@@ -57,31 +57,37 @@ namespace TurnpikeGate.View.StationManagerViews
             // 
             // btnLogout
             // 
+            this.btnLogout.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Location = new System.Drawing.Point(0, 586);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(198, 52);
             this.btnLogout.TabIndex = 7;
             this.btnLogout.Text = "ODJAVA";
-            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnTollBooths
             // 
+            this.btnTollBooths.BackColor = System.Drawing.Color.SteelBlue;
             this.btnTollBooths.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTollBooths.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnTollBooths.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTollBooths.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTollBooths.ForeColor = System.Drawing.Color.White;
             this.btnTollBooths.Location = new System.Drawing.Point(0, 253);
             this.btnTollBooths.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTollBooths.Name = "btnTollBooths";
-            this.btnTollBooths.Size = new System.Drawing.Size(200, 52);
+            this.btnTollBooths.Size = new System.Drawing.Size(200, 88);
             this.btnTollBooths.TabIndex = 6;
             this.btnTollBooths.Text = "NAPLATNA MESTA";
-            this.btnTollBooths.UseVisualStyleBackColor = true;
+            this.btnTollBooths.UseVisualStyleBackColor = false;
             this.btnTollBooths.Click += new System.EventHandler(this.btnTollBooths_Click);
             // 
             // lbName
@@ -89,7 +95,7 @@ namespace TurnpikeGate.View.StationManagerViews
             this.lbName.AutoSize = true;
             this.lbName.Location = new System.Drawing.Point(32, 169);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(27, 15);
+            this.lbName.Size = new System.Drawing.Size(34, 20);
             this.lbName.TabIndex = 5;
             this.lbName.Text = "Ime";
             // 
@@ -99,7 +105,7 @@ namespace TurnpikeGate.View.StationManagerViews
             this.lbRole.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.lbRole.Location = new System.Drawing.Point(32, 196);
             this.lbRole.Name = "lbRole";
-            this.lbRole.Size = new System.Drawing.Size(38, 15);
+            this.lbRole.Size = new System.Drawing.Size(49, 20);
             this.lbRole.TabIndex = 4;
             this.lbRole.Text = "Uloga";
             // 

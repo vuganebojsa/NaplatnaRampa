@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TurnpikeGate.Core.TollStations.States;
 
 namespace TurnpikeGate.Core.TollStations.Model
 {
@@ -12,8 +13,12 @@ namespace TurnpikeGate.Core.TollStations.Model
     {
         [BsonElement("_id")]
         public ObjectId ID { get; set; }
+
         [BsonElement("toolBoothId")]
         public ObjectId ToolBoothId { get; set; }
+
+        [BsonElement("state")]
+        public State State { get; set; }
 
         [BsonElement("isWorking")]
         public bool IsWorking { get; set; }
@@ -23,6 +28,13 @@ namespace TurnpikeGate.Core.TollStations.Model
             ID = ObjectId.GenerateNewId();
             ToolBoothId = toolBoothId;
             IsWorking = isWorking;
+            State = new Lowered(this);
+        }
+
+        public void ChangeState(State state)
+        {
+            State = state;
+
         }
     }
 }

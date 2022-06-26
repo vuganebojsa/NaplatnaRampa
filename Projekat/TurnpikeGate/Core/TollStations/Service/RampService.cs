@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TurnpikeGate.Core.TollStations.Model;
 using TurnpikeGate.Core.TollStations.Repository;
+using TurnpikeGate.Core.TollStations.States;
 
 namespace TurnpikeGate.Core.TollStations.Service
 {
@@ -49,5 +50,7 @@ namespace TurnpikeGate.Core.TollStations.Service
         {
             _rampRepository.Update(entity);
         }
+
+        
     }
 }
