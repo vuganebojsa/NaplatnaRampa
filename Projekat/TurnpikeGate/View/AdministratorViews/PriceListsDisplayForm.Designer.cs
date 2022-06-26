@@ -55,7 +55,9 @@ namespace TurnpikeGate.View.AdministratorViews
             this.dgvPriceList.Name = "dgvPriceList";
             this.dgvPriceList.RowHeadersWidth = 51;
             this.dgvPriceList.RowTemplate.Height = 29;
-            this.dgvPriceList.Size = new System.Drawing.Size(934, 359);
+
+            this.dgvPriceList.Size = new System.Drawing.Size(977, 359);
+
             this.dgvPriceList.TabIndex = 0;
             // 
             // vehicleType
@@ -99,7 +101,9 @@ namespace TurnpikeGate.View.AdministratorViews
             this.btnShow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShow.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnShow.ForeColor = System.Drawing.Color.White;
-            this.btnShow.Location = new System.Drawing.Point(724, 502);
+
+            this.btnShow.Location = new System.Drawing.Point(524, 501);
+
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(218, 61);
             this.btnShow.TabIndex = 2;
@@ -111,7 +115,9 @@ namespace TurnpikeGate.View.AdministratorViews
             // 
             this.cbPriceList.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbPriceList.FormattingEnabled = true;
-            this.cbPriceList.Location = new System.Drawing.Point(504, 514);
+
+            this.cbPriceList.Location = new System.Drawing.Point(304, 513);
+
             this.cbPriceList.Name = "cbPriceList";
             this.cbPriceList.Size = new System.Drawing.Size(178, 39);
             this.cbPriceList.TabIndex = 3;
@@ -121,7 +127,9 @@ namespace TurnpikeGate.View.AdministratorViews
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(437, 33);
+
+            this.label1.Location = new System.Drawing.Point(441, 42);
+
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(189, 45);
             this.label1.TabIndex = 4;

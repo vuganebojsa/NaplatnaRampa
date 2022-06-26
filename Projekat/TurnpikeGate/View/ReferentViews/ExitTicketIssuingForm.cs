@@ -89,12 +89,11 @@ namespace TurnpikeGate.View.ReferentViews
             _selectedPicture.BorderStyle = BorderStyle.None;
             _selectedPicture.BackColor = Color.Transparent;
             pictureBox.BorderStyle = BorderStyle.None;
-            pictureBox.BackColor = Color.LightBlue;
+            pictureBox.BackColor = Color.LightGray;
 
             _selectedPicture = pictureBox;
             _selectedVehicleType = vehicleType;
 
-            _selectedRoadSection = _roadSectionRepository.GetByLocations(_entranceStation.ID, _exitStation.ID);
             CalculateTollPrice(_selectedRoadSection);
 
         }
@@ -102,8 +101,8 @@ namespace TurnpikeGate.View.ReferentViews
         private void CalculateTollPrice(RoadSection roadSection)
         {
             Currency currency = GetSelectedCurrency();
+            Console.WriteLine(currency);
             tbTollPrice.Text = _physicalTollPaymentService.CalculateTollPrice(_selectedVehicleType, roadSection.ID, currency, out _priceListEntryId).ToString();
-            Console.WriteLine(_priceListEntryId);
         }
 
         private Currency GetSelectedCurrency()
@@ -175,12 +174,16 @@ namespace TurnpikeGate.View.ReferentViews
 
             tbPlates.Text = physicalTollPayment.RegistrationPlate;
 
+            Console.WriteLine(physicalTollPayment.EntranceStationId);
             _entranceStation = _tollStationService.GetById(physicalTollPayment.EntranceStationId);
-            Console.WriteLine(_entranceStation.Name);
             tbEntranceStation.Text = _entranceStation.Name;
 
             tbEntranceTime.Text = physicalTollPayment.EntranceTime.ToString();
             tbExitTime.Text = DateTime.Now.ToString();
+            _currentTollPayment.ExitTime = DateTime.Now;
+            _selectedRoadSection = _roadSectionRepository.GetByLocations(_entranceStation.ID, _exitStation.ID);
+            tbMileage.Text = _selectedRoadSection.Mileage.ToString();
+            tbVelocity.Text = ((int)_physicalTollPaymentService.CalculateVelocity(_currentTollPayment, _selectedRoadSection.Mileage)).ToString();
         }
 
         private void tbReceivedSum_keyDown(object sender, KeyEventArgs e)
@@ -266,6 +269,22 @@ namespace TurnpikeGate.View.ReferentViews
             RaiseRamp();
             btnRaiseRamp.Enabled = false;
 
+        }
+
+        private void rbRSD_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbRSD.Checked)
+            {
+                CalculateTollPrice(_selectedRoadSection);
+            }
+        }
+
+        private void rbEUR_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbEUR.Checked)
+            {
+                CalculateTollPrice(_selectedRoadSection);
+            }
         }
     }
 }
