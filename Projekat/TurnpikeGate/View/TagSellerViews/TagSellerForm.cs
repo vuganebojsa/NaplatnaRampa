@@ -88,6 +88,7 @@ namespace TurnpikeGate.View.TagSellerViews
                 electronicTag.Amount.Total += int.Parse(tbAmount.Text);
                 electronicTagService.Update(electronicTag);
                 System.Windows.Forms.MessageBox.Show("Sredstva dodata!");
+                ClearBoxes();
             }
             catch (Exception ex)
             {
@@ -115,17 +116,29 @@ namespace TurnpikeGate.View.TagSellerViews
             cbCurrency.DataSource = (Currency[])Enum.GetValues(typeof(Currency));
 
         }
+        private void ClearBoxes()
+        { 
+            tbAmount.Text = string.Empty;
+            tbID.Text = string.Empty;
+            tbLastName.Text = string.Empty;
+            tbName.Text = string.Empty;
+        }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
             ElectronicTag electronicTag = new ElectronicTag(tbName.Text, tbLastName.Text, (VehicleType)cbType.SelectedValue,(Currency)cbCurrency.SelectedValue);
             electronicTagService.Insert(electronicTag);
+            
             DialogResult dialogResult = MessageBox.Show("Tag uspesno napravljen\nDa li zelite da odhah oplatite novac?", "", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 tbID.Text = electronicTag.ID.ToString();
                 chbAddFounds.Checked = true;
 
+            }
+            else
+            {
+                ClearBoxes(); 
             }
         }
     }
